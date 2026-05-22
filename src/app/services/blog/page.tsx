@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { AboutMidCTA } from "@/components/sections/AboutMidCTA";
+import { BlogCaseChart } from "@/components/sections/BlogCaseChart";
+import { BlogEngagementPolicy } from "@/components/sections/BlogEngagementPolicy";
+import { BlogFinalCTA } from "@/components/sections/BlogFinalCTA";
 import { BlogHero } from "@/components/sections/BlogHero";
+import { BlogHomepageSection } from "@/components/sections/BlogHomepageSection";
 import { BlogVsAds } from "@/components/sections/BlogVsAds";
-import { CaseTestimonial } from "@/components/sections/CaseTestimonial";
-import { ServiceEngagementPolicy } from "@/components/sections/ServiceEngagementPolicy";
 import { ServiceProcess } from "@/components/sections/ServiceProcess";
 import { ServiceProofStrip } from "@/components/sections/ServiceProofStrip";
 import { ServiceWhatWeDo } from "@/components/sections/ServiceWhatWeDo";
-import { BLOG_CASES, BLOG_PILLARS, BLOG_PROCESS, BLOG_PROOF } from "@/data/service-blog";
+import { BLOG_PILLARS, BLOG_PROCESS, BLOG_PROOF } from "@/data/service-blog";
 
 export const metadata: Metadata = {
 	title: "블로그 마케팅 | Onketing",
@@ -20,12 +21,13 @@ export const BlogServicePage = () => {
 		<>
 			<BlogHero />
 			<BlogVsAds />
+			<BlogHomepageSection />
 			<ServiceProofStrip items={BLOG_PROOF} />
 			<ServiceWhatWeDo items={BLOG_PILLARS} />
-			<CaseTestimonial cases={BLOG_CASES} />
+			<BlogCaseChart />
 			<ServiceProcess steps={BLOG_PROCESS} />
-			<ServiceEngagementPolicy />
-			<AboutMidCTA />
+			<BlogEngagementPolicy />
+			<BlogFinalCTA />
 		</>
 	);
 };

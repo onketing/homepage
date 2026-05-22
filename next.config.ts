@@ -87,6 +87,7 @@ const nextConfig: NextConfig = {
 	},
 
 	images: {
+		qualities: [75, 90],
 		remotePatterns: [
 			{
 				// TODO(배포 전): 모든 https 도메인 허용 → 실제 사용 도메인으로 좁힐 것

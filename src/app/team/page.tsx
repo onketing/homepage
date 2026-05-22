@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { TeamCrews } from "@/components/sections/TeamCrews";
 import { TeamHero } from "@/components/sections/TeamHero";
-import { TeamMemberFeature } from "@/components/sections/TeamMemberFeature";
-import { TeamPrinciples } from "@/components/sections/TeamPrinciples";
+import { TeamProblemSolution } from "@/components/sections/TeamProblemSolution";
 import { TeamScene } from "@/components/sections/TeamScene";
-import { TeamStats } from "@/components/sections/TeamStats";
 import { CTACard } from "@/components/shared/CTACard";
 
 export const metadata: Metadata = {
@@ -24,16 +22,17 @@ export const metadata: Metadata = {
 export const TeamPage = () => (
 	<>
 		<TeamHero />
-		<TeamStats />
-		<TeamMemberFeature />
-		<TeamPrinciples />
 		<TeamCrews />
 		<TeamScene />
+		<TeamProblemSolution />
 		<CTACard
 			variant="gradient"
-			headline="한 번 맡겨보세요."
-			sub="판단은 그 다음에 하셔도 됩니다."
-			buttonText="마케팅 컨설팅"
+			headline="최고의 팀과 함께해 보세요"
+			sub="왜 다른지 알게 되실 거예요."
+			buttonText="문의하기"
+			hideEyebrow
+			hideTrustStats
+			showButton
 		/>
 	</>
 );

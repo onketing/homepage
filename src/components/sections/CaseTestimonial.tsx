@@ -19,7 +19,7 @@ type Props = {
 
 export const CaseTestimonial = ({ cases, dark = false }: Props) => {
 	return (
-		<section className={`px-4 py-16 md:py-20 ${dark ? "bg-[#052e16]" : "bg-slate-50"}`}>
+		<section className={`px-4 py-16 md:py-20 ${dark ? "bg-[#0a0a0a]" : "bg-white"}`}>
 			<div className="mx-auto max-w-6xl">
 				<Reveal className="mb-12 text-center">
 					<p
@@ -38,7 +38,7 @@ export const CaseTestimonial = ({ cases, dark = false }: Props) => {
 					{cases.map((c, i) => (
 						<Reveal key={c.discipline} delay={i * 0.1} direction="up">
 							<div
-								className={`flex h-full flex-col overflow-hidden rounded-2xl border ${dark ? "border-white/10" : "border-slate-100"} shadow-[0_2px_16px_rgba(0,0,0,0.06)]`}
+								className={`flex h-full flex-col overflow-hidden rounded-2xl border ${dark ? "border-white/20" : "border-slate-100"} ${dark ? "shadow-[0_4px_24px_rgba(0,0,0,0.4)]" : "shadow-[0_2px_16px_rgba(0,0,0,0.06)]"}`}
 							>
 								{/* 상단: 수치 */}
 								<div className="bg-[#052e16] px-6 py-6">

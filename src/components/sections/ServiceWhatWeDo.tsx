@@ -11,21 +11,34 @@ type Pillar = {
 
 type Props = {
 	items: readonly Pillar[];
+	heading?: React.ReactNode;
+	sub?: string;
 };
 
 const DIRS = ["left", "scale", "right"] as const;
 
-export const ServiceWhatWeDo = ({ items }: Props) => {
+export const ServiceWhatWeDo = ({ items, heading, sub }: Props) => {
 	return (
 		<section className="bg-white px-4 py-16 md:py-20">
 			<div className="mx-auto max-w-6xl">
 				<Reveal className="mb-12 text-center">
-					<p className="mb-3 font-semibold text-[#58d68d] text-sm uppercase tracking-[0.25em]">
-						What We Do
-					</p>
+					{!heading && (
+						<p className="mb-3 font-semibold text-[#58d68d] text-sm uppercase tracking-[0.25em]">
+							What We Do
+						</p>
+					)}
 					<h2 className="font-bold text-3xl text-[#0a0a0a] tracking-tight md:text-5xl">
-						3가지로 <span className="gradient-text">구분합니다</span>
+						{heading ?? (
+							<>
+								성과를 만드는 <span className="gradient-text">3단계 운영 방식</span>
+							</>
+						)}
 					</h2>
+					{sub && (
+						<p className="mx-auto mt-3 max-w-lg break-keep text-base text-slate-500 leading-relaxed">
+							{sub}
+						</p>
+					)}
 				</Reveal>
 
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">

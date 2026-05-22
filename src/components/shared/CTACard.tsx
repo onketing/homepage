@@ -1,3 +1,4 @@
+import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/shared/Reveal";
@@ -15,6 +16,9 @@ type CTACardProps = {
 	eyebrow?: string;
 	variant?: "dark" | "gradient";
 	triggerContactOnView?: boolean;
+	hideEyebrow?: boolean;
+	hideTrustStats?: boolean;
+	showButton?: boolean;
 };
 
 export const CTACard = ({
@@ -24,6 +28,9 @@ export const CTACard = ({
 	eyebrow,
 	variant = "dark",
 	triggerContactOnView = false,
+	hideEyebrow = false,
+	hideTrustStats = false,
+	showButton = false,
 }: CTACardProps) => {
 	if (variant === "gradient") {
 		return (
@@ -68,9 +75,11 @@ export const CTACard = ({
 				<div className="relative z-10 mx-auto max-w-3xl text-center">
 					<Reveal>
 						{/* Eyebrow */}
-						<p className="mb-6 font-mono text-[10px] text-white/50 uppercase tracking-[0.4em]">
-							{eyebrow ?? `${siteConfig.nameKo} · 마케팅 컨설팅`}
-						</p>
+						{!hideEyebrow && (
+							<p className="mb-6 font-mono text-[10px] text-white/50 uppercase tracking-[0.4em]">
+								{eyebrow ?? `${siteConfig.nameKo} · 마케팅 컨설팅`}
+							</p>
+						)}
 
 						{/* Headline */}
 						<h2 className="mb-4 font-extrabold text-[40px] text-white leading-[1.08] tracking-tight md:text-[56px] lg:text-[68px]">
@@ -78,22 +87,49 @@ export const CTACard = ({
 						</h2>
 
 						{/* Sub */}
-						<p className="mb-14 font-semibold text-white/90 text-xl leading-relaxed md:text-2xl">{sub}</p>
+						<p className="mb-14 font-semibold text-white/90 text-xl leading-relaxed md:text-2xl">
+							{sub}
+						</p>
 
 						{/* Trust stats */}
-						<div className="flex items-center justify-center border-white/15 border-t pt-10">
-							{TRUST_STATS.map((stat, i) => (
-								<div key={stat.label} className="flex items-center">
-									{i > 0 && <div className="mx-8 h-8 w-px bg-white/20" aria-hidden="true" />}
-									<div className="flex flex-col items-center gap-1.5">
-										<span className="font-bold text-2xl text-white sm:text-3xl">{stat.value}</span>
-										<span className="font-mono text-[10px] text-white/45 uppercase tracking-[0.18em]">
-											{stat.label}
-										</span>
+						{!hideTrustStats && (
+							<div className="flex items-center justify-center border-white/15 border-t pt-10">
+								{TRUST_STATS.map((stat, i) => (
+									<div key={stat.label} className="flex items-center">
+										{i > 0 && <div className="mx-8 h-8 w-px bg-white/20" aria-hidden="true" />}
+										<div className="flex flex-col items-center gap-1.5">
+											<span className="font-bold text-2xl text-white sm:text-3xl">
+												{stat.value}
+											</span>
+											<span className="font-mono text-[10px] text-white/45 uppercase tracking-[0.18em]">
+												{stat.label}
+											</span>
+										</div>
 									</div>
-								</div>
-							))}
-						</div>
+								))}
+							</div>
+						)}
+
+						{/* Button (opt-in for gradient variant) */}
+						{showButton && (
+							<div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+								<Link
+									href="/contact"
+									className="w-full rounded-xl bg-white px-8 py-4 font-bold text-[#16a34a] text-base shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all hover:scale-[1.03] hover:shadow-[0_12px_32px_rgba(0,0,0,0.2)] sm:w-auto"
+								>
+									{buttonText}
+								</Link>
+								<a
+									href={siteConfig.contact.kakaoOpenChat}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/40 bg-white/10 px-8 py-4 font-semibold text-base text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:w-auto"
+								>
+									<MessageCircle className="h-4 w-4" />
+									카카오톡 1:1 문의
+								</a>
+							</div>
+						)}
 					</Reveal>
 				</div>
 			</section>

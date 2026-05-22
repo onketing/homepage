@@ -25,14 +25,11 @@ export const TeamScene = () => {
 			{/* 헤더 */}
 			<div className="mx-auto mb-12 max-w-6xl px-4 md:mb-16 md:px-8">
 				<Reveal>
-					<p className="mb-3 font-semibold text-[#86efac] text-sm uppercase tracking-[0.25em]">
-						Studio
-					</p>
 					<h2 className="font-bold text-3xl text-white tracking-tight md:text-5xl">
-						같은 공간에서 같이 만듭니다.
+						같은 공간에서 같이 만들어 갑니다.
 					</h2>
 					<p className="mt-4 max-w-xl break-keep text-sm text-white/80 leading-relaxed md:text-base">
-						촬영·편집·발행이 한 팀, 한 공간에서 끝납니다.
+						원하시는 편집 방향이나 강조하고 싶은 내용들의 경우 현장에서 즉석 반영도 가능합니다.
 					</p>
 				</Reveal>
 			</div>
@@ -61,7 +58,7 @@ export const TeamScene = () => {
 								{/* 가장 큰 셀에 텍스트 overlay */}
 								{isFeature && (
 									<>
-										<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+										<div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 										<div className="absolute right-0 bottom-0 left-0 p-6 md:p-8">
 											<p className="font-mono text-white/80 text-xs tracking-[0.2em]">@onketing</p>
 											<p className="mt-2 font-bold text-white text-xl tracking-tight md:text-2xl">

@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { AboutMidCTA } from "@/components/sections/AboutMidCTA";
 import { CaseTestimonial } from "@/components/sections/CaseTestimonial";
-import { ServiceEngagementPolicy } from "@/components/sections/ServiceEngagementPolicy";
 import { ServiceProcess } from "@/components/sections/ServiceProcess";
-import { ServiceProofStrip } from "@/components/sections/ServiceProofStrip";
 import { ServiceWhatWeDo } from "@/components/sections/ServiceWhatWeDo";
 import { ShortformAccumulation } from "@/components/sections/ShortformAccumulation";
+import { ShortformFinalCTA } from "@/components/sections/ShortformFinalCTA";
+import { ShortformGallery } from "@/components/sections/ShortformGallery";
 import { ShortformHero } from "@/components/sections/ShortformHero";
 import { ShortformPain } from "@/components/sections/ShortformPain";
-import {
-	SHORTFORM_CASES,
-	SHORTFORM_PILLARS,
-	SHORTFORM_PROCESS,
-	SHORTFORM_PROOF,
-} from "@/data/service-shortform";
+import { ShortformPortfolio } from "@/components/sections/ShortformPortfolio";
+import { SHORTFORM_CASES, SHORTFORM_PILLARS, SHORTFORM_PROCESS } from "@/data/service-shortform";
 
 export const metadata: Metadata = {
 	title: "숏폼 마케팅 | Onketing",
@@ -25,14 +20,18 @@ export const ShortformServicePage = () => {
 	return (
 		<>
 			<ShortformHero />
-			<ShortformAccumulation />
-			<ServiceProofStrip items={SHORTFORM_PROOF} />
 			<ShortformPain />
-			<ServiceWhatWeDo items={SHORTFORM_PILLARS} />
-			<CaseTestimonial cases={SHORTFORM_CASES} dark />
-			<ServiceProcess steps={SHORTFORM_PROCESS} footnote="5단계 모두 대표가 직접 검수합니다." />
-			<ServiceEngagementPolicy />
-			<AboutMidCTA />
+			<ServiceWhatWeDo
+				items={SHORTFORM_PILLARS}
+				heading="걱정하지 마세요. 몸만 오세요!"
+				sub="숏폼은 세가지면 됩니다."
+			/>
+			<ShortformAccumulation />
+			<ServiceProcess steps={SHORTFORM_PROCESS} />
+			<ShortformPortfolio />
+			<ShortformGallery />
+			<CaseTestimonial cases={SHORTFORM_CASES} />
+			<ShortformFinalCTA />
 		</>
 	);
 };

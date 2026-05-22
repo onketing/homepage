@@ -23,32 +23,34 @@ export const TeamHero = () => {
 			{/* ── Left text area ── */}
 			<div className="relative z-10 flex w-full flex-col justify-center px-6 py-28 md:px-14 md:py-36 lg:w-[58%] lg:py-40 lg:pr-16 lg:pl-20 xl:pl-28">
 				<motion.p
-					className="mb-6 font-mono text-[#58d68d] text-xs uppercase tracking-[0.35em]"
+					className="mb-6 font-semibold text-[#58d68d] text-base uppercase tracking-[0.25em]"
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Our Team
+					숏폼 마케팅. 저희가 가장 잘 합니다.
 				</motion.p>
 
 				<motion.h1
-					className="mb-8 font-bold text-[42px] text-slate-900 leading-[1.08] tracking-[-0.02em] sm:text-[56px] md:text-[70px] lg:text-[84px] xl:text-[100px]"
+					className="mb-8 font-bold text-[38px] text-slate-900 leading-[1.08] tracking-[-0.02em] sm:text-[50px] md:text-[62px] lg:text-[74px] xl:text-[84px]"
 					initial={{ opacity: 0, y: 28 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 				>
-					처음 맡은 팀이,
+					&ldquo;다 갖춘&rdquo; 마케팅팀
 					<br />
-					끝까지 <span className="gradient-text">갑니다.</span>
+					<span className="gradient-text">본 적 있으신가요?</span>
 				</motion.h1>
 
 				<motion.p
-					className="mb-10 max-w-md break-keep text-base text-slate-600 leading-relaxed md:text-lg"
+					className="mb-10 break-keep text-base text-slate-600 leading-relaxed md:text-lg"
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.25 }}
 				>
-					규정 검수부터 발행까지, 외주 없이 한 공간에서.
+					대본, 촬영, 편집, 업로드, 메세지 발송까지.{" "}
+					<strong className="text-slate-900">&ldquo;전부 다&rdquo;</strong> 인하우스 전문가들이
+					진행해 드립니다.
 				</motion.p>
 			</div>
 

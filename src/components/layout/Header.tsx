@@ -185,7 +185,7 @@ export const Header = () => {
 						className={cn(
 							"hidden rounded-md px-5 py-2.5 font-semibold text-sm shadow-sm transition-opacity hover:opacity-90 lg:block",
 							isLight
-								? "bg-white text-[#58d68d]"
+								? "bg-[#58d68d] text-white"
 								: "bg-linear-to-r from-[#58d68d] to-[#16a34a] text-white",
 						)}
 					>

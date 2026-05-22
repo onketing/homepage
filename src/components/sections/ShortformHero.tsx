@@ -15,7 +15,7 @@ export const ShortformHero = () => {
 	};
 
 	return (
-		<section className="relative flex min-h-screen items-center overflow-hidden bg-[#052e16] px-6 py-24 md:px-10 md:py-32">
+		<section className="relative flex min-h-screen items-center overflow-hidden bg-[#0a0a0a] px-6 py-24 md:px-10 md:py-32">
 			<motion.div
 				className="pointer-events-none absolute h-[400px] w-[400px] rounded-full bg-[#58d68d] opacity-[0.15] blur-[120px]"
 				style={{ top: "-80px", right: "-80px" }}
@@ -34,20 +34,20 @@ export const ShortformHero = () => {
 						Shortform Marketing
 					</motion.p>
 					<motion.h1
-						className="mb-4 font-bold text-5xl text-white leading-none tracking-tight md:text-7xl"
+						className="mb-4 font-bold text-[52px] text-white leading-tight tracking-tight sm:text-[64px] md:text-[80px] lg:text-[96px]"
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.1 }}
 					>
-						대본부터 <span className="gradient-text">손동작</span>까지 알려드립니다.
+						숏폼 촬영이 <span className="gradient-text">어려우세요?</span>
 					</motion.h1>
 					<motion.p
-						className="mb-8 max-w-xl break-keep text-base text-white/60 leading-relaxed"
+						className="mb-8 max-w-xl break-keep text-white/80 text-xl leading-relaxed md:text-2xl"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 					>
-						한 번 촬영으로 여러 채널에 동시 발행합니다.
+						대본부터 손동작까지 전부 책임져 드립니다.
 					</motion.p>
 				</div>
 

@@ -39,6 +39,8 @@ const KEYWORD_SETS = [
 	},
 ] as const;
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export const BlogHero = () => {
 	const [idx, setIdx] = useState(0);
 
@@ -55,30 +57,56 @@ export const BlogHero = () => {
 
 	return (
 		<section className="relative flex min-h-screen items-center overflow-hidden bg-white px-6 py-24 md:px-10 md:py-32">
+			{/* Background orbs */}
 			<div
 				className="pointer-events-none absolute inset-0"
 				style={{
-					background: "radial-gradient(ellipse at 20% 50%, #f0fdf4 0%, transparent 60%)",
+					background:
+						"radial-gradient(ellipse at 15% 50%, rgba(88,214,141,0.09) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(22,163,74,0.04) 0%, transparent 50%)",
 				}}
 			/>
 
 			<div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+				{/* Left: text */}
 				<div>
-					<motion.h1
-						className="mb-4 font-bold text-5xl text-[#0a0a0a] leading-none tracking-tight md:text-7xl"
-						initial={{ opacity: 0, y: 30 }}
+					<motion.p
+						className="mb-5 font-semibold text-[#58d68d] text-sm uppercase tracking-[0.25em]"
+						initial={{ opacity: 0, y: 12 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
+						transition={{ duration: 0.5, ease }}
 					>
-						찾아오는 <span className="gradient-text">블로그</span>가 됩니다.
+						Blog Marketing
+					</motion.p>
+
+					<motion.h1
+						className="mb-6 font-bold text-5xl text-[#0a0a0a] leading-[1.06] tracking-tight md:text-[5.5rem]"
+						initial={{ opacity: 0, y: 28 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.7, delay: 0.1, ease }}
+					>
+						찾아오는 <span className="gradient-text">블로그</span>가
+						<br />
+						됩니다.
 					</motion.h1>
+
+					<motion.p
+						className="mb-8 max-w-sm break-keep text-base text-slate-500 leading-relaxed"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.55, delay: 0.22, ease }}
+					>
+						의뢰 직전에 검색하는 키워드를 분석하고,
+						<br />
+						신뢰가 전달되는 콘텐츠를 발행합니다.
+					</motion.p>
 				</div>
 
+				{/* Right: browser mockup */}
 				<motion.div
 					className="relative"
 					initial={{ opacity: 0, x: 40 }}
 					animate={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+					transition={{ duration: 0.7, delay: 0.2, ease }}
 				>
 					<div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_24px_64px_rgba(0,0,0,0.08)]">
 						{/* Browser chrome */}
@@ -123,36 +151,37 @@ export const BlogHero = () => {
 							</div>
 						</div>
 
-						{/* Results */}
+						{/* Results — wrapped in single keyed div to fix AnimatePresence mode="wait" */}
 						<div className="divide-y divide-slate-50 px-5 py-2">
 							<AnimatePresence mode="wait">
-								{current.results.map((title, i) => (
-									<motion.div
-										key={title}
-										className="py-3"
-										initial={{ opacity: 0, y: 8 }}
-										animate={{ opacity: 1, y: 0 }}
-										exit={{ opacity: 0 }}
-										transition={{ delay: i * 0.06, duration: 0.25 }}
-									>
-										<div className="mb-1 flex items-center gap-2">
-											<span
-												className={`rounded px-1.5 py-0.5 font-semibold text-[10px] ${
-													i === 0 ? "bg-[#58d68d] text-white" : "bg-slate-100 text-slate-700"
+								<motion.div
+									key={idx}
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									transition={{ duration: 0.2 }}
+								>
+									{current.results.map((title, i) => (
+										<div key={title} className="py-3">
+											<div className="mb-1 flex items-center gap-2">
+												<span
+													className={`rounded px-1.5 py-0.5 font-semibold text-[10px] ${
+														i === 0 ? "bg-[#58d68d] text-white" : "bg-slate-100 text-slate-700"
+													}`}
+												>
+													블로그
+												</span>
+											</div>
+											<p
+												className={`text-sm leading-snug ${
+													i === 0 ? "font-semibold text-[#58d68d]" : "text-[#0a0a0a]"
 												}`}
 											>
-												블로그
-											</span>
+												{title}
+											</p>
 										</div>
-										<p
-											className={`text-sm leading-snug ${
-												i === 0 ? "font-semibold text-[#58d68d]" : "text-[#0a0a0a]"
-											}`}
-										>
-											{title}
-										</p>
-									</motion.div>
-								))}
+									))}
+								</motion.div>
 							</AnimatePresence>
 						</div>
 
@@ -162,26 +191,44 @@ export const BlogHero = () => {
 							</p>
 						</div>
 					</div>
+
+					{/* Floating stat badge */}
+					<motion.div
+						className="absolute -bottom-5 -left-5 rounded-xl bg-white px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+						initial={{ opacity: 0, scale: 0.85, y: 10 }}
+						animate={{ opacity: 1, scale: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.65, ease }}
+					>
+						<div className="flex items-center gap-2.5">
+							<div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f0fdf4]">
+								<span className="font-bold text-[#58d68d] text-base">↑</span>
+							</div>
+							<div>
+								<p className="font-bold text-[#58d68d] text-sm leading-none">+500%</p>
+								<p className="mt-0.5 text-[10px] text-slate-400">3개월 조회수</p>
+							</div>
+						</div>
+					</motion.div>
 				</motion.div>
 			</div>
 
+			{/* Scroll indicator */}
 			<motion.button
 				type="button"
 				onClick={scrollDown}
-				className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-slate-500 transition-colors hover:text-slate-600"
+				className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 text-slate-400 transition-colors hover:text-slate-600"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 0.6, delay: 0.8 }}
-				aria-label="더 알아보기"
+				transition={{ duration: 0.6, delay: 0.9 }}
+				aria-label="스크롤"
 			>
 				<motion.div
-					className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300"
+					className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200"
 					animate={{ y: [0, 5, 0] }}
-					transition={{ duration: 1.8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+					transition={{ duration: 1.8, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY }}
 				>
-					<ChevronDown className="h-5 w-5" />
+					<ChevronDown className="h-4 w-4" />
 				</motion.div>
-				<span className="font-semibold text-xs tracking-[0.15em]">더 알아보기</span>
 			</motion.button>
 		</section>
 	);

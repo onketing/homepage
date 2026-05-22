@@ -10,12 +10,9 @@ export const ShortformAccumulation = () => {
 	const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px" });
 
 	return (
-		<section className="bg-[#052e16] px-4 py-16 md:py-20">
+		<section className="bg-[#0a0a0a] px-4 py-16 md:py-20">
 			<div className="mx-auto max-w-5xl">
 				<Reveal className="mb-12 text-center">
-					<p className="mb-3 font-semibold text-[#86efac] text-sm uppercase tracking-[0.25em]">
-						Accumulation
-					</p>
 					<h2 className="font-bold text-3xl text-white tracking-tight md:text-5xl">
 						광고는 멈추면 0, <span className="gradient-text">숏폼은 누적됩니다</span>
 					</h2>

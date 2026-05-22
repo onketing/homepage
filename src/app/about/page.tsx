@@ -46,8 +46,10 @@ export const AboutPage = () => {
 					</>
 				}
 				sub="뒤쳐지지 마세요."
-				buttonText="마케팅 컨설팅"
+				buttonText="문의하기"
 				triggerContactOnView
+				hideTrustStats
+				showButton
 			/>
 		</>
 	);

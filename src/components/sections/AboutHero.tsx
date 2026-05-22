@@ -60,17 +60,8 @@ export const AboutHero = () => {
 			{/* 콘텐츠 */}
 			<div className="relative z-10 mx-auto w-full max-w-6xl px-8 py-32 md:px-12">
 				<div className="max-w-xl">
-					<motion.p
-						className="mb-10 font-semibold text-2xl text-white/70 uppercase tracking-[0.3em]"
-						initial={{ opacity: 0, y: 16 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, ease }}
-					>
-						회사소개
-					</motion.p>
-
 					<motion.h1
-						className="mb-8 font-bold text-[48px] text-white leading-[1.15] tracking-tight md:text-[64px] lg:text-[80px]"
+						className="mb-10 font-bold text-[48px] text-white leading-[1.15] tracking-tight md:text-[64px] lg:text-[80px]"
 						initial={{ opacity: 0, y: 32 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.75, delay: 0.1, ease }}
@@ -79,6 +70,15 @@ export const AboutHero = () => {
 						<br />
 						<span className="text-[#58d68d]">안하고</span> 계신가요?
 					</motion.h1>
+
+					<motion.p
+						className="font-semibold text-2xl text-white/50 md:text-3xl"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.3, ease }}
+					>
+						온 세상이 마케팅입니다.
+					</motion.p>
 				</div>
 			</div>
 

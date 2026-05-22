@@ -1,9 +1,11 @@
-import { Clapperboard, MonitorPlay } from "lucide-react";
+import { Clapperboard, MonitorPlay, PenLine } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import type { TeamPhoto } from "@/data/team-photos";
 import { EDIT_PHOTOS, VIDEO_PHOTOS } from "@/data/team-photos";
+
+const SCRIPT_PHOTOS: TeamPhoto[] = VIDEO_PHOTOS.slice(0, 3);
 
 type CrewBlockProps = {
 	icon: React.ReactNode;
@@ -66,35 +68,36 @@ export const TeamCrews = () => {
 			<div className="mx-auto max-w-7xl">
 				<Reveal>
 					<SectionHeading
-						eyebrow="Crews"
-						title="현장과 편집실 모두 직접 운영"
-						sub="촬영부터 발행까지 외주 없이 한 팀이 책임합니다."
+						title="저희 팀을 소개합니다!"
+						sub='촬영부터 발행까지 외주 없이 전부 "직접" 합니다.'
 						className="mb-16"
 					/>
 				</Reveal>
 
 				<div className="flex flex-col gap-10 lg:gap-16">
 					<CrewBlock
+						icon={<PenLine className="h-5 w-5 text-white" aria-hidden="true" />}
+						label="대본팀"
+						heading="잘 쓴 대본 하나. 그거면 충분합니다."
+						body="알고리즘 최적화 대본을 인플루언서가 직접 기획합니다. 성공하는 숏폼의 대본에는 성공 공식이 숨어져 있습니다. 그리고 그 공식은 실제로 운영해 본 사람이 가장 잘 압니다."
+						photos={SCRIPT_PHOTOS}
+						gridCols="grid-cols-2 sm:grid-cols-3"
+					/>
+					<CrewBlock
 						icon={<Clapperboard className="h-5 w-5 text-white" aria-hidden="true" />}
 						label="영상팀"
-						heading={
-							<>
-								현장 촬영부터 편집까지
-								<br />
-								직접 갑니다
-							</>
-						}
-						body="의뢰인이 카메라 앞에서 편안하게 말할 수 있도록 촬영팀이 직접 현장에 갑니다. 조명·사운드·디렉팅을 한 팀이 책임집니다."
-						photos={VIDEO_PHOTOS}
+						heading="비싼 게 좋은 건 아니지만 비싸면 보통 좋습니다."
+						body="캐논, 소니, 오즈모 등 가장 잘 나오는 카메라로 최고의 모습을 담아드리겠습니다. 촬영 시엔 전문 디렉터가 함께하며 성공 공식을 따른 대본을 바탕으로 디렉터가 가이드를 제공해 드립니다."
+						photos={VIDEO_PHOTOS.slice(3) as TeamPhoto[]}
+						reverse
 					/>
 					<CrewBlock
 						icon={<MonitorPlay className="h-5 w-5 text-white" aria-hidden="true" />}
 						label="편집팀"
-						heading="초안부터 발행까지 한 팀에서"
-						body="숏폼·릴스의 호흡과 블로그 비주얼을 함께 책임지는 인하우스 편집팀이 컷·자막·썸네일을 일관된 톤으로 다듬습니다."
-						photos={EDIT_PHOTOS}
+						heading="편집자가 직접 촬영합니다."
+						body="영상을 찍은 사람이 편집점을 가장 잘 압니다. 편집자가 직접 촬영하고 편집 포인트를 두 눈으로 확인해 최고의 결과물을 제작해 드립니다."
+						photos={EDIT_PHOTOS as unknown as TeamPhoto[]}
 						gridCols="grid-cols-2 sm:grid-cols-3"
-						reverse
 					/>
 				</div>
 			</div>
