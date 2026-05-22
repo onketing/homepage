@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans:
+		var(--font-pretendard), "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+		system-ui, sans-serif;
+	--font-inter: var(--font-inter), "Inter", sans-serif;
+	--font-mono: ui-monospace, monospace;
+	--font-heading: var(--font-pretendard), "Pretendard Variable", Pretendard, sans-serif;
+	--color-ring: var(--ring);
+	--color-input: var(--input);
+	--color-border: var(--border);
+	--color-destructive: var(--destructive);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted: var(--muted);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary: var(--secondary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary: var(--primary);
+	--color-card-foreground: var(--card-foreground);
+	--color-card: var(--card);
+	--radius-sm: 4px;
+	--radius-md: 6px;
+	--radius-lg: 8px;
+	--radius-xl: 12px;
+	--radius-2xl: 16px;
+}
+
+:root {
+	/* Base */
+	--background: #ffffff;
+	--foreground: #0f172a;
+	--card: #ffffff;
+	--card-foreground: #0f172a;
+	--popover: #ffffff;
+	--popover-foreground: #0f172a;
+
+	/* Brand */
+	--brand-sage: #58d68d;
+	--brand-green: #16a34a;
+	--brand-forest: #15803d;
+
+	/* Semantic */
+	--primary: #16a34a;
+	--primary-foreground: #ffffff;
+	--secondary: #f8fafc;
+	--secondary-foreground: #0f172a;
+	--muted: #f1f5f9;
+	--muted-foreground: #475569;
+	--accent: #f1f5f9;
+	--accent-foreground: #0f172a;
+	--destructive: #ef4444;
+	--border: #e2e8f0;
+	--input: #e2e8f0;
+	--ring: #58d68d;
+	--radius: 6px;
+	--bg-tinted-sage: #f0fdf4;
+	--bg-tinted-slate: #f8fafc;
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	html {
+		overflow-x: hidden;
+		scrollbar-gutter: stable;
+	}
+	body {
+		@apply bg-background text-foreground;
+		overflow-x: hidden;
+		word-break: keep-all;
+		font-family:
+			var(--font-pretendard), "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+			system-ui, sans-serif;
+	}
+	html {
+		scroll-padding-top: 64px;
+	}
+	@media (min-width: 768px) {
+		html {
+			scroll-padding-top: 80px;
+		}
+	}
+	a,
+	button,
+	[role="button"],
+	label[for],
+	select {
+		cursor: pointer;
+	}
+}
+
+/* Brand gradient utilities */
+.gradient-brand {
+	background: linear-gradient(135deg, #58d68d 0%, #16a34a 50%, #15803d 100%);
+}
+.gradient-text {
+	background: linear-gradient(135deg, #16a34a 0%, #052e16 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+.gradient-soft {
+	background: radial-gradient(60% 50% at 50% 50%, rgba(88, 214, 141, 0.12), transparent 70%);
+}
+.gradient-border {
+	border-image: linear-gradient(135deg, #58d68d 0%, #16a34a 50%, #15803d 100%) 1;
+}
+
+/* Card hover */
+.card-hover {
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+.card-hover:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Solid dark button */
+.btn-solid-dark {
+	background: #0a0a0a;
+	color: #ffffff;
+	transition: opacity 0.2s ease;
+}
+.btn-solid-dark:hover {
+	opacity: 0.85;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #e2e8f0;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #cbd5e1;
+}
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #e2e8f0 transparent;
+}
+
+/* Badge sage utility */
+.badge-purple {
+	display: inline-flex;
+	height: 1.25rem;
+	align-items: center;
+	border-radius: 9999px;
+	background-color: rgb(88 214 141 / 0.1);
+	padding-inline: 0.5rem;
+	font-size: 0.625rem;
+	font-weight: 700;
+	color: #58d68d;
+}
