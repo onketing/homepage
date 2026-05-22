@@ -23,7 +23,7 @@ export const RegulationPledge = () => {
 								이런 카피는 쓰지 않습니다.
 							</h2>
 							<p className="mt-4 font-semibold text-[#86efac] text-sm tracking-[0.15em]">
-								Growth Wave 약속
+								Onketing 약속
 							</p>
 							<p className="mt-8 font-mono text-white/60 text-xs tracking-[0.15em]">
 								대표 검수 — 김태훈

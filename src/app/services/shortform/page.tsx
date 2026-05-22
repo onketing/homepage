@@ -16,7 +16,7 @@ import {
 } from "@/data/service-shortform";
 
 export const metadata: Metadata = {
-	title: "숏폼 마케팅 | Growth Wave",
+	title: "숏폼 마케팅 | Onketing",
 	description:
 		"전문직을 위한 숏폼 마케팅. 릴스·쇼츠·틱톡 3채널 동시 운영으로 채널 자산을 누적합니다.",
 };

@@ -17,7 +17,7 @@ import {
 import { WORK_PROCESS } from "@/data/work-process";
 
 export const metadata: Metadata = {
-	title: "전문직 마케팅 | Growth Wave",
+	title: "전문직 마케팅 | Onketing",
 	description:
 		"변호사·의사·한의사·수의사·노무사·세무사 등 전문직을 위한 마케팅. 광고 규정을 이해하고 수임·의뢰 전환을 설계합니다.",
 };

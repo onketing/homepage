@@ -8,7 +8,7 @@ export const Comparison = () => {
 		<section className="bg-slate-50 px-4 py-20 md:py-24">
 			<div className="mx-auto max-w-5xl">
 				<Reveal>
-					<SectionHeading title="일반 대행사 vs 그로스웨이브" className="mb-16" />
+					<SectionHeading title="일반 대행사 vs 온케팅" className="mb-16" />
 				</Reveal>
 
 				<Reveal delay={0.1}>
@@ -28,9 +28,9 @@ export const Comparison = () => {
 							</ul>
 						</div>
 
-						{/* Growth Wave */}
+						{/* Onketing */}
 						<div className="rounded-md border border-slate-200 bg-white p-7">
-							<p className="mb-6 font-semibold text-[#0a0a0a] text-base">그로스웨이브</p>
+							<p className="mb-6 font-semibold text-[#0a0a0a] text-base">온케팅</p>
 							<ul className="space-y-3">
 								{COMPARISON_ROWS.map((row) => (
 									<li key={row.growthwave} className="flex items-start gap-3">

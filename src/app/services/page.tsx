@@ -7,9 +7,9 @@ import { CTACard } from "@/components/shared/CTACard";
 import { PageHero } from "@/components/shared/PageHero";
 
 export const metadata: Metadata = {
-	title: "서비스 | Growth Wave",
+	title: "서비스 | Onketing",
 	description:
-		"블로그·숏폼·전문직 통합 — 원하는 결과부터 정해주세요. 그로스웨이브의 3가지 마케팅 채널을 비교하고 선택하세요.",
+		"블로그·숏폼·전문직 통합 — 원하는 결과부터 정해주세요. 온케팅의 3가지 마케팅 채널을 비교하고 선택하세요.",
 };
 
 export const ServicesPage = () => {

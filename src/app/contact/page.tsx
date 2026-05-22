@@ -6,8 +6,8 @@ import { ContactSplit } from "@/components/sections/ContactSplit";
 import { CTACard } from "@/components/shared/CTACard";
 
 export const metadata: Metadata = {
-	title: "마케팅 컨설팅 | Growth Wave",
-	description: "그로스웨이브에 전문직 마케팅을 문의하세요. 영업일 1일 내 회신드립니다.",
+	title: "마케팅 컨설팅 | Onketing",
+	description: "온케팅에 전문직 마케팅을 문의하세요. 영업일 1일 내 회신드립니다.",
 };
 
 export const ContactPage = () => {
@@ -19,7 +19,7 @@ export const ContactPage = () => {
 			<ContactFAQ />
 			<CTACard
 				variant="gradient"
-				eyebrow="그로스웨이브의 약속"
+				eyebrow="온케팅의 약속"
 				headline={
 					<>
 						처음 맡은 팀이

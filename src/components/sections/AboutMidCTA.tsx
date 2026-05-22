@@ -15,7 +15,7 @@ export const AboutMidCTA = () => {
 				<>
 					<Image
 						src="/images/about/desk.jpg"
-						alt="그로스웨이브 업무 환경"
+						alt="온케팅 업무 환경"
 						fill
 						className="object-cover object-center"
 					/>
@@ -89,7 +89,7 @@ export const AboutMidCTA = () => {
 					>
 						<a
 							href="/growthwave-brochure.pdf"
-							download="Growth Wave 회사소개서.pdf"
+							download="Onketing 회사소개서.pdf"
 							className="block w-full rounded-md border border-white/30 px-8 py-4 font-semibold text-base text-white transition-colors hover:border-white/60 hover:bg-white/5"
 						>
 							회사소개서 PDF

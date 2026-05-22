@@ -19,7 +19,7 @@ export const AboutHero = () => {
 				{HERO_PHOTO_READY ? (
 					<Image
 						src="/images/about/office-main.jpg"
-						alt="그로스웨이브 사무실"
+						alt="온케팅 사무실"
 						fill
 						className="object-cover object-center"
 						priority

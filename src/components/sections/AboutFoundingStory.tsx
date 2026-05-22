@@ -17,7 +17,7 @@ export const AboutFoundingStory = () => {
 						Why we started
 					</p>
 					<h2 className="font-bold text-3xl text-[#0a0a0a] tracking-tight md:text-5xl">
-						왜 그로스웨이브가 만들어졌나
+						왜 온케팅가 만들어졌나
 					</h2>
 				</Reveal>
 

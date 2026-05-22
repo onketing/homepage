@@ -16,7 +16,7 @@ const ITEMS = [
 	{ text: "의약품·기기 효능 과장 없음", law: "약사법 §68" },
 	{ text: "사진·이미지 출처 권리 확인", law: "저작권법 §35의5" },
 	{ text: "키워드·해시태그 금지어 점검", law: "각 직군 세부 규정" },
-	{ text: "발행 직전 최종 검수자 서명", law: "Growth Wave 내부 기준" },
+	{ text: "발행 직전 최종 검수자 서명", law: "Onketing 내부 기준" },
 ] as const;
 
 export const RegulationChecklist = () => {
@@ -114,7 +114,7 @@ export const RegulationChecklist = () => {
 									{/* 하단 라벨 */}
 									<div className="mt-4 px-6 text-right">
 										<p className="font-mono text-slate-500 text-xs tracking-[0.12em]">
-											Growth Wave 자체 체크리스트 — 직군별 항목 보강
+											Onketing 자체 체크리스트 — 직군별 항목 보강
 										</p>
 									</div>
 								</div>

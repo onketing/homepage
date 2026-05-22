@@ -52,7 +52,7 @@ export const Header = () => {
 				<Link
 					href="/"
 					className="transition-opacity hover:opacity-80"
-					aria-label="Growth Wave 홈으로"
+					aria-label="Onketing 홈으로"
 					onClick={() => {
 						if (pathname === "/") window.scrollTo({ top: 0, behavior: "instant" });
 					}}
@@ -173,7 +173,7 @@ export const Header = () => {
 				<div className="flex items-center gap-2">
 					<a
 						href="/growthwave-brochure.pdf"
-						download="Growth Wave 회사소개서.pdf"
+						download="Onketing 회사소개서.pdf"
 						className={cn(
 							"hidden rounded-md px-4 py-2.5 font-semibold text-sm transition-colors lg:block",
 							isLight

@@ -35,7 +35,7 @@ export const ContactSplit = () => {
 							Why us
 						</p>
 						<h2 className="mb-10 font-bold text-3xl text-[#0a0a0a] tracking-tight md:text-4xl">
-							왜 그로스웨이브에
+							왜 온케팅에
 							<br />
 							의뢰하나
 						</h2>

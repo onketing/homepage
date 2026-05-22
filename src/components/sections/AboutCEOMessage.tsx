@@ -66,7 +66,7 @@ export const AboutCEOMessage = () => {
 							))}
 						</div>
 						<p className="mt-8 font-semibold text-slate-500 text-sm tracking-wide">
-							― 김태훈 / 그로스웨이브 대표
+							― 김태훈 / 온케팅 대표
 						</p>
 					</Reveal>
 				</div>

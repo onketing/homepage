@@ -8,7 +8,7 @@ import { RegulationPledge } from "@/components/sections/RegulationPledge";
 import { RegulationStats } from "@/components/sections/RegulationStats";
 
 export const metadata: Metadata = {
-	title: "광고 규정 가이드 | Growth Wave",
+	title: "광고 규정 가이드 | Onketing",
 	description:
 		"12개 직군 광고 규정을 발행 전 직접 검토합니다. 위반 카피와 통과 카피를 항목별로 확인하세요.",
 	keywords: [

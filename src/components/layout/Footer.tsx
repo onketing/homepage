@@ -61,7 +61,7 @@ export const Footer = () => {
 				</div>
 
 				<div className="mt-10 border-white/10 border-t pt-6 text-center text-slate-400 text-xs">
-					Copyright © 2026 Growth Wave. All rights reserved.
+					Copyright © 2026 Onketing. All rights reserved.
 				</div>
 			</div>
 		</footer>

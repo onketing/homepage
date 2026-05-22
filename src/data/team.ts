@@ -10,7 +10,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
 		careers: [
 			"변호사·의료광고 규정 검토 8년",
 			"12개 직군 키워드 데이터베이스 설계",
-			"그로스웨이브 창업 및 전략 총괄",
+			"온케팅 창업 및 전략 총괄",
 		],
 		photo: "/images/team/taehoon-kim.png",
 	},

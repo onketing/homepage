@@ -14,7 +14,7 @@ export const AESlogan = () => {
 					className="mt-10 font-medium text-white/50 text-xs uppercase tracking-[0.2em]"
 					aria-hidden="true"
 				>
-					Growth Wave / Since 2026
+					Onketing / Since 2026
 				</p>
 			</div>
 		</section>
