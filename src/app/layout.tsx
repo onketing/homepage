@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 		canonical: siteConfig.url,
 	},
 	verification: {
-		google: "UWjs_RkjrB3REQAKEWuywkJi3_X6bphhaIyz1_cnulU",
+		google: "RHFjIItqXfDsghUkllvYdjx__JO2c9HTgLrsMAm_N4M",
 		other: {
 			"naver-site-verification": "d4226bbbaae73c2c62b9327693fac4b373595e3a",
 		},
