@@ -12,14 +12,16 @@ export const ContactHero = () => {
 	};
 
 	return (
-		<section className="relative flex min-h-screen items-center overflow-hidden bg-white px-6 py-28 md:px-10 md:py-36">
-			{/* Soft green radial glow */}
-			<div
+		<section className="relative flex min-h-screen items-center overflow-hidden bg-[#060d08] px-6 py-28 md:px-10 md:py-36">
+			{/* Large soft green radial glow — center */}
+			<motion.div
 				className="pointer-events-none absolute inset-0"
 				style={{
 					background:
-						"radial-gradient(ellipse 55% 45% at 50% 50%, rgba(88,214,141,0.18), transparent 70%)",
+						"radial-gradient(ellipse 65% 55% at 50% 50%, rgba(88,214,141,0.22), rgba(88,214,141,0.06) 45%, transparent 70%)",
 				}}
+				animate={{ opacity: [0.8, 1, 0.8] }}
+				transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
 				aria-hidden="true"
 			/>
 
@@ -31,12 +33,12 @@ export const ContactHero = () => {
 				{([0, 1, 2] as const).map((i) => (
 					<motion.div
 						key={i}
-						className="absolute rounded-full border border-[#58d68d]"
-						style={{ width: 160, height: 160, left: -80, top: -80 }}
-						animate={{ scale: [1, 6], opacity: [0.35, 0] }}
+						className="absolute rounded-full border border-[#58d68d]/25"
+						style={{ width: 200, height: 200, left: -100, top: -100 }}
+						animate={{ scale: [1, 5.5], opacity: [0.4, 0] }}
 						transition={{
-							duration: 4,
-							delay: i * 1.35,
+							duration: 4.5,
+							delay: i * 1.5,
 							repeat: Number.POSITIVE_INFINITY,
 							ease: "easeOut",
 						}}
@@ -46,10 +48,10 @@ export const ContactHero = () => {
 
 			{/* Fine grid */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-25"
+				className="pointer-events-none absolute inset-0 opacity-[0.12]"
 				style={{
 					backgroundImage:
-						"linear-gradient(rgba(148,163,184,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.3) 1px, transparent 1px)",
+						"linear-gradient(rgba(88,214,141,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(88,214,141,0.2) 1px, transparent 1px)",
 					backgroundSize: "64px 64px",
 					maskImage: "radial-gradient(ellipse at center, black 20%, transparent 72%)",
 					WebkitMaskImage: "radial-gradient(ellipse at center, black 20%, transparent 72%)",
@@ -59,7 +61,7 @@ export const ContactHero = () => {
 			{/* Center content */}
 			<div className="relative z-10 mx-auto w-full max-w-4xl text-center">
 				<motion.h1
-					className="mb-6 font-bold text-[#0a0a0a] text-[40px] leading-[1.1] tracking-[-0.02em] sm:text-[56px] md:text-[72px] lg:text-[88px]"
+					className="mb-6 font-bold text-[40px] text-white leading-[1.1] tracking-[-0.02em] sm:text-[56px] md:text-[72px] lg:text-[88px]"
 					initial={{ opacity: 0, y: 28 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.75, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
@@ -70,7 +72,7 @@ export const ContactHero = () => {
 				</motion.h1>
 
 				<motion.p
-					className="mx-auto mb-12 max-w-lg break-keep text-base text-slate-600 leading-relaxed md:text-lg"
+					className="mx-auto mb-12 max-w-lg break-keep text-base text-white/60 leading-relaxed md:text-lg"
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}
