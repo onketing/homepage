@@ -73,7 +73,7 @@ export const ContactForm = () => {
 		const fd = new FormData(e.currentTarget);
 		try {
 			await submitContact({
-				company: "",
+				company: (fd.get("company") as string) ?? "",
 				profession,
 				name: (fd.get("name") as string) ?? "",
 				tel: (fd.get("tel") as string) ?? "",
@@ -240,6 +240,21 @@ export const ContactForm = () => {
 					</div>
 
 					<form onSubmit={handleSubmit} onKeyDown={handleKeyDown} className="space-y-6">
+						<div className="space-y-2">
+							<Label
+								htmlFor="company"
+								className="font-semibold text-slate-700 text-xs uppercase tracking-[0.08em]"
+							>
+								회사/소속명
+							</Label>
+							<Input
+								id="company"
+								name="company"
+								placeholder="예: OO 한의원, 홍길동 변호사"
+								className="h-12 border-slate-200 text-sm focus-visible:border-[#58d68d] focus-visible:ring-2 focus-visible:ring-[#58d68d]/15"
+							/>
+						</div>
+
 						<div className="grid gap-5 sm:grid-cols-2">
 							<div className="space-y-2">
 								<Label className="font-semibold text-slate-700 text-xs uppercase tracking-[0.08em]">
