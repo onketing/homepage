@@ -23,8 +23,20 @@ export type ContactData = {
 	message: string;
 };
 
+const nullIfEmpty = (v: string) => v.trim() || null;
+
 export async function submitContact(data: ContactData) {
-	const { error: dbError } = await supabase.from("contact_submissions").insert(data);
+	const row = {
+		company: data.company.trim() || "",
+		name: data.name.trim(),
+		tel: data.tel.trim(),
+		profession: nullIfEmpty(data.profession),
+		email: nullIfEmpty(data.email),
+		source: nullIfEmpty(data.source),
+		message: nullIfEmpty(data.message),
+	};
+
+	const { error: dbError } = await supabase.from("contact_submissions").insert(row);
 	if (dbError) throw new Error(dbError.message);
 
 	// 이메일 실패해도 제출 성공 처리 (env var 미설정 등 환경 문제 대비)
