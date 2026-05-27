@@ -28,7 +28,7 @@ const MILESTONES = [
 	},
 	{
 		year: "2026",
-		title: "온케팅 정식 운영",
+		title: "온세상이마케팅이다 정식 운영",
 		desc: "변호사·의사·세무사 등 12개 직군 전문 콘텐츠 마케팅",
 		done: true,
 	},

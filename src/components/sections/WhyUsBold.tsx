@@ -73,7 +73,7 @@ export const WhyUsBold = () => {
 								<div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/25">
 									<Check className="h-3 w-3 text-white" />
 								</div>
-								<p className="font-semibold text-sm text-white">온케팅</p>
+								<p className="font-semibold text-sm text-white">온세상이마케팅이다</p>
 							</div>
 						</div>
 						{/* Rows */}

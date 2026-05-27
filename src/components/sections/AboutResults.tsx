@@ -37,7 +37,7 @@ export const AboutResults = () => {
 						animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.92, y: 28 }}
 						transition={{ duration: 0.85, delay: 0.08, ease }}
 					>
-						온케팅이 직접 만들었습니다.
+						온세상이마케팅이다이 직접 만들었습니다.
 					</motion.h2>
 				</div>
 
@@ -84,7 +84,7 @@ export const AboutResults = () => {
 							<ArrowRight className="h-20 w-20 text-[#16a34a] md:h-24 md:w-24" strokeWidth={2} />
 						</motion.div>
 						<span className="font-bold text-[#16a34a] text-[11px] uppercase tracking-widest">
-							온케팅
+							온세상이마케팅이다
 						</span>
 					</motion.div>
 

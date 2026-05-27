@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 import { Reveal } from "@/components/shared/Reveal";
 
 const DESK_PHOTO_READY = false; // /public/images/about/desk.jpg 준비 시 true로 변경
@@ -15,7 +16,7 @@ export const AboutMidCTA = () => {
 				<>
 					<Image
 						src="/images/about/desk.jpg"
-						alt="온케팅 업무 환경"
+						alt="온세상이마케팅이다 업무 환경"
 						fill
 						className="object-cover object-center"
 					/>
@@ -69,7 +70,7 @@ export const AboutMidCTA = () => {
 						className="w-full sm:w-auto"
 					>
 						<a
-							href="https://open.kakao.com/o/growthwave"
+							href={siteConfig.contact.kakaoOpenChat}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="block w-full rounded-md bg-[#FAE100] px-8 py-4 font-semibold text-[#3A1D1D] text-base transition-opacity hover:opacity-90"
@@ -88,7 +89,7 @@ export const AboutMidCTA = () => {
 						className="w-full sm:w-auto"
 					>
 						<a
-							href="/growthwave-brochure.pdf"
+							href="/onketing-brochure.pdf"
 							download="Onketing 회사소개서.pdf"
 							className="block w-full rounded-md border border-white/30 px-8 py-4 font-semibold text-base text-white transition-colors hover:border-white/60 hover:bg-white/5"
 						>

@@ -19,7 +19,7 @@
 | 숏폼 마케팅 페이지 데이터 | `src/data/service-shortform.ts` |
 | 전문직 마케팅 페이지 데이터 | `src/data/service-professional.ts` |
 | 채널별 비교 매트릭스 | `src/data/service-comparison.ts`, `src/data/service-matrix.ts` |
-| 일반 대행사 vs 그로스웨이브 비교 | `src/data/comparison.ts` |
+| 일반 대행사 vs 온세상이마케팅이다 비교 | `src/data/comparison.ts` |
 | 통계 수치 (12개 직군 · 재계약율 등) | `src/data/stats.ts` |
 | KPI 쇼케이스 수치 | `src/data/kpi-showcase.ts` |
 | 페인 포인트 | `src/data/pain-points.ts` |
@@ -37,7 +37,7 @@
 | 조직 구조 | `src/data/org-structure.ts` |
 | 팀 사진 목록 | `src/data/team-photos.ts` |
 | 후기 (Testimonial, 현재 비어 있음) | `src/data/testimonials.ts` |
-| 왜 그로스웨이브인가 카드 | `src/data/why-us.ts` |
+| 왜 온세상이마케팅이다인가 카드 | `src/data/why-us.ts` |
 | 시그니처 포인트 | `src/data/signature-points.ts` |
 | 의뢰 수락 기준 | `src/data/selection-policy.ts` |
 | 진행하지 않는 의뢰 | `src/data/engagement-policy.ts` |
@@ -60,7 +60,7 @@
 | `cases.ts` | `CASES` | `Case[]` | 홈 사례 카드 (TODO: 실데이터 교체) |
 | `ceo-message.ts` | `MESSAGE_PARAGRAPHS`, `EXPERTISE` | `string[]` | CEO 창업 스토리 단락 |
 | `client-disciplines.ts` | `CLIENT_DISCIPLINES` | `readonly` 배열 | 직군 로테이터용 12개 직군 + 광고 근거법 |
-| `comparison.ts` | `COMPARISON_ROWS` | `ComparisonRow[]` | 일반 대행사 vs 그로스웨이브 비교 행 |
+| `comparison.ts` | `COMPARISON_ROWS` | `ComparisonRow[]` | 일반 대행사 vs 온세상이마케팅이다 비교 행 |
 | `engagement-policy.ts` | `ENGAGEMENT_POLICY` | `const` 객체 | 진행하지 않는 의뢰 3가지 조건 |
 | `faq.ts` | `FAQ_ITEMS` | `FaqItem[]` | FAQ 전체 목록, category + featured 포함 |
 | `founding-story.ts` | `FOUNDING_STORY` | 객체 (paragraphs + stats) | About 창업 스토리 |
@@ -83,12 +83,12 @@
 | `service-professional.ts` | `PROFESSIONAL_PROOF`, `PROFESSIONAL_PAIN` | `readonly` 배열 | 전문직 마케팅 페이지 증거 수치 + 페인 포인트 |
 | `service-shortform.ts` | `SHORTFORM_PROOF`, `SHORTFORM_PAIN` | `readonly` 배열 | 숏폼 마케팅 페이지 증거 수치 + 페인 포인트 |
 | `services.ts` | `SERVICES` | `Service[]` | 홈 서비스 소개 (블로그·숏폼·전문직) |
-| `signature-points.ts` | `SIGNATURE_POINTS` | `SignaturePoint[]` | 그로스웨이브 차별화 포인트 |
+| `signature-points.ts` | `SIGNATURE_POINTS` | `SignaturePoint[]` | 온세상이마케팅이다 차별화 포인트 |
 | `stats.ts` | `STATS` | `Stat[]` | 홈 주요 수치 4개 (12개 직군·재계약율·규정검토·상위노출) |
 | `team-photos.ts` | `VIDEO_PHOTOS`, `EDIT_PHOTOS` | `TeamPhoto[]` | 팀 촬영 현장 사진 목록 |
 | `team.ts` | `TEAM_MEMBERS` | `TeamMember[]` | 팀원 3명 전체 데이터 |
 | `testimonials.ts` | `TESTIMONIALS` | `Testimonial[]` | 현재 비어 있음 (`[]`) |
-| `why-us.ts` | `WHY_US_CARDS` 등 | `WhyUsCard[]`, `WhyUsBoldCard[]` | 왜 그로스웨이브인가 카드 |
+| `why-us.ts` | `WHY_US_CARDS` 등 | `WhyUsCard[]`, `WhyUsBoldCard[]` | 왜 온세상이마케팅이다인가 카드 |
 | `work-process.ts` | `WORK_PROCESS` | `WorkStep[]` | 규정 검토 기반 업무 플로우 |
 
 > **주의**: `process.ts`와 `process-steps.ts`는 둘 다 `PROCESS_STEPS`를 export한다. import 시 alias 필수.  
@@ -114,7 +114,7 @@ export type WhyUsCard = {
 
 export type ComparisonRow = {
   general: string;
-  growthwave: string;
+  onketing: string;
 };
 
 export type ServiceStep = {
@@ -187,24 +187,24 @@ export type NavItem =
 
 ```ts
 export const siteConfig = {
-  name: "Growth Wave",
-  nameKo: "그로스웨이브",
-  title: "Growth Wave | 전문직 마케팅 대행사",
-  description: "변호사·의사·한의사·수의사·노무사 등 전문직을 위한 네이버 블로그·숏폼 콘텐츠 마케팅. 광고 규정을 이해하는 그로스웨이브.",
+  name: "온세상이마케팅이다",
+  nameKo: "온세상이마케팅이다",
+  title: "온세상이마케팅이다 | 전문직 마케팅 대행사",
+  description: "변호사·의사·한의사·수의사·노무사 등 전문직을 위한 네이버 블로그·숏폼 콘텐츠 마케팅. 광고 규정을 이해하는 온세상이마케팅이다.",
   keywords: [...],  // 14개 키워드
-  url,              // NEXT_PUBLIC_SITE_URL 환경변수, 기본값 "https://growthwave.co.kr"
+  url,              // NEXT_PUBLIC_SITE_URL 환경변수, 기본값 "https://onketing.kr"
   ogImage: `${url}/og-image.png`,
   locale: "ko_KR",
-  authors: [{ name: "Growth Wave", url }],
-  creator: "Growth Wave",
+  authors: [{ name: "온세상이마케팅이다", url }],
+  creator: "온세상이마케팅이다",
   contact: {
     tel: "010-4048-6460",
-    email: "growthwave.3kim@gmail.com",
+    email: "onketing.3kim@gmail.com",
     address: "경기도 화성시 동탄구 동탄중심상가1길 36, 8층",
-    businessName: "그로스웨이브",
+    businessName: "온세상이마케팅이다",
     businessNumber: "112-31-25690",
-    kakaoOpenChat: "https://open.kakao.com/o/sgn3wFti",
-    naverBlog: "https://blog.naver.com/growthwave-",
+    kakaoOpenChat: "https://pf.kakao.com/_FwExjX",
+    naverBlog: "https://blog.naver.com/onketing-",
     businessHours: "월–금 09:00–18:00",
   },
   nav: NavItem[],
@@ -232,14 +232,14 @@ export const siteConfig = {
 
 ```ts
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),  // "https://growthwave.co.kr"
-  title: "Growth Wave | 전문직 마케팅 대행사",
-  description: "변호사·의사·한의사·수의사·노무사 등 전문직을 위한 네이버 블로그·숏폼 콘텐츠 마케팅. 광고 규정을 이해하는 그로스웨이브.",
+  metadataBase: new URL(siteConfig.url),  // "https://onketing.kr"
+  title: "온세상이마케팅이다 | 전문직 마케팅 대행사",
+  description: "변호사·의사·한의사·수의사·노무사 등 전문직을 위한 네이버 블로그·숏폼 콘텐츠 마케팅. 광고 규정을 이해하는 온세상이마케팅이다.",
   keywords: [...siteConfig.keywords],
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    images: [{ url: "/og-image.png", width: 1200, height: 1200, alt: "Growth Wave" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 1200, alt: "온세상이마케팅이다" }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true, googleBot: { "max-image-preview": "large" } },
@@ -258,7 +258,7 @@ export const metadata: Metadata = {
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "페이지 제목 | Growth Wave",
+  title: "페이지 제목 | 온세상이마케팅이다",
   description: "페이지 설명",
 }
 
@@ -298,7 +298,7 @@ export default MyPage
 ```
 Allow: /
 Disallow: /api/
-Sitemap: https://growthwave.co.kr/sitemap.xml
+Sitemap: https://onketing.kr/sitemap.xml
 ```
 
 ---
@@ -312,7 +312,7 @@ public/
 ├── hero-bg.webm                    # Hero 배경 (WebM)
 ├── hero-bg.mp4                     # Hero 배경 (MP4)
 ├── hero-bg-poster.jpg              # Hero 배경 poster 이미지
-├── growthwave-brochure.pdf         # 회사소개서 다운로드
+├── onketing-brochure.pdf         # 회사소개서 다운로드
 ├── downloads/                      # 기타 다운로드 파일
 └── images/
     └── team/
@@ -388,10 +388,10 @@ Enter 키 기본 제출 방지: `Textarea` 외 요소에서 Enter 누르면 `e.p
 
 ### 수신 이메일
 
-`siteConfig.contact.email` → `growthwave.3kim@gmail.com`
+`siteConfig.contact.email` → `onketing.3kim@gmail.com`
 
 ### 성공 화면
 
 - 헤드라인: **신청이 완료되었습니다**
 - 서브: 영업일 1일 내로 직접 연락드리겠습니다.
-- CTA 버튼: **카카오로 바로 연락하기** → `siteConfig.contact.kakaoOpenChat` (`https://open.kakao.com/o/sgn3wFti`) 새 탭 오픈
+- CTA 버튼: **카카오로 바로 연락하기** → `siteConfig.contact.kakaoOpenChat` (`https://pf.kakao.com/_FwExjX`) 새 탭 오픈

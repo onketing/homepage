@@ -1,4 +1,4 @@
-# Growth Wave 홈페이지
+# 온세상이마케팅이다 홈페이지
 
 **스택**: Next.js 16 · React 19 · Tailwind v4 · motion/react · pnpm · TypeScript strict  
 **사업**: 전문직(의사·변호사·한의사 등 12개 직군) 마케팅 대행사  

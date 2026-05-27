@@ -239,7 +239,7 @@ const CaseCard = ({ item, index }: { item: CaseItem; index: number }) => {
 
 					{/* 결과 요약 */}
 					<p className="mb-8 break-keep text-lg text-slate-600 leading-relaxed md:text-xl">
-						온케팅 마케팅 후 6개월, 월 상담{" "}
+						온세상이마케팅이다 마케팅 후 6개월, 월 상담{" "}
 						<span className="font-extrabold text-2xl text-[#58d68d] md:text-3xl">
 							<CountUp to={item.multiplier} />배
 						</span>{" "}

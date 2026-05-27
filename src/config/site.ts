@@ -4,9 +4,9 @@ const rawUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://onketing.kr";
 const url = rawUrl.replace(/\/$/, "");
 
 export const siteConfig = {
-	name: "온케팅",
-	nameKo: "온케팅",
-	title: "온케팅 | 전문직 마케팅 대행사",
+	name: "온세상이마케팅이다",
+	nameKo: "온세상이마케팅이다",
+	title: "온세상이마케팅이다 | 전문직 마케팅 대행사",
 	description:
 		"변호사·의사·한의사 등 12개 전문직 전담 마케팅 대행사. 처음 맡은 팀이 끝까지 가는 네이버 블로그·숏폼·SNS 콘텐츠로 의뢰를 만듭니다.",
 	keywords: [
@@ -18,7 +18,7 @@ export const siteConfig = {
 		"노무사 마케팅",
 		"세무사 마케팅",
 		"전문직 블로그",
-		"온케팅",
+		"온세상이마케팅이다",
 		"네이버 블로그 마케팅",
 		"숏폼 마케팅",
 		"전문직 광고",
@@ -27,16 +27,16 @@ export const siteConfig = {
 	url,
 	ogImage: `${url}/og-image.png`,
 	locale: "ko_KR",
-	authors: [{ name: "온케팅", url }],
-	creator: "온케팅",
+	authors: [{ name: "온세상이마케팅이다", url }],
+	creator: "온세상이마케팅이다",
 	contact: {
 		tel: "010-4667-6460",
 		email: "onketing.3kim@gmail.com",
 		address: "경기도 화성시 동탄구 동탄중심상가1길 36, 8층",
-		businessName: "온케팅",
+		businessName: "온세상이마케팅이다",
 		businessNumber: "112-31-25690",
-		kakaoOpenChat: "https://open.kakao.com/o/sgn3wFti",
-		naverBlog: "https://blog.naver.com/growthwave-",
+		kakaoOpenChat: "https://pf.kakao.com/_FwExjX",
+		naverBlog: "https://blog.naver.com/onketing-",
 		businessHours: "24시간 문의 접수 · 연중무휴",
 	},
 	nav: [

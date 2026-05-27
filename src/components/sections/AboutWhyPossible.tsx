@@ -34,7 +34,7 @@ export const AboutWhyPossible = () => {
 						어떻게 이런 성과가 가능했냐고요?
 					</h2>
 					<p className="mt-6 break-keep text-slate-500 text-xl leading-relaxed">
-						하나부터 열까지 온케팅의 손으로 만들기 때문입니다.
+						하나부터 열까지 온세상이마케팅이다의 손으로 만들기 때문입니다.
 					</p>
 					<p className="mt-6 font-mono text-slate-400 text-sm">외주 없음 · 한 팀 · 한 공간</p>
 				</Reveal>

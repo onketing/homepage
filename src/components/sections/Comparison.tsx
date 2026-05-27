@@ -8,7 +8,7 @@ export const Comparison = () => {
 		<section className="bg-slate-50 px-4 py-20 md:py-24">
 			<div className="mx-auto max-w-5xl">
 				<Reveal>
-					<SectionHeading title="일반 대행사 vs 온케팅" className="mb-16" />
+					<SectionHeading title="일반 대행사 vs 온세상이마케팅이다" className="mb-16" />
 				</Reveal>
 
 				<Reveal delay={0.1}>
@@ -30,14 +30,14 @@ export const Comparison = () => {
 
 						{/* Onketing */}
 						<div className="rounded-md border border-slate-200 bg-white p-7">
-							<p className="mb-6 font-semibold text-[#0a0a0a] text-base">온케팅</p>
+							<p className="mb-6 font-semibold text-[#0a0a0a] text-base">온세상이마케팅이다</p>
 							<ul className="space-y-3">
 								{COMPARISON_ROWS.map((row) => (
-									<li key={row.growthwave} className="flex items-start gap-3">
+									<li key={row.onketing} className="flex items-start gap-3">
 										<div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#052e16]">
 											<CheckIcon className="h-3 w-3 text-white" />
 										</div>
-										<span className="font-medium text-foreground text-sm">{row.growthwave}</span>
+										<span className="font-medium text-foreground text-sm">{row.onketing}</span>
 									</li>
 								))}
 							</ul>

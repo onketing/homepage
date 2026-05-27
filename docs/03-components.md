@@ -119,7 +119,7 @@ type PageHeroProps = {
   titleHighlight="세 가지로 합니다."
   sub="채널마다 강점이 다릅니다."
   secondaryText="회사소개서"
-  secondaryHref="/growthwave-brochure.pdf"
+  secondaryHref="/onketing-brochure.pdf"
   secondaryDownload
 />
 ```
@@ -222,7 +222,7 @@ type LogoProps = {
 **동작**:
 - `variant="dark"`: `text-foreground` (어두운 배경 아닌 곳)
 - `variant="light"`: `text-white` (다크 배경용 — Header 투명 모드, Footer)
-- 렌더: `<span>` 텍스트 "Growth Wave" (font-bold, 20px, tracking-[-0.02em])
+- 렌더: `<span>` 텍스트 "온세상이마케팅이다" (font-bold, 20px, tracking-[-0.02em])
 
 ---
 
@@ -318,7 +318,7 @@ const TRANSPARENT_HERO_PATHS = [
 - 단순 링크: 회사소개(`/about`), 광고 규정(`/regulation`), 팀(`/team`), FAQ(`/faq`)
 - 드롭다운 "마케팅": 전문직 마케팅(`/services/professional`), 블로그 마케팅(`/services/blog`), 숏폼 마케팅(`/services/shortform`)
 - CTA 버튼: "마케팅 컨설팅" → `/contact`
-- 다운로드: "회사소개서" → `/growthwave-brochure.pdf` (download 속성)
+- 다운로드: "회사소개서" → `/onketing-brochure.pdf` (download 속성)
 
 **⚠️ 신규 풀스크린 다크 Hero 페이지 추가 시**:
 `TRANSPARENT_HERO_PATHS` 배열에 해당 경로 추가 필수. 누락 시 라이트 배경인 채로 Hero 위에 헤더가 렌더됨.
@@ -335,7 +335,7 @@ props 없음.
 - 최상단: `<WaveDivider fillColor="#0f172a" />`
 - 좌: Logo variant="light" + 슬로건 + SNS 아이콘(네이버 블로그 N, 카카오톡 MessageCircle)
 - 우: 회사명, 사업자등록번호, 주소, TEL, EMAIL (siteConfig에서 읽음)
-- 최하단: `Copyright © 2026 Growth Wave. All rights reserved.`
+- 최하단: `Copyright © 2026 온세상이마케팅이다. All rights reserved.`
 
 ---
 
@@ -369,7 +369,7 @@ props 없음. Header 내부에서 렌더.
 [ ] src/app/{slug}/page.tsx 생성
     → export const {Name}Page = () => { ... }
     → export default {Name}Page
-[ ] export const metadata: Metadata = { title: "제목 | Growth Wave", description: "..." }
+[ ] export const metadata: Metadata = { title: "제목 | 온세상이마케팅이다", description: "..." }
 [ ] 풀스크린 다크 Hero라면 Header.tsx의 TRANSPARENT_HERO_PATHS에 경로 추가
 [ ] src/app/sitemap.ts에 라우트 추가
 [ ] src/config/site.ts의 nav에 링크 추가 (해당 시)

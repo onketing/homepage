@@ -51,13 +51,13 @@ export async function submitContact(data: ContactData) {
 
 		const html = await render(createElement(ContactNotification, { ...data, sentAt }));
 
-		const recipients = (process.env.NOTIFICATION_EMAILS ?? "growthwave.3kim@gmail.com")
+		const recipients = (process.env.NOTIFICATION_EMAILS ?? "onketing.3kim@gmail.com")
 			.split(",")
 			.map((e) => e.trim())
 			.filter(Boolean);
 
 		await resend.emails.send({
-			from: "온케팅 <noreply@onketing.kr>",
+			from: "온세상이마케팅이다 <noreply@onketing.kr>",
 			to: recipients,
 			subject: `[문의] ${data.name} · ${data.company} · ${data.profession || "직군 미선택"}`,
 			html,

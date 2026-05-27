@@ -9,7 +9,7 @@ export const Logo = ({ variant = "dark", className = "" }: LogoProps) => {
 	return (
 		<Image
 			src="/header-logo.png"
-			alt="온케팅"
+			alt="온세상이마케팅이다"
 			width={1593}
 			height={323}
 			style={{

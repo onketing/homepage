@@ -80,7 +80,7 @@ pnpm prepare      # lefthook install (git hooks)
 ## 환경변수
 
 ```
-NEXT_PUBLIC_SITE_URL   # 기본: https://growthwave.co.kr (trailing slash 없음)
+NEXT_PUBLIC_SITE_URL   # 기본: https://onketing.kr (trailing slash 없음)
 ```
 
 ## next.config.ts 핵심 설정

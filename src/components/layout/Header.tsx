@@ -169,7 +169,7 @@ export const Header = () => {
 				{/* Right */}
 				<div className="flex items-center gap-2">
 					<a
-						href="/growthwave-brochure.pdf"
+						href="/onketing-brochure.pdf"
 						download="Onketing 회사소개서.pdf"
 						className={cn(
 							"hidden rounded-md px-4 py-2.5 font-semibold text-sm transition-colors lg:block",
