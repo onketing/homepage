@@ -74,16 +74,23 @@ const DUMMY_TEL = "02-000-0000";
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "ProfessionalService",
-	name: `${siteConfig.name} (${siteConfig.nameKo})`,
+	name: siteConfig.nameKo,
+	alternateName: "Onketing",
 	description: siteConfig.description,
 	url: siteConfig.url,
+	logo: `${siteConfig.url}/icon-512.png`,
+	foundingDate: "2024",
 	...(siteConfig.contact.tel !== DUMMY_TEL && { telephone: siteConfig.contact.tel }),
 	email: siteConfig.contact.email,
 	address: {
 		"@type": "PostalAddress",
 		streetAddress: siteConfig.contact.address,
+		addressLocality: "화성시",
+		addressRegion: "경기도",
+		postalCode: "18469",
 		addressCountry: "KR",
 	},
+	areaServed: "KR",
 	serviceType: [
 		"전문직 마케팅",
 		"블로그 마케팅",
@@ -91,7 +98,52 @@ const jsonLd = {
 		"변호사 마케팅",
 		"의사 마케팅",
 		"한의사 마케팅",
+		"수의사 마케팅",
+		"노무사 마케팅",
+		"세무사 마케팅",
 	],
+	knowsAbout: [
+		"전문직 광고 규정",
+		"변호사법 제23조",
+		"의료법 제56조",
+		"네이버 블로그 SEO",
+		"숏폼 영상 마케팅",
+		"검색 의도 기반 콘텐츠",
+	],
+	sameAs: [
+		siteConfig.contact.naverBlog,
+		siteConfig.contact.kakaoOpenChat,
+	],
+	hasOfferCatalog: {
+		"@type": "OfferCatalog",
+		name: "전문직 마케팅 서비스",
+		itemListElement: [
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "전문직 블로그 마케팅",
+					url: `${siteConfig.url}/services/blog`,
+				},
+			},
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "전문직 숏폼 마케팅",
+					url: `${siteConfig.url}/services/shortform`,
+				},
+			},
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "전문직 통합 마케팅",
+					url: `${siteConfig.url}/services/professional`,
+				},
+			},
+		],
+	},
 };
 
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {

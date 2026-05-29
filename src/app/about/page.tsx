@@ -8,14 +8,55 @@ import { OrgChart } from "@/components/sections/OrgChart";
 import { CTACard } from "@/components/shared/CTACard";
 
 export const metadata: Metadata = {
-	title: "회사소개 | Onketing",
+	title: "회사소개 | 온세상이마케팅이다",
 	description:
 		"변호사·의사·한의사·수의사·노무사 등 전문직 마케팅에 집중하는 온세상이마케팅이다. 광고 규정을 이해하는 팀이 직접 콘텐츠를 설계합니다.",
+	keywords: [
+		"온세상이마케팅이다",
+		"전문직 마케팅 대행사",
+		"변호사 마케팅 회사",
+		"의료 마케팅 대행사",
+		"마케팅 대행사 회사소개",
+		"전문직 광고 규정",
+	],
+};
+
+const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: "온세상이마케팅이다",
+	alternateName: "Onketing",
+	url: "https://onketing.kr",
+	logo: "https://onketing.kr/icon-512.png",
+	foundingDate: "2024",
+	email: "onketing.3kim@gmail.com",
+	address: {
+		"@type": "PostalAddress",
+		streetAddress: "경기도 화성시 동탄구 동탄중심상가1길 36, 8층 801-117A호",
+		addressLocality: "화성시",
+		addressRegion: "경기도",
+		addressCountry: "KR",
+	},
+	description:
+		"변호사·의사·한의사·수의사·노무사·세무사 6개 전문직 직군 전용 마케팅 대행사. 처음 맡은 팀이 끝까지 책임집니다. 재계약율 90%+, 광고 규정 위반 0건.",
+	knowsAbout: [
+		"전문직 마케팅",
+		"변호사 광고 규정",
+		"의료광고 심의",
+		"블로그 마케팅",
+		"숏폼 마케팅",
+		"네이버 블로그 SEO",
+	],
+	sameAs: [
+		"https://blog.naver.com/onketing-",
+		"https://pf.kakao.com/_FwExjX",
+	],
 };
 
 export const AboutPage = () => {
 	return (
 		<>
+			<script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
 			{/* 1. 풀스크린 다크 Hero */}
 			<AboutHero />
 
