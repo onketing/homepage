@@ -1,29 +1,71 @@
+"use client";
+
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { ConstellationBackground } from "@/components/shared/ConstellationBackground";
 import { Reveal } from "@/components/shared/Reveal";
 import { siteConfig } from "@/config/site";
 
 export const FinalCTA = () => {
 	return (
-		<section className="relative overflow-hidden bg-[#0b1220] px-4 py-28 md:py-36">
-			<ConstellationBackground />
-			{/* 보라 오로라 글로우 */}
-			<div className="pointer-events-none absolute inset-0">
-				<div className="absolute top-1/2 left-1/2 h-[620px] w-[960px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(88,214,141,0.34),transparent_68%)]" />
-				<div className="absolute top-1/2 left-1/2 h-[380px] w-[620px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(167,139,250,0.16),transparent_70%)]" />
-				<div className="absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-[#86efac] opacity-[0.06] blur-[120px]" />
+		<section className="relative overflow-hidden bg-[#04100a] px-4 py-28 md:py-36">
+			{/* CSS aurora — 4개 블롭이 각자 다른 속도로 천천히 궤도를 돌며 프리미엄 마무리 느낌 */}
+			<div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+				<div
+					className="absolute rounded-full"
+					style={{
+						width: "700px",
+						height: "700px",
+						background: "radial-gradient(circle, rgba(88,214,141,0.28) 0%, transparent 70%)",
+						top: "50%",
+						left: "50%",
+						transform: "translate(-50%, -50%)",
+						animation: "auroraA 18s ease-in-out infinite",
+					}}
+				/>
+				<div
+					className="absolute rounded-full"
+					style={{
+						width: "480px",
+						height: "480px",
+						background: "radial-gradient(circle, rgba(22,163,74,0.18) 0%, transparent 70%)",
+						top: "30%",
+						left: "20%",
+						animation: "auroraB 22s ease-in-out infinite",
+					}}
+				/>
+				<div
+					className="absolute rounded-full"
+					style={{
+						width: "360px",
+						height: "360px",
+						background: "radial-gradient(circle, rgba(134,239,172,0.14) 0%, transparent 70%)",
+						bottom: "20%",
+						right: "15%",
+						animation: "auroraC 26s ease-in-out infinite",
+					}}
+				/>
+				<div
+					className="absolute rounded-full"
+					style={{
+						width: "260px",
+						height: "260px",
+						background: "radial-gradient(circle, rgba(167,139,250,0.10) 0%, transparent 70%)",
+						top: "20%",
+						right: "25%",
+						animation: "auroraD 30s ease-in-out infinite",
+					}}
+				/>
 			</div>
 
 			{/* 파인 그리드 */}
 			<div
-				className="pointer-events-none absolute inset-0 opacity-[0.14]"
+				className="pointer-events-none absolute inset-0 opacity-[0.1]"
 				style={{
 					backgroundImage:
-						"linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-					backgroundSize: "64px 64px",
-					maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent 75%)",
-					WebkitMaskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent 75%)",
+						"linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)",
+					backgroundSize: "56px 56px",
+					maskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black, transparent 80%)",
+					WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black, transparent 80%)",
 				}}
 				aria-hidden="true"
 			/>
@@ -39,6 +81,7 @@ export const FinalCTA = () => {
 					<p className="mb-12 break-keep text-lg text-white/55 leading-relaxed md:text-xl">
 						매출로 전환되는 마케팅, 경험해보세요.
 					</p>
+
 					<div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
 						<Link
 							href="/contact"
@@ -56,9 +99,33 @@ export const FinalCTA = () => {
 							카카오톡 1:1 문의
 						</a>
 					</div>
-					<p className="mt-7 font-mono text-white/35 text-xs tracking-wider">영업일 1일 내 회신</p>
+
+					<p className="mt-10 font-mono text-white/30 text-xs tracking-wider">영업일 1일 내 회신</p>
 				</Reveal>
 			</div>
+
+			{/* Aurora keyframes */}
+			<style>{`
+				@keyframes auroraA {
+					0%, 100% { transform: translate(-50%, -50%) scale(1); }
+					33% { transform: translate(-44%, -56%) scale(1.08); }
+					66% { transform: translate(-56%, -44%) scale(0.94); }
+				}
+				@keyframes auroraB {
+					0%, 100% { transform: translate(0, 0) scale(1); }
+					40% { transform: translate(60px, 40px) scale(1.12); }
+					70% { transform: translate(-30px, 60px) scale(0.92); }
+				}
+				@keyframes auroraC {
+					0%, 100% { transform: translate(0, 0) scale(1); }
+					35% { transform: translate(-50px, -30px) scale(1.1); }
+					65% { transform: translate(30px, -50px) scale(0.9); }
+				}
+				@keyframes auroraD {
+					0%, 100% { transform: translate(0, 0) scale(1); }
+					50% { transform: translate(-40px, 50px) scale(1.15); }
+				}
+			`}</style>
 		</section>
 	);
 };
