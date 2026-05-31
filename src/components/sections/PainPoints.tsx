@@ -3,6 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 
 const ITEMS = [
 	{
@@ -57,20 +58,22 @@ export const PainPoints = () => {
 								ease: [0.22, 1, 0.36, 1],
 							}}
 						>
-							<div className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-[#58d68d]/20 hover:bg-[#f0fdf4] hover:shadow-[0_16px_48px_rgba(88,214,141,0.12)]">
-								{/* 왼쪽 gradient 세로선 */}
-								<div className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-linear-to-b from-[#58d68d] to-[#16a34a] opacity-40 transition-opacity duration-500 group-hover:opacity-100" />
+							<SpotlightCard className="rounded-2xl">
+								<div className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-[#58d68d]/20 hover:bg-[#f0fdf4] hover:shadow-[0_16px_48px_rgba(88,214,141,0.12)]">
+									{/* 왼쪽 gradient 세로선 */}
+									<div className="absolute inset-y-0 left-0 w-[3px] rounded-l-2xl bg-linear-to-b from-[#58d68d] to-[#16a34a] opacity-40 transition-opacity duration-500 group-hover:opacity-100" />
 
-								{/* 번호 */}
-								<span className="gradient-text font-bold font-mono text-4xl leading-none">
-									{String(i + 1).padStart(2, "0")}
-								</span>
+									{/* 번호 */}
+									<span className="gradient-text font-bold font-mono text-4xl leading-none">
+										{String(i + 1).padStart(2, "0")}
+									</span>
 
-								{/* 제목 */}
-								<p className="flex min-h-20 items-end whitespace-pre-line font-bold text-2xl text-[#0a0a0a] leading-snug tracking-tight">
-									{item.title}
-								</p>
-							</div>
+									{/* 제목 */}
+									<p className="flex min-h-20 items-end whitespace-pre-line font-bold text-2xl text-[#0a0a0a] leading-snug tracking-tight">
+										{item.title}
+									</p>
+								</div>
+							</SpotlightCard>
 						</motion.div>
 					))}
 				</div>

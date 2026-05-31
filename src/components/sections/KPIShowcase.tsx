@@ -3,6 +3,7 @@
 import { animate, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 import { KPI_SHOWCASE } from "@/data/kpi-showcase";
 
 const LiveResponseValue = ({ numClass }: { numClass: string }) => {
@@ -64,7 +65,16 @@ const CELL_META = [
 
 export const KPIShowcase = () => {
 	return (
-		<section className="bg-white py-20 md:py-28">
+		<section className="relative overflow-hidden bg-white py-20 md:py-28">
+			{/* 그린 소프트 배경 블룸 */}
+			<div
+				className="pointer-events-none absolute inset-x-0 top-0 h-full"
+				aria-hidden="true"
+				style={{
+					background:
+						"radial-gradient(ellipse 60% 40% at 50% 0%, rgba(88,214,141,0.06), transparent 70%)",
+				}}
+			/>
 			<div className="mx-auto max-w-7xl px-4 md:px-8">
 				<Reveal className="mb-12 text-center">
 					<p className="mb-3 font-bold text-[#58d68d] text-xl md:text-2xl">저희는</p>
@@ -83,36 +93,38 @@ export const KPIShowcase = () => {
 								direction={meta.direction}
 								className={meta.borderClass}
 							>
-								<div className="flex flex-col px-5 py-8 md:px-8 md:py-10">
-									<span className="mb-3 font-mono text-[10px] text-slate-400 tracking-[0.3em]">
-										{item.index}
-									</span>
+								<SpotlightCard className="h-full">
+									<div className="flex h-full flex-col px-5 py-8 md:px-8 md:py-10">
+										<span className="mb-3 font-mono text-[10px] text-slate-400 tracking-[0.3em]">
+											{item.index}
+										</span>
 
-									{i === 3 ? (
-										<LiveResponseValue numClass={meta.numClass} />
-									) : (
-										<p className="font-extrabold leading-none tracking-tighter">
-											<span
-												className={`text-[52px] sm:text-[60px] md:text-[68px] lg:text-[80px] ${meta.numClass}`}
-											>
-												<CountUp to={item.value} />
-											</span>
-											<span
-												className={`ml-0.5 align-top text-xl md:text-2xl lg:text-3xl ${meta.numClass}`}
-											>
-												{item.suffix}
-											</span>
+										{i === 3 ? (
+											<LiveResponseValue numClass={meta.numClass} />
+										) : (
+											<p className="font-extrabold leading-none tracking-tighter">
+												<span
+													className={`text-[52px] sm:text-[60px] md:text-[68px] lg:text-[80px] ${meta.numClass}`}
+												>
+													<CountUp to={item.value} />
+												</span>
+												<span
+													className={`ml-0.5 align-top text-xl md:text-2xl lg:text-3xl ${meta.numClass}`}
+												>
+													{item.suffix}
+												</span>
+											</p>
+										)}
+
+										<h3 className="mt-3 break-keep font-bold text-[#0a0a0a] text-base tracking-tight md:text-lg">
+											{item.label}
+										</h3>
+
+										<p className="mt-1.5 break-keep text-slate-500 text-xs leading-relaxed md:text-sm">
+											{item.description}
 										</p>
-									)}
-
-									<h3 className="mt-3 break-keep font-bold text-[#0a0a0a] text-base tracking-tight md:text-lg">
-										{item.label}
-									</h3>
-
-									<p className="mt-1.5 break-keep text-slate-500 text-xs leading-relaxed md:text-sm">
-										{item.description}
-									</p>
-								</div>
+									</div>
+								</SpotlightCard>
 							</Reveal>
 						);
 					})}

@@ -1,11 +1,13 @@
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { ConstellationBackground } from "@/components/shared/ConstellationBackground";
 import { Reveal } from "@/components/shared/Reveal";
 import { siteConfig } from "@/config/site";
 
 export const FinalCTA = () => {
 	return (
-		<section className="relative overflow-hidden bg-[#100d18] px-4 py-28 md:py-36">
+		<section className="relative overflow-hidden bg-[#0b1220] px-4 py-28 md:py-36">
+			<ConstellationBackground />
 			{/* 보라 오로라 글로우 */}
 			<div className="pointer-events-none absolute inset-0">
 				<div className="absolute top-1/2 left-1/2 h-[620px] w-[960px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(88,214,141,0.34),transparent_68%)]" />
