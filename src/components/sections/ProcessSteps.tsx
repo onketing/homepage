@@ -52,19 +52,29 @@ export const ProcessSteps = () => {
 				</Reveal>
 
 				<div ref={gridRef} className="relative grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-6">
-					{/* 연결선 — 왼쪽에서 오른쪽으로 드로우 */}
+					{/* 연결선 — 왼쪽에서 오른쪽으로 드로우 (그린 그라데이션) */}
 					<motion.div
-						className="absolute top-10 hidden h-px bg-slate-200 md:block"
+						className="absolute top-10 hidden h-0.5 rounded-full bg-linear-to-r from-[#58d68d] to-[#16a34a] md:block"
 						style={{ left: "12.5%", right: "12.5%", transformOrigin: "left" }}
 						initial={{ scaleX: 0 }}
 						animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
 						transition={
 							shouldAnimate
-								? { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+								? { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
 								: { duration: 0, delay: 0 }
 						}
 						aria-hidden="true"
 					/>
+					{/* 흐르는 펄스 — 라인을 따라 이동 */}
+					{shouldAnimate && (
+						<motion.div
+							className="absolute top-[38px] hidden h-2 w-2 rounded-full bg-[#58d68d] shadow-[0_0_10px_2px_rgba(88,214,141,0.6)] md:block"
+							initial={{ left: "12.5%", opacity: 0 }}
+							animate={{ left: ["12.5%", "87.5%"], opacity: [0, 1, 1, 0] }}
+							transition={{ duration: 2.2, ease: "easeInOut", repeat: Infinity, delay: 0.9 }}
+							aria-hidden="true"
+						/>
+					)}
 
 					{PROCESS_STEPS.map((step, i) => {
 						const Icon = ICON_MAP[step.icon] ?? MessageSquare;
@@ -82,11 +92,23 @@ export const ProcessSteps = () => {
 										: { duration: 0, delay: 0 }
 								}
 							>
-								<div className="relative z-10 mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_2px_8px_rgba(88,214,141,0.06)]">
+								<motion.div
+									className="relative z-10 mb-6 flex h-20 w-20 items-center justify-center rounded-full border bg-white"
+									initial={{ borderColor: "#e2e8f0", boxShadow: "0 2px 8px rgba(88,214,141,0.06)" }}
+									animate={
+										isInView
+											? {
+													borderColor: "#58d68d",
+													boxShadow: "0 0 0 4px rgba(88,214,141,0.12)",
+												}
+											: { borderColor: "#e2e8f0", boxShadow: "0 2px 8px rgba(88,214,141,0.06)" }
+									}
+									transition={{ duration: 0.4, delay: shouldAnimate ? delay + 0.2 : 0 }}
+								>
 									<span className="font-bold font-mono text-[#58d68d] text-xl">
 										{String(i + 1).padStart(2, "0")}
 									</span>
-								</div>
+								</motion.div>
 
 								<Icon className="mb-3 h-6 w-6 text-[#58d68d]" aria-hidden="true" />
 								<h3 className="mb-3 font-bold text-foreground text-xl tracking-tight md:text-2xl">

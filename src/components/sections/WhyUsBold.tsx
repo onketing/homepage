@@ -1,5 +1,6 @@
 import { Check, Database, ShieldCheck, Target, X } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 import { WHY_US_BOLD_CARDS } from "@/data/why-us";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -38,21 +39,23 @@ export const WhyUsBold = () => {
 						const directions = ["left", "up", "right"] as const;
 						return (
 							<Reveal key={card.title} delay={i * 0.1} direction={directions[i]} className="h-full">
-								<div className="flex h-full flex-col rounded-md bg-white p-8">
-									<span className="mb-5 block font-mono text-[#0a0a0a]/30 text-[11px] tracking-[0.2em]">
-										{String(i + 1).padStart(2, "0")}
-									</span>
-									<Icon className="mb-4 h-5 w-5 text-[#58d68d]" aria-hidden="true" />
-									<div className="mb-2 flex items-center gap-3">
-										<h3 className="font-bold text-foreground text-lg">{card.title}</h3>
+								<SpotlightCard className="h-full rounded-md">
+									<div className="flex h-full flex-col rounded-md bg-white p-8">
+										<span className="mb-5 block font-mono text-[#0a0a0a]/30 text-[11px] tracking-[0.2em]">
+											{String(i + 1).padStart(2, "0")}
+										</span>
+										<Icon className="mb-4 h-5 w-5 text-[#58d68d]" aria-hidden="true" />
+										<div className="mb-2 flex items-center gap-3">
+											<h3 className="font-bold text-foreground text-lg">{card.title}</h3>
+										</div>
+										<p className="mb-4 text-muted-foreground text-sm leading-relaxed">
+											{card.description}
+										</p>
+										<div className="mt-auto flex min-h-[3.25rem] items-center rounded-md bg-[#58d68d]/[0.08] px-4 py-3">
+											<span className="font-semibold text-[#58d68d] text-sm">{card.stat}</span>
+										</div>
 									</div>
-									<p className="mb-4 text-muted-foreground text-sm leading-relaxed">
-										{card.description}
-									</p>
-									<div className="mt-auto flex min-h-[3.25rem] items-center rounded-md bg-[#58d68d]/[0.08] px-4 py-3">
-										<span className="font-semibold text-[#58d68d] text-sm">{card.stat}</span>
-									</div>
-								</div>
+								</SpotlightCard>
 							</Reveal>
 						);
 					})}

@@ -61,7 +61,7 @@ export const ServiceProcess = ({ steps, footnote, eyebrow = "Process" }: Props) 
 
 				<div ref={gridRef} className={`relative grid grid-cols-1 gap-10 md:gap-4 ${gridColsClass}`}>
 					<motion.div
-						className="absolute top-10 hidden h-px bg-slate-200 md:block"
+						className="absolute top-10 hidden h-0.5 rounded-full bg-linear-to-r from-[#58d68d] to-[#16a34a] md:block"
 						style={{ left: "10%", right: "10%", transformOrigin: "left" }}
 						initial={{ scaleX: 0 }}
 						animate={animState.inView ? { scaleX: 1 } : { scaleX: 0 }}

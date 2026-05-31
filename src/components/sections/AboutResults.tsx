@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRight, Eye } from "lucide-react";
-import { motion, useInView } from "motion/react";
+import { ArrowRight, Eye, X } from "lucide-react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const AFTER_REELS = [
 	{ views: "81.9만", src: "/images/results/reel-01.png", alt: "근로계약서 관련 릴스", rotate: -4 },
@@ -17,6 +17,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export const AboutResults = () => {
 	const ref = useRef<HTMLDivElement>(null);
 	const isInView = useInView(ref, { once: false, margin: "-120px" });
+	const [active, setActive] = useState<number | null>(null);
+
+	useEffect(() => {
+		const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, []);
 
 	return (
 		<section className="overflow-hidden bg-white px-4 py-24 md:py-32">
@@ -108,6 +115,7 @@ export const AboutResults = () => {
 										key={reel.src}
 										className="relative aspect-9/16 cursor-pointer overflow-hidden rounded-2xl"
 										style={{ boxShadow: "0 16px 48px rgba(0,0,0,0.28)" }}
+										onClick={() => setActive(i)}
 										initial={{ opacity: 0, y: 80, rotate: initRotate, scale: 0.8 }}
 										animate={
 											isInView
@@ -164,6 +172,54 @@ export const AboutResults = () => {
 					</div>
 				</div>
 			</div>
+
+			{/* 릴스 라이트박스 */}
+			<AnimatePresence>
+				{active !== null && (
+					<motion.div
+						className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 p-6 backdrop-blur-sm"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.2 }}
+						onClick={() => setActive(null)}
+					>
+						<button
+							type="button"
+							onClick={() => setActive(null)}
+							aria-label="닫기"
+							className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+						>
+							<X className="h-5 w-5" />
+						</button>
+						<motion.div
+							className="relative aspect-9/16 w-[min(80vw,360px)] overflow-hidden rounded-3xl shadow-2xl"
+							initial={{ scale: 0.85, opacity: 0 }}
+							animate={{ scale: 1, opacity: 1 }}
+							exit={{ scale: 0.9, opacity: 0 }}
+							transition={{ type: "spring", stiffness: 220, damping: 24 }}
+							onClick={(e) => e.stopPropagation()}
+						>
+							<Image
+								src={AFTER_REELS[active].src}
+								alt={AFTER_REELS[active].alt}
+								fill
+								className="object-cover"
+								sizes="360px"
+							/>
+							<div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/90 via-black/40 to-transparent px-5 py-5">
+								<div className="flex items-center gap-2">
+									<Eye className="h-4 w-4 text-white/70" />
+									<p className="font-bold text-2xl text-white leading-none">
+										{AFTER_REELS[active].views}
+									</p>
+									<span className="ml-1 text-sm text-white/60">조회수</span>
+								</div>
+							</div>
+						</motion.div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</section>
 	);
 };

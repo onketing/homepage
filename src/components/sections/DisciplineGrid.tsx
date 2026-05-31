@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 import { CLIENT_DISCIPLINES } from "@/data/client-disciplines";
 
 export const DisciplineGrid = () => {
@@ -22,22 +23,23 @@ export const DisciplineGrid = () => {
 
 				<div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
 					{CLIENT_DISCIPLINES.map((d, i) => (
-						<motion.div
-							key={d.name}
-							className="flex flex-col rounded-xl border border-slate-100 bg-slate-50 px-5 py-5"
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: false }}
-							transition={{ delay: i * 0.04, duration: 0.4 }}
-							whileHover={{
-								borderColor: "rgba(88,214,141,0.4)",
-								boxShadow: "0 8px 24px rgba(88,214,141,0.1)",
-								y: -4,
-							}}
-						>
-							<p className="font-bold text-[#0a0a0a] text-base">{d.name}</p>
-							<p className="mt-1 break-keep text-slate-500 text-xs">{d.caption}</p>
-						</motion.div>
+						<SpotlightCard key={d.name} className="rounded-xl">
+							<motion.div
+								className="flex flex-col rounded-xl border border-slate-100 bg-slate-50 px-5 py-5"
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: false }}
+								transition={{ delay: i * 0.04, duration: 0.4 }}
+								whileHover={{
+									borderColor: "rgba(88,214,141,0.4)",
+									boxShadow: "0 8px 24px rgba(88,214,141,0.1)",
+									y: -4,
+								}}
+							>
+								<p className="font-bold text-[#0a0a0a] text-base">{d.name}</p>
+								<p className="mt-1 break-keep text-slate-500 text-xs">{d.caption}</p>
+							</motion.div>
+						</SpotlightCard>
 					))}
 				</div>
 			</div>

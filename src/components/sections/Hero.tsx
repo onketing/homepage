@@ -1,28 +1,17 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ConstellationBackground } from "@/components/shared/ConstellationBackground";
 
 export const Hero = () => {
 	return (
-		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white pt-16 md:pt-20">
-			{/* Background video */}
-			<video
-				autoPlay
-				muted
-				loop
-				playsInline
-				poster="/hero-bg-poster.jpg"
-				tabIndex={-1}
-				aria-hidden="true"
-				className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-			>
-				<source src="/hero-bg.webm" type="video/webm" />
-				<source src="/hero-bg.mp4" type="video/mp4" />
-			</video>
+		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0b1220] pt-16 md:pt-20">
+			{/* 리드-플로우 컨스텔레이션 배경 */}
+			<ConstellationBackground />
 
-			{/* Overlay — 이전보다 진하게 (가독성) */}
+			{/* 가독성 비네트 */}
 			<div
-				className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/75 via-white/80 to-white/70"
+				className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,_rgba(11,18,32,0.35)_0%,_rgba(11,18,32,0.78)_100%)]"
 				aria-hidden="true"
 			/>
 
@@ -35,10 +24,10 @@ export const Hero = () => {
 					className="mb-10 font-bold text-[44px] leading-[1.15] tracking-[-0.03em] sm:text-[60px] md:text-[80px] md:leading-[1.1] lg:text-[100px]"
 				>
 					<span className="gradient-text">전문직 마케팅</span>
-					<span className="text-[#0a0a0a]">은</span>
+					<span className="text-white">은</span>
 					<br />
 					<span className="gradient-text">달라야</span>
-					<span className="text-[#0a0a0a]"> 합니다</span>
+					<span className="text-white"> 합니다</span>
 				</motion.h1>
 
 				{/* Sub */}
@@ -46,7 +35,7 @@ export const Hero = () => {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-					className="mb-10 font-medium text-slate-700 text-xl leading-relaxed md:text-3xl"
+					className="mb-10 font-medium text-slate-300 text-xl leading-relaxed md:text-3xl"
 				>
 					조회수는 터졌는데, 매출은 그대로이신가요?
 				</motion.p>

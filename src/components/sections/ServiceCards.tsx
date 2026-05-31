@@ -5,6 +5,7 @@ import { motion, useInView, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 import { SERVICE_CARDS } from "@/data/service-cards";
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -94,63 +95,65 @@ export const ServiceCards = () => {
 						const Icon = ICON_MAP[card.icon] ?? Users;
 						return (
 							<FlipCard key={card.href} delay={i * 0.12}>
-								<Link
-									href={card.href}
-									className="group relative flex h-full min-h-[420px] flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#052e16] to-[#021009] p-8 shadow-[0_20px_50px_-20px_rgba(88,214,141,0.30)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#58d68d]/40 hover:shadow-[0_28px_70px_-20px_rgba(88,214,141,0.50)]"
-								>
-									{/* 상단 엣지 하이라이트 */}
-									<div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+								<SpotlightCard className="h-full rounded-2xl" glow="rgba(88,214,141,0.22)">
+									<Link
+										href={card.href}
+										className="group relative flex h-full min-h-[420px] flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#052e16] to-[#021009] p-8 shadow-[0_20px_50px_-20px_rgba(88,214,141,0.30)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#58d68d]/40 hover:shadow-[0_28px_70px_-20px_rgba(88,214,141,0.50)]"
+									>
+										{/* 상단 엣지 하이라이트 */}
+										<div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-									{/* 코너 블룸 */}
-									<div className="pointer-events-none absolute -top-20 -right-20 h-44 w-44 rounded-full bg-[#58d68d] opacity-[0.12] blur-3xl transition-opacity duration-500 group-hover:opacity-30" />
+										{/* 코너 블룸 */}
+										<div className="pointer-events-none absolute -top-20 -right-20 h-44 w-44 rounded-full bg-[#58d68d] opacity-[0.12] blur-3xl transition-opacity duration-500 group-hover:opacity-30" />
 
-									{/* 번호 + 아이콘 */}
-									<div className="relative mb-8 flex items-center justify-between">
-										<span className="font-mono text-slate-500 text-xs tracking-[0.3em]">
-											0{i + 1}
-										</span>
-										<div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#58d68d]/25 bg-[#58d68d]/15">
-											<Icon className="h-5 w-5 text-[#86efac]" aria-hidden="true" />
+										{/* 번호 + 아이콘 */}
+										<div className="relative mb-8 flex items-center justify-between">
+											<span className="font-mono text-slate-500 text-xs tracking-[0.3em]">
+												0{i + 1}
+											</span>
+											<div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#58d68d]/25 bg-[#58d68d]/15">
+												<Icon className="h-5 w-5 text-[#86efac]" aria-hidden="true" />
+											</div>
 										</div>
-									</div>
 
-									{/* 큰 타이틀 */}
-									<p className="relative mb-3 font-bold text-3xl text-white leading-tight tracking-tight">
-										{card.eyebrow}
-									</p>
+										{/* 큰 타이틀 */}
+										<p className="relative mb-3 font-bold text-3xl text-white leading-tight tracking-tight">
+											{card.eyebrow}
+										</p>
 
-									{/* 구분선 */}
-									<div className="relative mb-4 h-px w-10 bg-gradient-to-r from-[#58d68d] to-transparent" />
+										{/* 구분선 */}
+										<div className="relative mb-4 h-px w-10 bg-gradient-to-r from-[#58d68d] to-transparent" />
 
-									{/* 설명 */}
-									<p className="relative min-h-12 text-slate-300 text-sm leading-relaxed">
-										{card.description}
-									</p>
+										{/* 설명 */}
+										<p className="relative min-h-12 text-slate-300 text-sm leading-relaxed">
+											{card.description}
+										</p>
 
-									{/* 포인트 리스트 */}
-									{card.points && (
-										<ul className="relative mt-5 flex-1 space-y-2.5">
-											{card.points.map((point) => (
-												<li
-													key={point}
-													className="flex items-start gap-2.5 text-slate-400 text-xs leading-relaxed"
-												>
-													<span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#86efac]" />
-													{point}
-												</li>
-											))}
-										</ul>
-									)}
+										{/* 포인트 리스트 */}
+										{card.points && (
+											<ul className="relative mt-5 flex-1 space-y-2.5">
+												{card.points.map((point) => (
+													<li
+														key={point}
+														className="flex items-start gap-2.5 text-slate-400 text-xs leading-relaxed"
+													>
+														<span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#86efac]" />
+														{point}
+													</li>
+												))}
+											</ul>
+										)}
 
-									{/* CTA */}
-									<span className="relative mt-8 flex items-center gap-1.5 self-start font-semibold text-[#86efac] text-sm transition-colors group-hover:text-white">
-										{card.cta}
-										<ArrowRight
-											className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-											aria-hidden="true"
-										/>
-									</span>
-								</Link>
+										{/* CTA */}
+										<span className="relative mt-8 flex items-center gap-1.5 self-start font-semibold text-[#86efac] text-sm transition-colors group-hover:text-white">
+											{card.cta}
+											<ArrowRight
+												className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+												aria-hidden="true"
+											/>
+										</span>
+									</Link>
+								</SpotlightCard>
 							</FlipCard>
 						);
 					})}
