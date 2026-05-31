@@ -3,6 +3,7 @@
 import { animate, motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 import { CASE_HIGHLIGHTS, CASE_HIGHLIGHTS_SINGLE } from "@/data/case-highlight";
 
 const CountUp = ({ to, duration = 1.4 }: { to: number; duration?: number }) => {
@@ -221,69 +222,75 @@ const CaseCard = ({ item, index }: { item: CaseItem; index: number }) => {
 
 	return (
 		<Reveal>
-			<div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_32px_rgba(15,23,42,0.06)]">
-				<div className="p-6 md:p-10">
-					{/* 사례 라벨 */}
-					<div className="mb-5 flex items-center gap-2">
-						<span className="font-bold text-slate-800 text-sm">{item.label}</span>
-						<span className="font-medium text-slate-500 text-sm">{item.client}</span>
-					</div>
-
-					{/* 한마디 */}
-					<blockquote className="mb-5 border-[#58d68d]/30 border-l-[3px] pl-5">
-						<p className="break-keep font-bold text-[#0a0a0a] text-xl leading-snug md:text-2xl">
-							&ldquo;{item.quote}&rdquo;
-						</p>
-						<footer className="mt-2 font-mono text-slate-500 text-xs">— {item.quoteAuthor}</footer>
-					</blockquote>
-
-					{/* 결과 요약 */}
-					<p className="mb-8 break-keep text-lg text-slate-600 leading-relaxed md:text-xl">
-						온세상이마케팅이다 마케팅 후 6개월, 월 상담{" "}
-						<span className="font-extrabold text-2xl text-[#58d68d] md:text-3xl">
-							<CountUp to={item.multiplier} />배
-						</span>{" "}
-						증가, 광고비{" "}
-						<span className="font-extrabold text-2xl text-emerald-600 md:text-3xl">
-							{item.adSavingAmount}만원
-						</span>{" "}
-						절감!
-					</p>
-
-					{/* 차트 2개 */}
-					<div ref={chartsRef} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-						<div className="rounded-xl bg-slate-50 p-4">
-							<p className="mb-1 font-semibold text-[#0a0a0a] text-xs tracking-wide">
-								월 상담 건수
-							</p>
-							<ImpactBar
-								before={item.beforeValue}
-								after={item.afterValue}
-								unit={item.afterUnit}
-								annotation={`${item.multiplier}배`}
-								gradId={consultGradId}
-								inView={chartsInView}
-								decrease={false}
-								xLabels={["시작 전", "6개월 후"]}
-							/>
+			<SpotlightCard className="rounded-2xl">
+				<div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_32px_rgba(15,23,42,0.06)]">
+					<div className="p-6 md:p-10">
+						{/* 사례 라벨 */}
+						<div className="mb-5 flex items-center gap-2">
+							<span className="font-bold text-slate-800 text-sm">{item.label}</span>
+							<span className="font-medium text-slate-500 text-sm">{item.client}</span>
 						</div>
-						<div className="rounded-xl bg-slate-50 p-4">
-							<p className="mb-1 font-semibold text-[#0a0a0a] text-xs tracking-wide">광고비 절감</p>
-							<ImpactBar
-								before={item.adCostBefore}
-								after={item.adCostAfter}
-								unit="만원"
-								annotation={`${item.adSavingAmount}만원`}
-								gradId={savingsGradId}
-								inView={chartsInView}
-								decrease={true}
-								delay={0.1}
-								xLabels={["시작 전", "현재"]}
-							/>
+
+						{/* 한마디 */}
+						<blockquote className="mb-5 border-[#58d68d]/30 border-l-[3px] pl-5">
+							<p className="break-keep font-bold text-[#0a0a0a] text-xl leading-snug md:text-2xl">
+								&ldquo;{item.quote}&rdquo;
+							</p>
+							<footer className="mt-2 font-mono text-slate-500 text-xs">
+								— {item.quoteAuthor}
+							</footer>
+						</blockquote>
+
+						{/* 결과 요약 */}
+						<p className="mb-8 break-keep text-lg text-slate-600 leading-relaxed md:text-xl">
+							온세상이마케팅이다 마케팅 후 6개월, 월 상담{" "}
+							<span className="font-extrabold text-2xl text-[#58d68d] md:text-3xl">
+								<CountUp to={item.multiplier} />배
+							</span>{" "}
+							증가, 광고비{" "}
+							<span className="font-extrabold text-2xl text-emerald-600 md:text-3xl">
+								{item.adSavingAmount}만원
+							</span>{" "}
+							절감!
+						</p>
+
+						{/* 차트 2개 */}
+						<div ref={chartsRef} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+							<div className="rounded-xl bg-slate-50 p-4">
+								<p className="mb-1 font-semibold text-[#0a0a0a] text-xs tracking-wide">
+									월 상담 건수
+								</p>
+								<ImpactBar
+									before={item.beforeValue}
+									after={item.afterValue}
+									unit={item.afterUnit}
+									annotation={`${item.multiplier}배`}
+									gradId={consultGradId}
+									inView={chartsInView}
+									decrease={false}
+									xLabels={["시작 전", "6개월 후"]}
+								/>
+							</div>
+							<div className="rounded-xl bg-slate-50 p-4">
+								<p className="mb-1 font-semibold text-[#0a0a0a] text-xs tracking-wide">
+									광고비 절감
+								</p>
+								<ImpactBar
+									before={item.adCostBefore}
+									after={item.adCostAfter}
+									unit="만원"
+									annotation={`${item.adSavingAmount}만원`}
+									gradId={savingsGradId}
+									inView={chartsInView}
+									decrease={true}
+									delay={0.1}
+									xLabels={["시작 전", "현재"]}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</SpotlightCard>
 		</Reveal>
 	);
 };
@@ -298,49 +305,53 @@ const SingleCaseCard = ({ item, index }: { item: SingleCaseItem; index: number }
 
 	return (
 		<Reveal delay={index * 0.1}>
-			<div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_32px_rgba(15,23,42,0.06)]">
-				<div className="flex flex-1 flex-col p-6 md:p-8">
-					{/* 사례 라벨 */}
-					<div className="mb-4 flex items-center gap-2">
-						<span className="font-bold text-slate-800 text-sm">{item.label}</span>
-						<span className="font-medium text-slate-500 text-sm">{item.client}</span>
-					</div>
+			<SpotlightCard className="h-full rounded-2xl">
+				<div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_32px_rgba(15,23,42,0.06)]">
+					<div className="flex flex-1 flex-col p-6 md:p-8">
+						{/* 사례 라벨 */}
+						<div className="mb-4 flex items-center gap-2">
+							<span className="font-bold text-slate-800 text-sm">{item.label}</span>
+							<span className="font-medium text-slate-500 text-sm">{item.client}</span>
+						</div>
 
-					{/* 한마디 */}
-					<blockquote className="mb-4 border-[#58d68d]/30 border-l-[3px] pl-4">
-						<p className="break-keep font-bold text-[#0a0a0a] text-lg leading-snug">
-							&ldquo;{item.quote}&rdquo;
+						{/* 한마디 */}
+						<blockquote className="mb-4 border-[#58d68d]/30 border-l-[3px] pl-4">
+							<p className="break-keep font-bold text-[#0a0a0a] text-lg leading-snug">
+								&ldquo;{item.quote}&rdquo;
+							</p>
+							<footer className="mt-1.5 font-mono text-slate-500 text-xs">
+								— {item.quoteAuthor}
+							</footer>
+						</blockquote>
+
+						{/* 결과 요약 */}
+						<p className="mb-5 break-keep text-base text-slate-600 leading-relaxed">
+							{item.period} 후 월 상담{" "}
+							<span className="font-extrabold text-[#58d68d] text-xl">
+								<CountUp to={item.multiplier} />배
+							</span>{" "}
+							증가!
 						</p>
-						<footer className="mt-1.5 font-mono text-slate-500 text-xs">
-							— {item.quoteAuthor}
-						</footer>
-					</blockquote>
 
-					{/* 결과 요약 */}
-					<p className="mb-5 break-keep text-base text-slate-600 leading-relaxed">
-						{item.period} 후 월 상담{" "}
-						<span className="font-extrabold text-[#58d68d] text-xl">
-							<CountUp to={item.multiplier} />배
-						</span>{" "}
-						증가!
-					</p>
-
-					{/* 차트 1개 */}
-					<div ref={chartRef} className="mt-auto rounded-xl bg-slate-50 p-4">
-						<p className="mb-1 font-semibold text-[#0a0a0a] text-xs tracking-wide">월 상담 건수</p>
-						<ImpactBar
-							before={item.beforeValue}
-							after={item.afterValue}
-							unit={item.afterUnit}
-							annotation={`${item.multiplier}배`}
-							gradId={gradId}
-							inView={chartInView}
-							decrease={false}
-							xLabels={["시작 전", `${item.period} 후`]}
-						/>
+						{/* 차트 1개 */}
+						<div ref={chartRef} className="mt-auto rounded-xl bg-slate-50 p-4">
+							<p className="mb-1 font-semibold text-[#0a0a0a] text-xs tracking-wide">
+								월 상담 건수
+							</p>
+							<ImpactBar
+								before={item.beforeValue}
+								after={item.afterValue}
+								unit={item.afterUnit}
+								annotation={`${item.multiplier}배`}
+								gradId={gradId}
+								inView={chartInView}
+								decrease={false}
+								xLabels={["시작 전", `${item.period} 후`]}
+							/>
+						</div>
 					</div>
 				</div>
-			</div>
+			</SpotlightCard>
 		</Reveal>
 	);
 };
