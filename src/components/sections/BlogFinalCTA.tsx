@@ -59,7 +59,6 @@ export const BlogFinalCTA = () => {
 						문의하기
 					</Link>
 				</motion.div>
-
 			</div>
 		</section>
 	);

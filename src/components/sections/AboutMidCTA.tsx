@@ -3,8 +3,8 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
 import { Reveal } from "@/components/shared/Reveal";
+import { siteConfig } from "@/config/site";
 
 const DESK_PHOTO_READY = false; // /public/images/about/desk.jpg 준비 시 true로 변경
 const spring = { type: "spring", stiffness: 280, damping: 18 } as const;

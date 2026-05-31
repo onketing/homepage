@@ -13,9 +13,10 @@ type Step = {
 type Props = {
 	steps: readonly Step[];
 	footnote?: string;
+	eyebrow?: string;
 };
 
-export const ServiceProcess = ({ steps, footnote }: Props) => {
+export const ServiceProcess = ({ steps, footnote, eyebrow = "Process" }: Props) => {
 	const gridRef = useRef<HTMLDivElement>(null);
 	const scrollDirRef = useRef<"down" | "up">("down");
 	const isInView = useInView(gridRef, { once: false, margin: "0px 0px -150px 0px" });
@@ -50,7 +51,7 @@ export const ServiceProcess = ({ steps, footnote }: Props) => {
 				<Reveal>
 					<div className="mb-14 text-center">
 						<p className="mb-3 font-semibold text-[#58d68d] text-sm uppercase tracking-[0.25em]">
-							Process
+							{eyebrow}
 						</p>
 						<h2 className="font-bold text-3xl text-[#0a0a0a] tracking-tight md:text-5xl">
 							이렇게 <span className="gradient-text">진행합니다</span>

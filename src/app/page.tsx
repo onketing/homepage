@@ -3,12 +3,12 @@ import { CaseHighlight } from "@/components/sections/CaseHighlight";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
 import { KPIShowcase } from "@/components/sections/KPIShowcase";
+import { OneTeamScene } from "@/components/sections/OneTeamScene";
 import { PainPoints } from "@/components/sections/PainPoints";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { ProfessionRotator } from "@/components/sections/ProfessionRotator";
 import { RealReviews } from "@/components/sections/RealReviews";
 import { ServiceCards } from "@/components/sections/ServiceCards";
-import { TeamPreview } from "@/components/sections/TeamPreview";
 
 export const metadata: Metadata = {
 	title: "온세상이마케팅이다 | 전문직 마케팅 대행사",
@@ -85,7 +85,7 @@ export const HomePage = () => {
 			<ServiceCards />
 			<ProcessSteps />
 			<RealReviews />
-			<TeamPreview />
+			<OneTeamScene />
 			<FinalCTA />
 		</>
 	);

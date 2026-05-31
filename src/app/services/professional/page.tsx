@@ -56,7 +56,10 @@ const professionalServiceSchema = {
 		name: "전문직 마케팅 서비스",
 		itemListElement: [
 			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "키워드 분석 및 콘텐츠 기획" } },
-			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "광고 규정 검토 및 콘텐츠 발행" } },
+			{
+				"@type": "Offer",
+				itemOffered: { "@type": "Service", name: "광고 규정 검토 및 콘텐츠 발행" },
+			},
 			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "월간 상담 신청 수 보고" } },
 		],
 	},

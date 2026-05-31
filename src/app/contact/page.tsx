@@ -20,8 +20,7 @@ const contactPageSchema = {
 	"@type": "ContactPage",
 	name: "온세상이마케팅이다 마케팅 컨설팅 문의",
 	url: "https://onketing.kr/contact",
-	description:
-		"전문직 마케팅 무료 상담. 첫 상담 비용 없음, 계약 압박 없음, 영업일 1일 내 회신.",
+	description: "전문직 마케팅 무료 상담. 첫 상담 비용 없음, 계약 압박 없음, 영업일 1일 내 회신.",
 	mainEntity: {
 		"@type": "Organization",
 		name: "온세상이마케팅이다",

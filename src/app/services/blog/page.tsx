@@ -44,7 +44,10 @@ const blogServiceSchema = {
 		name: "블로그 마케팅 서비스",
 		itemListElement: [
 			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "검색 의도 기반 키워드 분석" } },
-			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "광고 규정 검토 후 콘텐츠 발행" } },
+			{
+				"@type": "Offer",
+				itemOffered: { "@type": "Service", name: "광고 규정 검토 후 콘텐츠 발행" },
+			},
 			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "월간 상담 신청 수 리포트" } },
 		],
 	},

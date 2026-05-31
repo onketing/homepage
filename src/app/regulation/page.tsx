@@ -20,8 +20,16 @@ const regulationSchema = {
 		url: "https://onketing.kr",
 	},
 	about: [
-		{ "@type": "Thing", name: "변호사 광고 규정", description: "변호사법 제23조 기준 허용·금지 표현" },
-		{ "@type": "Thing", name: "의료광고 규정", description: "의료법 제56조 기준 사전심의 대상 및 금지 표현" },
+		{
+			"@type": "Thing",
+			name: "변호사 광고 규정",
+			description: "변호사법 제23조 기준 허용·금지 표현",
+		},
+		{
+			"@type": "Thing",
+			name: "의료광고 규정",
+			description: "의료법 제56조 기준 사전심의 대상 및 금지 표현",
+		},
 		{ "@type": "Thing", name: "한의사 광고 규정", description: "의료법 적용 한의원 광고 규정" },
 		{ "@type": "Thing", name: "수의사 광고 규정", description: "수의사법 제12조 기준" },
 		{ "@type": "Thing", name: "노무사 광고 규정", description: "공인노무사법 기준" },

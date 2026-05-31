@@ -110,10 +110,7 @@ const jsonLd = {
 		"숏폼 영상 마케팅",
 		"검색 의도 기반 콘텐츠",
 	],
-	sameAs: [
-		siteConfig.contact.naverBlog,
-		siteConfig.contact.kakaoOpenChat,
-	],
+	sameAs: [siteConfig.contact.naverBlog, siteConfig.contact.kakaoOpenChat],
 	hasOfferCatalog: {
 		"@type": "OfferCatalog",
 		name: "전문직 마케팅 서비스",

@@ -74,7 +74,6 @@
 	}
 	body {
 		@apply bg-background text-foreground;
-		overflow-x: hidden;
 		word-break: keep-all;
 		font-family:
 			var(--font-pretendard), "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,

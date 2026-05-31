@@ -47,10 +47,7 @@ const organizationSchema = {
 		"숏폼 마케팅",
 		"네이버 블로그 SEO",
 	],
-	sameAs: [
-		"https://blog.naver.com/onketing-",
-		"https://pf.kakao.com/_FwExjX",
-	],
+	sameAs: ["https://blog.naver.com/onketing-", "https://pf.kakao.com/_FwExjX"],
 };
 
 export const AboutPage = () => {

@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { CaseTestimonial } from "@/components/sections/CaseTestimonial";
 import { ServiceProcess } from "@/components/sections/ServiceProcess";
 import { ServiceWhatWeDo } from "@/components/sections/ServiceWhatWeDo";
 import { ShortformAccumulation } from "@/components/sections/ShortformAccumulation";
 import { ShortformFinalCTA } from "@/components/sections/ShortformFinalCTA";
-import { ShortformGallery } from "@/components/sections/ShortformGallery";
 import { ShortformHero } from "@/components/sections/ShortformHero";
 import { ShortformPain } from "@/components/sections/ShortformPain";
 import { ShortformPortfolio } from "@/components/sections/ShortformPortfolio";
-import { SHORTFORM_CASES, SHORTFORM_PILLARS, SHORTFORM_PROCESS } from "@/data/service-shortform";
+import { SHORTFORM_PILLARS, SHORTFORM_PROCESS } from "@/data/service-shortform";
 
 export const metadata: Metadata = {
 	title: "숏폼 마케팅 | 온세상이마케팅이다",
@@ -44,7 +42,10 @@ const shortformServiceSchema = {
 		name: "숏폼 마케팅 서비스",
 		itemListElement: [
 			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "대본 기획 및 촬영 디렉팅" } },
-			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "영상 편집 및 3채널 동시 업로드" } },
+			{
+				"@type": "Offer",
+				itemOffered: { "@type": "Service", name: "영상 편집 및 3채널 동시 업로드" },
+			},
 			{ "@type": "Offer", itemOffered: { "@type": "Service", name: "채널 분석 및 월간 리포트" } },
 		],
 	},
@@ -62,10 +63,8 @@ export const ShortformServicePage = () => {
 				sub="숏폼은 세가지면 됩니다."
 			/>
 			<ShortformAccumulation />
-			<ServiceProcess steps={SHORTFORM_PROCESS} />
+			<ServiceProcess steps={SHORTFORM_PROCESS} eyebrow="진행과정" />
 			<ShortformPortfolio />
-			<ShortformGallery />
-			<CaseTestimonial cases={SHORTFORM_CASES} />
 			<ShortformFinalCTA />
 		</>
 	);

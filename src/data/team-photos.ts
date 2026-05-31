@@ -17,3 +17,10 @@ export const EDIT_PHOTOS: TeamPhoto[] = [
 	{ src: "/images/team/edit-02.jpg", alt: "스튜디오 와이드 작업석" },
 	{ src: "/images/team/edit-03.jpg", alt: "편집자 워크스테이션" },
 ];
+
+export const ONSITE_PHOTOS: TeamPhoto[] = [
+	{ src: "/images/onsite/onsite-1.jpg", alt: "전문직 인터뷰 촬영 현장" },
+	{ src: "/images/onsite/onsite-2.jpg", alt: "콘텐츠 기획 미팅" },
+	{ src: "/images/onsite/onsite-3.jpg", alt: "텔레프롬프터·카메라 촬영 셋업" },
+	{ src: "/images/onsite/onsite-4.jpg", alt: "스튜디오 촬영·편집 작업" },
+];
