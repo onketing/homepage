@@ -1,5 +1,6 @@
 "use client";
 
+import { ConstellationBackground } from "@/components/shared/ConstellationBackground";
 import { Reveal } from "@/components/shared/Reveal";
 
 const CONSEQUENCES = [
@@ -27,7 +28,8 @@ const CONSEQUENCES = [
 
 export const AboutConsequences = () => {
 	return (
-		<section className="relative overflow-hidden bg-[#052e16] px-4 py-24 md:py-32">
+		<section className="relative overflow-hidden bg-[#0b1220] px-4 py-24 md:py-32">
+			<ConstellationBackground />
 			{/* 분위기 orbs */}
 			<div
 				aria-hidden="true"

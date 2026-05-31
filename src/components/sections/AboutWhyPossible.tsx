@@ -2,6 +2,7 @@
 
 import { Camera, PenLine, Scissors } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
+import { SpotlightCard } from "@/components/shared/SpotlightCard";
 
 const INHOUSE = [
 	{
@@ -43,20 +44,24 @@ export const AboutWhyPossible = () => {
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 					{INHOUSE.map((item, i) => (
 						<Reveal key={item.title} delay={i * 0.12}>
-							<div className="flex h-full flex-col gap-5 rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-shadow duration-300 hover:shadow-md">
-								<div className="flex items-center gap-3">
-									<div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#052e16]/8">
-										<item.icon className="h-6 w-6 text-[#16a34a]" aria-hidden="true" />
+							<SpotlightCard className="h-full rounded-2xl">
+								<div className="flex h-full flex-col gap-5 rounded-2xl border border-slate-100 bg-slate-50 p-8 transition-shadow duration-300 hover:shadow-md">
+									<div className="flex items-center gap-3">
+										<div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#052e16]/8">
+											<item.icon className="h-6 w-6 text-[#16a34a]" aria-hidden="true" />
+										</div>
+										<span className="font-mono text-[#58d68d]/60 text-xs tracking-widest">
+											{item.num}
+										</span>
 									</div>
-									<span className="font-mono text-[#58d68d]/60 text-xs tracking-widest">
-										{item.num}
-									</span>
+									<div>
+										<p className="mb-2 font-bold text-[#0a0a0a] text-xl">{item.title}</p>
+										<p className="break-keep text-base text-slate-600 leading-relaxed">
+											{item.body}
+										</p>
+									</div>
 								</div>
-								<div>
-									<p className="mb-2 font-bold text-[#0a0a0a] text-xl">{item.title}</p>
-									<p className="break-keep text-base text-slate-600 leading-relaxed">{item.body}</p>
-								</div>
-							</div>
+							</SpotlightCard>
 						</Reveal>
 					))}
 				</div>
