@@ -5,13 +5,13 @@ import { ConstellationBackground } from "@/components/shared/ConstellationBackgr
 
 export const Hero = () => {
 	return (
-		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0b1220] pt-16 md:pt-20">
+		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_70%_60%_at_50%_30%,#ffffff_0%,#eef2f7_60%,#e2e8f0_100%)] pt-16 md:pt-20">
 			{/* 리드-플로우 컨스텔레이션 배경 */}
-			<ConstellationBackground />
+			<ConstellationBackground variant="light" />
 
-			{/* 가독성 비네트 */}
+			{/* 가독성 와시 — 텍스트 뒤를 밝게 */}
 			<div
-				className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,_rgba(11,18,32,0.35)_0%,_rgba(11,18,32,0.78)_100%)]"
+				className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_45%,rgba(248,250,252,0.6)_0%,rgba(248,250,252,0)_65%)]"
 				aria-hidden="true"
 			/>
 
@@ -24,10 +24,10 @@ export const Hero = () => {
 					className="mb-10 font-bold text-[44px] leading-[1.15] tracking-[-0.03em] sm:text-[60px] md:text-[80px] md:leading-[1.1] lg:text-[100px]"
 				>
 					<span className="gradient-text">전문직 마케팅</span>
-					<span className="text-white">은</span>
+					<span className="text-slate-900">은</span>
 					<br />
 					<span className="gradient-text">달라야</span>
-					<span className="text-white"> 합니다</span>
+					<span className="text-slate-900"> 합니다</span>
 				</motion.h1>
 
 				{/* Sub */}
@@ -35,7 +35,7 @@ export const Hero = () => {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-					className="mb-10 font-medium text-slate-300 text-xl leading-relaxed md:text-3xl"
+					className="mb-10 font-medium text-slate-600 text-xl leading-relaxed md:text-3xl"
 				>
 					조회수는 터졌는데, 매출은 그대로이신가요?
 				</motion.p>

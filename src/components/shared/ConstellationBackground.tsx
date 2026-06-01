@@ -37,16 +37,6 @@ type ShootingStar = {
 	maxLife: number;
 };
 
-const GREEN = "88, 214, 141";
-
-const STAR_COLORS = [
-	"255, 255, 255", // 흰색
-	"186, 230, 253", // 하늘
-	"196, 181, 253", // 연보라
-	"167, 243, 208", // 에메랄드
-	"253, 230, 138", // 따뜻한 노란별
-];
-
 // 성운 정의 (위치는 비율, 애니메이션은 tick으로 맥동)
 const NEBULA_DEF = [
 	{ cx: 0.08, cy: 0.12, rBase: 360, color: [88, 214, 141], alpha: 0.08 },
@@ -56,7 +46,13 @@ const NEBULA_DEF = [
 	{ cx: 0.5, cy: 0.5, rBase: 200, color: [88, 214, 141], alpha: 0.04 }, // 중앙 미세 글로우
 ];
 
-export const ConstellationBackground = ({ className }: { className?: string }) => {
+export const ConstellationBackground = ({
+	className,
+	variant = "dark",
+}: {
+	className?: string;
+	variant?: "dark" | "light";
+}) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	useEffect(() => {
@@ -64,6 +60,28 @@ export const ConstellationBackground = ({ className }: { className?: string }) =
 		if (!canvas) return;
 		const ctx = canvas.getContext("2d");
 		if (!ctx) return;
+
+		// 팔레트 — 다크/라이트 분기
+		const isLight = variant === "light";
+		const GREEN = isLight ? "22, 163, 74" : "88, 214, 141";
+		const STAR_COLORS = isLight
+			? [
+					"100, 116, 139", // slate-500
+					"129, 140, 248", // indigo-400
+					"45, 212, 191", // teal-400
+					"52, 211, 153", // emerald-400
+					"148, 163, 184", // slate-400
+				]
+			: [
+					"255, 255, 255", // 흰색
+					"186, 230, 253", // 하늘
+					"196, 181, 253", // 연보라
+					"167, 243, 208", // 에메랄드
+					"253, 230, 138", // 따뜻한 노란별
+				];
+		const STAR_DIM = isLight ? 0.5 : 1; // 라이트는 별 필드 톤다운
+		const SHOOT_CORE = isLight ? "71, 85, 105" : "255, 255, 255"; // 유성 머리/꼬리
+		const SHOOT_MID = isLight ? "100, 116, 139" : "200, 235, 255";
 
 		const reduce =
 			typeof window !== "undefined" &&
@@ -173,7 +191,7 @@ export const ConstellationBackground = ({ className }: { className?: string }) =
 			for (const s of stars) {
 				if (!reduce && s.twinkleSpeed > 0) s.phase += s.twinkleSpeed;
 				const twinkle = s.twinkleSpeed > 0 ? Math.sin(s.phase) * 0.3 + 0.7 : 1;
-				const alpha = s.baseOpacity * twinkle;
+				const alpha = s.baseOpacity * twinkle * STAR_DIM;
 				const col = STAR_COLORS[s.colorIdx];
 
 				// 십자 광선 (큰 별만)
@@ -342,9 +360,9 @@ export const ConstellationBackground = ({ className }: { className?: string }) =
 					const ty = ss.y - (ss.vy / spd) * tailLen;
 
 					const g = ctx.createLinearGradient(tx, ty, ss.x, ss.y);
-					g.addColorStop(0, "rgba(255,255,255,0)");
-					g.addColorStop(0.5, `rgba(200,235,255,${alpha * 0.45})`);
-					g.addColorStop(1, `rgba(255,255,255,${alpha})`);
+					g.addColorStop(0, `rgba(${SHOOT_CORE},0)`);
+					g.addColorStop(0.5, `rgba(${SHOOT_MID},${alpha * 0.45})`);
+					g.addColorStop(1, `rgba(${SHOOT_CORE},${alpha})`);
 
 					ctx.strokeStyle = g;
 					ctx.lineWidth = 1.8;
@@ -355,8 +373,8 @@ export const ConstellationBackground = ({ className }: { className?: string }) =
 
 					// 유성 머리 글로우
 					const hg = ctx.createRadialGradient(ss.x, ss.y, 0, ss.x, ss.y, 6);
-					hg.addColorStop(0, `rgba(255,255,255,${alpha * 0.8})`);
-					hg.addColorStop(1, "rgba(255,255,255,0)");
+					hg.addColorStop(0, `rgba(${SHOOT_CORE},${alpha * 0.8})`);
+					hg.addColorStop(1, `rgba(${SHOOT_CORE},0)`);
 					ctx.fillStyle = hg;
 					ctx.beginPath();
 					ctx.arc(ss.x, ss.y, 6, 0, Math.PI * 2);
@@ -425,7 +443,7 @@ export const ConstellationBackground = ({ className }: { className?: string }) =
 			window.removeEventListener("resize", onResize);
 			document.removeEventListener("visibilitychange", onVisibility);
 		};
-	}, []);
+	}, [variant]);
 
 	return (
 		<canvas
