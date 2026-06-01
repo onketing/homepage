@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 // 오디오 웨이브폼 + 이퀄라이저 — 숏폼(영상·사운드) 모티프
-// 의존성 0, prefers-reduced-motion 대응, 라이트 배경 전용
+// 의존성 0, prefers-reduced-motion 대응. 밝은/어두운 배경 모두 사용 (밝은 스트로크 색)
 
 type WaveDef = {
 	amp: number; // 진폭 비율 (height 기준)

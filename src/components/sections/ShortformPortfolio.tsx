@@ -77,10 +77,25 @@ export const ShortformPortfolio = () => {
 								/>
 								{/* 호버 오버레이 */}
 								<div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/30" />
-								{/* 재생 아이콘 */}
+								{/* "재생 중" 이퀄라이저 배지 */}
+								<div className="absolute top-3 left-3 flex items-end gap-[3px] rounded-full bg-black/35 px-2 py-1.5 backdrop-blur-sm">
+									<span className="eq-bar h-3 w-[3px] rounded-full bg-[#58d68d]" />
+									<span
+										className="eq-bar h-3 w-[3px] rounded-full bg-[#58d68d]"
+										style={{ animationDelay: "0.15s" }}
+									/>
+									<span
+										className="eq-bar h-3 w-[3px] rounded-full bg-[#58d68d]"
+										style={{ animationDelay: "0.3s" }}
+									/>
+								</div>
+								{/* 재생 아이콘 (호버 시 펄스) */}
 								<div className="absolute inset-0 flex items-center justify-center">
-									<div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:opacity-100 md:h-16 md:w-16">
-										<Play className="h-6 w-6 translate-x-0.5 fill-[#0a0a0a] text-[#0a0a0a] md:h-7 md:w-7" />
+									<div className="relative h-14 w-14 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:h-16 md:w-16">
+										<span className="absolute inset-0 rounded-full bg-white/30 group-hover:animate-ping" />
+										<div className="relative flex h-full w-full items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur-sm">
+											<Play className="h-6 w-6 translate-x-0.5 fill-[#0a0a0a] text-[#0a0a0a] md:h-7 md:w-7" />
+										</div>
 									</div>
 								</div>
 								{/* 인스타그램 배지 */}

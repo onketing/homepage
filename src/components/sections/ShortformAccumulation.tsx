@@ -2,8 +2,8 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { ConstellationBackground } from "@/components/shared/ConstellationBackground";
 import { Reveal } from "@/components/shared/Reveal";
+import { RisingDotsBackground } from "@/components/shared/RisingDotsBackground";
 import { SHORTFORM_ACCUMULATION } from "@/data/service-shortform";
 
 export const ShortformAccumulation = () => {
@@ -12,7 +12,7 @@ export const ShortformAccumulation = () => {
 
 	return (
 		<section className="relative overflow-hidden bg-[#0b1220] px-4 py-16 md:py-20">
-			<ConstellationBackground />
+			<RisingDotsBackground />
 			<div className="mx-auto max-w-5xl">
 				<Reveal className="mb-12 text-center">
 					<h2 className="font-bold text-3xl text-white tracking-tight md:text-5xl">

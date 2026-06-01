@@ -155,6 +155,27 @@
 	scrollbar-color: #e2e8f0 transparent;
 }
 
+/* Live equalizer (숏폼 포트폴리오 "재생 중" 표시) */
+@keyframes eq-bounce {
+	0%,
+	100% {
+		transform: scaleY(0.35);
+	}
+	50% {
+		transform: scaleY(1);
+	}
+}
+.eq-bar {
+	transform-origin: bottom;
+	animation: eq-bounce 0.9s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+	.eq-bar {
+		animation: none;
+		transform: scaleY(0.7);
+	}
+}
+
 /* Badge sage utility */
 .badge-purple {
 	display: inline-flex;

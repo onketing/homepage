@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+import { PulseBurstBackground } from "@/components/shared/PulseBurstBackground";
 import { Reveal } from "@/components/shared/Reveal";
 import { siteConfig } from "@/config/site";
 
@@ -10,6 +11,8 @@ const spring = { type: "spring", stiffness: 280, damping: 18 } as const;
 export const ShortformFinalCTA = () => {
 	return (
 		<section className="relative overflow-hidden bg-[#0a0a0a] px-4 py-24 md:py-32">
+			{/* 펄스 리플 + 스파크 배경 ("터지다" 모티프) */}
+			<PulseBurstBackground />
 			<div
 				className="pointer-events-none absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-[#58d68d] opacity-[0.12] blur-[120px]"
 				aria-hidden="true"
