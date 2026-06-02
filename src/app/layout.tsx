@@ -82,7 +82,7 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "ProfessionalService",
 	name: siteConfig.nameKo,
-	alternateName: "Onketing",
+	alternateName: ["온케팅", "온세상이마케팅", "Onketing"],
 	description: siteConfig.description,
 	url: siteConfig.url,
 	logo: `${siteConfig.url}/icon-512.png`,

@@ -70,7 +70,7 @@
 | `pricing.ts` | `PRICING_FACTORS` | `PricingFactor[]` | 요금 결정 요소 |
 | `process-steps.ts` | `PROCESS_STEPS` | `ProcessStep[]` | 컨설팅→발행→보고 플로우 (icon, badge 포함) |
 | `process.ts` | `PROCESS_STEPS` | `ProcessStep[]` | 상담→키워드→콘텐츠→보고 단계 (step 번호 기반) |
-| `professions.ts` | `PROFESSIONS` | `Profession[]` | 직군별 상세 데이터 (6개: 변호사·의사·한의사·수의사·노무사·세무사) |
+| `professions.ts` | `PROFESSIONS` | `Profession[]` | 직군별 상세 데이터 (12개 직군: 변호사·의사·한의사·수의사·노무사·세무사 등) |
 | `real-reviews.ts` | `REAL_REVIEWS_ROW1`, `REAL_REVIEWS_ROW2` | `RealReview[]` | 실제 리뷰 카드 (phone/bubble/thumb 타입) |
 | `regulation-cases.ts` | `REGULATION_CASES` | `RegulationCase[]` | 광고 규정 위반→수정 사례 |
 | `regulation-stats.ts` | `REGULATION_STATS` 등 | `RegulationStat[]` | 광고 규정 통계 + 연도별 트렌드 |
