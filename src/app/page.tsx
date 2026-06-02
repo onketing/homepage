@@ -11,9 +11,9 @@ import { RealReviews } from "@/components/sections/RealReviews";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 
 export const metadata: Metadata = {
-	title: "온세상이마케팅이다 | 전문직 마케팅 대행사",
+	title: "온세상이마케팅이다(온케팅) | 전문직 마케팅 대행사",
 	description:
-		"변호사·의사·한의사·수의사·노무사·세무사 전용 마케팅 대행사. 처음 맡은 팀이 끝까지 책임집니다. 재계약율 90%+, 광고 규정 위반 0건.",
+		"온케팅(온세상이마케팅이다)은 변호사·의사·한의사·수의사·노무사·세무사 등 12개 전문직 직군 전용 마케팅 대행사입니다. 처음 맡은 팀이 끝까지 책임집니다. 재계약율 90%+, 광고 규정 위반 0건.",
 	keywords: [
 		"전문직 마케팅",
 		"변호사 마케팅",
