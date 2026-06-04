@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CaseHighlight } from "@/components/sections/CaseHighlight";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
+import { HeroIntro } from "@/components/sections/HeroIntro";
 import { KPIShowcase } from "@/components/sections/KPIShowcase";
 import { OneTeamScene } from "@/components/sections/OneTeamScene";
 import { PainPoints } from "@/components/sections/PainPoints";
@@ -78,6 +79,7 @@ export const HomePage = () => {
 		<>
 			<script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
 			<Hero />
+			<HeroIntro />
 			<PainPoints />
 			<ProfessionRotator />
 			<KPIShowcase />

@@ -16,7 +16,7 @@ const CHILD_ICON_MAP: Record<string, React.ComponentType<{ className?: string }>
 };
 
 // 상단이 투명해야 하는 페이지 (다크 풀스크린 Hero)
-const TRANSPARENT_HERO_PATHS = ["/about", "/services/professional", "/regulation"];
+const TRANSPARENT_HERO_PATHS = ["/", "/about", "/services/professional", "/regulation"];
 
 export const Header = () => {
 	const [scrolled, setScrolled] = useState(false);
@@ -186,7 +186,7 @@ export const Header = () => {
 					>
 						문의하기
 					</Link>
-					<MobileMenu />
+					<MobileMenu isLight={isLight} />
 				</div>
 			</div>
 		</header>

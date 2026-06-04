@@ -15,7 +15,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-export const MobileMenu = () => {
+export const MobileMenu = ({ isLight = false }: { isLight?: boolean }) => {
 	const [open, setOpen] = useState(false);
 	const pathname = usePathname();
 
@@ -26,7 +26,10 @@ export const MobileMenu = () => {
 	return (
 		<Sheet open={open} onOpenChange={setOpen}>
 			<SheetTrigger
-				className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-slate-100 lg:hidden"
+				className={cn(
+					"flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden",
+					isLight ? "text-white hover:bg-white/10" : "text-foreground hover:bg-slate-100",
+				)}
 				aria-label="메뉴 열기"
 			>
 				<MenuIcon className="h-5 w-5" />

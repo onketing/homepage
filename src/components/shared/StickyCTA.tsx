@@ -23,6 +23,13 @@ export const StickyCTA = () => {
 		return () => window.removeEventListener("keydown", onKey);
 	}, []);
 
+	// 홈 첫 진입 시 1회 자동 오픈 (사용자가 닫으면 이후 스크롤 트리거가 다시 열어줌)
+	useEffect(() => {
+		if (pathname !== "/") return;
+		const timer = window.setTimeout(() => setOpen(true), 1200);
+		return () => window.clearTimeout(timer);
+	}, [pathname]);
+
 	// 후기 섹션 중간 도달 시 1회 자동 오픈
 	// biome-ignore lint/correctness/useExhaustiveDependencies: pathname is the trigger, not consumed
 	useEffect(() => {
@@ -120,7 +127,7 @@ export const StickyCTA = () => {
 								type="button"
 								onClick={() => setOpen(false)}
 								aria-label="닫기"
-								className="absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 backdrop-blur-sm transition-colors hover:bg-white/25"
+								className="absolute top-4 right-4 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 backdrop-blur-sm transition-colors hover:bg-white/25"
 							>
 								<X className="h-3.5 w-3.5 text-white" />
 							</button>

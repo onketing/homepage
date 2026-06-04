@@ -29,9 +29,9 @@ export const ProfessionRotator = () => {
 							<AnimatePresence mode="wait" initial={false}>
 								<motion.span
 									key={labels[index]}
-									initial={{ y: "100%", opacity: 0 }}
+									initial={{ y: "-100%", opacity: 0 }}
 									animate={{ y: 0, opacity: 1 }}
-									exit={{ y: "-100%", opacity: 0 }}
+									exit={{ y: "100%", opacity: 0 }}
 									transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
 									className="gradient-text col-start-1 row-start-1 text-center"
 								>
