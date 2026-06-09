@@ -8,6 +8,7 @@ import { PageHero } from "@/components/shared/PageHero";
 
 export const metadata: Metadata = {
 	title: "서비스 | 온세상이마케팅이다",
+	alternates: { canonical: "/services" },
 	description:
 		"블로그·숏폼·전문직 통합 — 원하는 결과부터 정해주세요. 온세상이마케팅이다의 3가지 마케팅 채널을 비교하고 선택하세요.",
 };

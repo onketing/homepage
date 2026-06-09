@@ -9,17 +9,21 @@ import { ShortformPortfolio } from "@/components/sections/ShortformPortfolio";
 import { SHORTFORM_PILLARS, SHORTFORM_PROCESS } from "@/data/service-shortform";
 
 export const metadata: Metadata = {
-	title: "숏폼 마케팅 | 온세상이마케팅이다",
+	title: "전문직 숏폼 마케팅 | 온세상이마케팅이다",
+	alternates: { canonical: "/services/shortform" },
 	description:
-		"전문직을 위한 숏폼 마케팅. 릴스·쇼츠·틱톡 3채널 동시 운영으로 채널 자산을 누적합니다.",
+		"변호사·의사·한의사·수의사·노무사·세무사 등 전문직 숏폼 마케팅 대행사. 인스타그램 릴스·유튜브 쇼츠·틱톡 3채널 동시 운영. 대본 기획·촬영·편집·업로드까지 인하우스 팀이 전담합니다.",
 	keywords: [
 		"전문직 숏폼 마케팅",
+		"변호사 숏폼 마케팅",
+		"의사 숏폼 마케팅",
 		"변호사 릴스",
 		"의사 유튜브 쇼츠",
 		"전문직 틱톡",
 		"숏폼 영상 대행",
 		"인스타그램 릴스 대행",
 		"전문직 영상 마케팅",
+		"숏폼 마케팅 대행사",
 	],
 };
 
@@ -51,10 +55,58 @@ const shortformServiceSchema = {
 	},
 };
 
+const shortformFaqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: [
+		{
+			"@type": "Question",
+			name: "변호사·의사도 숏폼 마케팅이 가능한가요?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "네. 전문직 광고 규정(변호사법·의료법 등)을 검토한 대본으로 촬영합니다. 전문가 신뢰를 쌓는 케이스 토크·Q&A·지식 영상 포맷으로 제작하며, 광고 규정 위반 없이 운영합니다.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "숏폼 마케팅이란 무엇인가요?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "인스타그램 릴스·유튜브 쇼츠·틱톡 등 짧은 영상(15초~3분) 콘텐츠로 브랜드를 알리는 마케팅입니다. 온세상이마케팅이다는 전문직 대상으로 대본 기획부터 촬영·편집·업로드까지 인하우스 팀이 전담합니다.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "릴스·쇼츠·틱톡 중 전문직에게 어떤 채널이 효과적인가요?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "채널마다 주 이용층이 다릅니다. 인스타그램 릴스는 30~40대 의사결정자, 유튜브 쇼츠는 정보 탐색형 검색자에게 효과적입니다. 온세상이마케팅이다는 한 번 촬영으로 3채널에 동시 업로드하여 채널 자산을 누적합니다.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "숏폼 촬영은 어떻게 진행되나요?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "대본 기획 → 촬영 디렉팅 → 편집 → 3채널 업로드 순서로 진행합니다. 촬영 현장에 팀이 직접 방문하며, 의뢰인이 카메라 앞에서 편안하게 말할 수 있도록 디렉팅합니다. 외주 없이 인하우스 팀이 전담합니다.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "숏폼 마케팅 효과는 얼마나 지속되나요?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "광고와 달리 한 번 업로드된 숏폼 영상은 6~12개월 이상 검색에서 발견됩니다. 콘텐츠가 누적될수록 채널 신뢰도가 높아지고 의뢰 전환율이 올라갑니다.",
+			},
+		},
+	],
+};
+
 export const ShortformServicePage = () => {
 	return (
 		<>
 			<script type="application/ld+json">{JSON.stringify(shortformServiceSchema)}</script>
+			<script type="application/ld+json">{JSON.stringify(shortformFaqSchema)}</script>
 			<ShortformHero />
 			<ShortformPain />
 			<ServiceWhatWeDo

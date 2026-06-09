@@ -4,6 +4,7 @@ import { ContactSplit } from "@/components/sections/ContactSplit";
 
 export const metadata: Metadata = {
 	title: "마케팅 컨설팅 문의 | 온세상이마케팅이다",
+	alternates: { canonical: "/contact" },
 	description:
 		"온세상이마케팅이다에 전문직 마케팅을 문의하세요. 첫 상담 무료, 계약 압박 없음, 영업일 1일 내 회신드립니다.",
 	keywords: [

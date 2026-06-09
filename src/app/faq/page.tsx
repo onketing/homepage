@@ -7,6 +7,7 @@ import { FAQ_ITEMS } from "@/data/faq";
 
 export const metadata: Metadata = {
 	title: "자주 묻는 질문 | 온세상이마케팅이다",
+	alternates: { canonical: "/faq" },
 	description:
 		"온세상이마케팅이다 전문직 마케팅 자주 묻는 질문. 비용·진행절차·광고규정·운영보고·성과·해지환불 — 여섯 카테고리 직접 답변합니다.",
 	keywords: [

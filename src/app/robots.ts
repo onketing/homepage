@@ -20,6 +20,12 @@ export const robots = (): MetadataRoute.Robots => {
 			{ userAgent: "Google-Extended", allow: "/" },
 			{ userAgent: "Applebot", allow: "/" },
 			{ userAgent: "cohere-ai", allow: "/" },
+			// Bing 기반 크롤러 (ChatGPT 웹 검색이 Bing 인덱스 사용)
+			{ userAgent: "Bingbot", allow: "/" },
+			{ userAgent: "bingbot", allow: "/" },
+			// 기타 AI 엔진
+			{ userAgent: "YouBot", allow: "/" },
+			{ userAgent: "Diffbot", allow: "/" },
 		],
 		sitemap: `${siteConfig.url}/sitemap.xml`,
 	};

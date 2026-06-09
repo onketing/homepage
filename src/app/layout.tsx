@@ -63,6 +63,7 @@ export const metadata: Metadata = {
 		google: "RHFjIItqXfDsghUkllvYdjx__JO2c9HTgLrsMAm_N4M",
 		other: {
 			"naver-site-verification": "d4226bbbaae73c2c62b9327693fac4b373595e3a",
+			"msvalidate.01": "FEADAB9A050D08C9269521AB466C6271",
 		},
 	},
 	icons: {
@@ -80,12 +81,20 @@ const DUMMY_TEL = "02-000-0000";
 
 const jsonLd = {
 	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
+	"@type": ["Organization", "ProfessionalService"],
+	"@id": `${siteConfig.url}/#organization`,
 	name: siteConfig.nameKo,
-	alternateName: ["온케팅", "온세상이마케팅", "Onketing"],
+	legalName: "온세상이마케팅이다",
+	alternateName: ["온케팅", "온세상이마케팅", "Onketing", "onketing"],
+	slogan: "처음 맡은 팀이 끝까지 갑니다.",
 	description: siteConfig.description,
 	url: siteConfig.url,
-	logo: `${siteConfig.url}/icon-512.png`,
+	logo: {
+		"@type": "ImageObject",
+		url: `${siteConfig.url}/icon-512.png`,
+		width: 512,
+		height: 512,
+	},
 	foundingDate: "2024",
 	...(siteConfig.contact.tel !== DUMMY_TEL && { telephone: siteConfig.contact.tel }),
 	email: siteConfig.contact.email,
@@ -97,7 +106,7 @@ const jsonLd = {
 		postalCode: "18469",
 		addressCountry: "KR",
 	},
-	areaServed: "KR",
+	areaServed: { "@type": "Country", name: "대한민국" },
 	serviceType: [
 		"전문직 마케팅",
 		"블로그 마케팅",
@@ -113,11 +122,20 @@ const jsonLd = {
 		"전문직 광고 규정",
 		"변호사법 제23조",
 		"의료법 제56조",
+		"수의사법 제12조",
+		"공인노무사법",
+		"세무사법 제22조의2",
 		"네이버 블로그 SEO",
 		"숏폼 영상 마케팅",
 		"검색 의도 기반 콘텐츠",
+		"인스타그램 릴스",
+		"유튜브 쇼츠",
 	],
-	sameAs: [siteConfig.contact.naverBlog, siteConfig.contact.kakaoOpenChat],
+	sameAs: [
+		siteConfig.contact.instagram,
+		siteConfig.contact.naverBlog,
+		siteConfig.contact.kakaoOpenChat,
+	],
 	hasOfferCatalog: {
 		"@type": "OfferCatalog",
 		name: "전문직 마케팅 서비스",
@@ -150,6 +168,17 @@ const jsonLd = {
 	},
 };
 
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"@id": `${siteConfig.url}/#website`,
+	url: siteConfig.url,
+	name: "온세상이마케팅이다",
+	alternateName: "온케팅",
+	description: siteConfig.description,
+	publisher: { "@id": `${siteConfig.url}/#organization` },
+};
+
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html
@@ -162,6 +191,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
 				suppressHydrationWarning
 			>
 				<script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+				<script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
 				<Header />
 				<main className="flex-1">
 					<PageTransition>{children}</PageTransition>

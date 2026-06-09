@@ -29,6 +29,7 @@ const teamPageSchema = {
 
 export const metadata: Metadata = {
 	title: "팀 소개 | 온세상이마케팅이다",
+	alternates: { canonical: "/team" },
 	description:
 		"규정·전략·기획·발행을 한 팀이 끝까지 책임집니다. 200건 이상 검토, 위반 0건의 인하우스 팀을 소개합니다.",
 	keywords: [

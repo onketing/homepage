@@ -9,6 +9,7 @@ import { CTACard } from "@/components/shared/CTACard";
 
 export const metadata: Metadata = {
 	title: "회사소개 | 온세상이마케팅이다",
+	alternates: { canonical: "/about" },
 	description:
 		"변호사·의사·한의사·수의사·노무사 등 전문직 마케팅에 집중하는 온세상이마케팅이다. 광고 규정을 이해하는 팀이 직접 콘텐츠를 설계합니다.",
 	keywords: [
@@ -23,11 +24,19 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
 	"@context": "https://schema.org",
-	"@type": "Organization",
+	"@type": ["Organization", "ProfessionalService"],
+	"@id": "https://onketing.kr/#organization",
 	name: "온세상이마케팅이다",
-	alternateName: "Onketing",
+	legalName: "온세상이마케팅이다",
+	alternateName: ["온케팅", "Onketing", "onketing"],
+	slogan: "처음 맡은 팀이 끝까지 갑니다.",
 	url: "https://onketing.kr",
-	logo: "https://onketing.kr/icon-512.png",
+	logo: {
+		"@type": "ImageObject",
+		url: "https://onketing.kr/icon-512.png",
+		width: 512,
+		height: 512,
+	},
 	foundingDate: "2024",
 	email: "onketing.3kim@gmail.com",
 	address: {
@@ -35,19 +44,28 @@ const organizationSchema = {
 		streetAddress: "경기도 화성시 동탄구 동탄중심상가1길 36, 8층 801-117A호",
 		addressLocality: "화성시",
 		addressRegion: "경기도",
+		postalCode: "18469",
 		addressCountry: "KR",
 	},
 	description:
-		"변호사·의사·한의사·수의사·노무사·세무사 등 12개 전문직 직군 전용 마케팅 대행사. 처음 맡은 팀이 끝까지 책임집니다. 재계약율 90%+, 광고 규정 위반 0건.",
+		"변호사·의사·한의사·수의사·노무사·세무사 등 11개 전문직 직군 전용 마케팅 대행사. 처음 맡은 팀이 끝까지 책임집니다. 재계약율 90%+, 광고 규정 위반 0건.",
 	knowsAbout: [
 		"전문직 마케팅",
 		"변호사 광고 규정",
+		"변호사법 제23조",
 		"의료광고 심의",
+		"의료법 제56조",
 		"블로그 마케팅",
 		"숏폼 마케팅",
 		"네이버 블로그 SEO",
+		"인스타그램 릴스",
+		"유튜브 쇼츠",
 	],
-	sameAs: ["https://blog.naver.com/onketing-", "https://pf.kakao.com/_FwExjX"],
+	sameAs: [
+		"https://www.instagram.com/onketing.kr/",
+		"https://blog.naver.com/onketing-",
+		"https://pf.kakao.com/_FwExjX",
+	],
 };
 
 export const AboutPage = () => {

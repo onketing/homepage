@@ -8,7 +8,7 @@ export const siteConfig = {
 	nameKo: "온세상이마케팅이다",
 	title: "온세상이마케팅이다(온케팅) | 전문직 마케팅 대행사",
 	description:
-		"온케팅(온세상이마케팅이다)은 변호사·의사·한의사 등 12개 전문직 전담 마케팅 대행사입니다. 처음 맡은 팀이 끝까지 가는 네이버 블로그·숏폼·SNS 콘텐츠로 의뢰를 만듭니다.",
+		"온케팅(온세상이마케팅이다)은 변호사·의사·한의사 등 11개 전문직 전담 마케팅 대행사입니다. 처음 맡은 팀이 끝까지 가는 네이버 블로그·숏폼·SNS 콘텐츠로 의뢰를 만듭니다.",
 	keywords: [
 		// 브랜드
 		"온세상이마케팅이다",
@@ -89,6 +89,7 @@ export const siteConfig = {
 		businessNumber: "112-31-25690",
 		kakaoOpenChat: "https://pf.kakao.com/_FwExjX",
 		naverBlog: "https://blog.naver.com/onketing-",
+		instagram: "https://www.instagram.com/onketing.kr/",
 		businessHours: "24시간 문의 접수 · 연중무휴",
 	},
 	nav: [
