@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Search, Users, Zap } from "lucide-react";
+import { Search, Users, Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -73,7 +73,7 @@ export const Header = () => {
 									<button
 										type="button"
 										className={cn(
-											"flex w-24 items-center justify-center gap-1 rounded-lg px-4 py-2 font-bold text-[16px] transition-colors",
+											"w-24 rounded-lg px-4 py-2 font-bold text-[16px] transition-colors",
 											isLight
 												? "text-white/80 hover:bg-white/10 hover:text-white"
 												: "hover:bg-slate-50",
@@ -82,13 +82,6 @@ export const Header = () => {
 										)}
 									>
 										{item.label}
-										<ChevronDown
-											className={cn(
-												"h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform duration-200",
-												isOpen && "rotate-180",
-											)}
-											aria-hidden="true"
-										/>
 									</button>
 
 									{/* Dropdown */}
