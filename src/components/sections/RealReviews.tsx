@@ -16,17 +16,36 @@ type FrameProps = {
 	img: ReviewImage;
 	className?: string;
 	onOpen: (img: ReviewImage) => void;
+	disabled?: boolean;
 };
 
-const Frame = ({ img, className, onOpen }: FrameProps) => {
+const Frame = ({ img, className, onOpen, disabled }: FrameProps) => {
 	const [progress, setProgress] = useState(0);
 	const rafRef = useRef<number | null>(null);
 	const startTimeRef = useRef<number | null>(null);
+	const disabledRef = useRef(disabled);
+	useEffect(() => {
+		disabledRef.current = disabled;
+	}, [disabled]);
+
+	const cancelTimer = useCallback(() => {
+		if (rafRef.current) cancelAnimationFrame(rafRef.current);
+		startTimeRef.current = null;
+		setProgress(0);
+	}, []);
 
 	const startTimer = useCallback(() => {
+		if (disabledRef.current) return;
 		startTimeRef.current = Date.now();
 		const tick = () => {
 			if (!startTimeRef.current) return;
+			// 확대 상태가 됐으면 즉시 취소 (ref로 최신값 확인)
+			if (disabledRef.current) {
+				if (rafRef.current) cancelAnimationFrame(rafRef.current);
+				startTimeRef.current = null;
+				setProgress(0);
+				return;
+			}
 			const p = Math.min((Date.now() - startTimeRef.current) / HOLD_MS, 1);
 			setProgress(p);
 			if (p < 1) {
@@ -39,12 +58,6 @@ const Frame = ({ img, className, onOpen }: FrameProps) => {
 		};
 		rafRef.current = requestAnimationFrame(tick);
 	}, [img, onOpen]);
-
-	const cancelTimer = useCallback(() => {
-		if (rafRef.current) cancelAnimationFrame(rafRef.current);
-		startTimeRef.current = null;
-		setProgress(0);
-	}, []);
 
 	useEffect(
 		() => () => {
@@ -109,16 +122,24 @@ const Frame = ({ img, className, onOpen }: FrameProps) => {
 type UnitProps = {
 	unit: ReviewUnit;
 	onOpen: (img: ReviewImage) => void;
+	disabled?: boolean;
 };
 
-const Unit = ({ unit, onOpen }: UnitProps) => {
+const Unit = ({ unit, onOpen, disabled }: UnitProps) => {
 	if (unit.type === "single") {
-		return <Frame img={unit.img} className={`mr-4 shrink-0 ${BAND}`} onOpen={onOpen} />;
+		return (
+			<Frame
+				img={unit.img}
+				className={`mr-4 shrink-0 ${BAND}`}
+				onOpen={onOpen}
+				disabled={disabled}
+			/>
+		);
 	}
 	return (
 		<div className={`mr-4 flex shrink-0 flex-col gap-4 ${BAND}`}>
-			<Frame img={unit.imgs[0]} className="min-h-0 flex-1" onOpen={onOpen} />
-			<Frame img={unit.imgs[1]} className="min-h-0 flex-1" onOpen={onOpen} />
+			<Frame img={unit.imgs[0]} className="min-h-0 flex-1" onOpen={onOpen} disabled={disabled} />
+			<Frame img={unit.imgs[1]} className="min-h-0 flex-1" onOpen={onOpen} disabled={disabled} />
 		</div>
 	);
 };
@@ -166,13 +187,14 @@ export const RealReviews = () => {
 			</Reveal>
 
 			{/* 마퀴 — 계속 스크롤 */}
-			<div className="[mask-image:linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)]">
+			<div className="mask-[linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)]">
 				<Marquee speed={30} gradient={false}>
 					{REVIEW_UNITS.map((unit) => (
 						<Unit
 							key={unit.type === "single" ? unit.img.src : unit.imgs[0].src}
 							unit={unit}
 							onOpen={handleOpen}
+							disabled={!!enlargedImg}
 						/>
 					))}
 				</Marquee>
@@ -186,9 +208,9 @@ export const RealReviews = () => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.15 }}
-						className="pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center"
+						className="pointer-events-none fixed inset-0 z-9999 flex items-center justify-center"
 					>
-						<div className="absolute inset-0 bg-black/55" />
+						<div className="absolute inset-0 bg-black/80" />
 						<motion.div
 							initial={{ scale: 0.88, opacity: 0 }}
 							animate={{ scale: 1, opacity: 1 }}
