@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -78,6 +79,9 @@ export const metadata: Metadata = {
 };
 
 const DUMMY_TEL = "02-000-0000";
+
+// GA4 측정 ID. Vercel/로컬 env에 NEXT_PUBLIC_GA_ID=G-XXXXXXXX 설정 시에만 로드된다.
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 const jsonLd = {
 	"@context": "https://schema.org",
@@ -200,6 +204,7 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
 				<StickyCTA />
 				<FloatingActions />
 				<Analytics />
+				{gaId ? <GoogleAnalytics gaId={gaId} /> : null}
 			</body>
 		</html>
 	);

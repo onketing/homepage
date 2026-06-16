@@ -62,8 +62,8 @@ const securityHeaders = [
 			"img-src 'self' data: blob: https:",
 			// 폰트: self (next/font가 빌드 시 자체 호스팅)
 			"font-src 'self'",
-			// 연결: self + GA + Vercel Analytics
-			"connect-src 'self' https://www.google-analytics.com https://va.vercel-scripts.com",
+			// 연결: self + GA(지역 수집 엔드포인트 포함) + GTM + Vercel Analytics
+			"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://va.vercel-scripts.com",
 			// iframe: YouTube만 기본 포함. 지도 사용 시 위 가이드 참고해 도메인 추가
 			"frame-src 'self' https://www.youtube.com",
 			// 미디어: self + blob (영상 배경 등)
