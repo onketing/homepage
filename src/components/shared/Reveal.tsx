@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 type RevealProps = {
 	children: React.ReactNode;
@@ -19,34 +19,10 @@ export const Reveal = ({
 	duration = 1.1,
 }: RevealProps) => {
 	const ref = useRef<HTMLDivElement>(null);
-	const scrollDirRef = useRef<"down" | "up">("down");
-	const isInView = useInView(ref, { once: false, margin: "-120px" });
+	// once: true — 아래로 스크롤하며 처음 보일 때 1회만 재생.
+	// 위로 다시 스크롤해도 재생/리셋하지 않는다 (Windows 재실행 끊김·요소 미표시 방지).
+	const isInView = useInView(ref, { once: true, margin: "-120px" });
 	const prefersReducedMotion = useReducedMotion();
-	const [{ visible, enteredDown }, setAnimState] = useState({
-		visible: false,
-		enteredDown: false,
-	});
-
-	useEffect(() => {
-		let lastY = window.scrollY;
-		const onScroll = () => {
-			const y = window.scrollY;
-			scrollDirRef.current = y > lastY ? "down" : "up";
-			lastY = y;
-		};
-		window.addEventListener("scroll", onScroll, { passive: true });
-		return () => window.removeEventListener("scroll", onScroll);
-	}, []);
-
-	useEffect(() => {
-		if (isInView) {
-			setAnimState({ visible: true, enteredDown: scrollDirRef.current === "down" });
-		} else if (scrollDirRef.current === "up") {
-			setAnimState({ visible: false, enteredDown: false });
-		}
-	}, [isInView]);
-
-	const shouldAnimate = visible && enteredDown && !prefersReducedMotion;
 
 	const directionMap = {
 		up: { y: 90, x: 0 },
@@ -62,15 +38,15 @@ export const Reveal = ({
 			? { opacity: 0, scale: 0.78 }
 			: { opacity: 0, ...directionMap[direction] };
 
-	const animate = visible
+	const animate = isInView
 		? direction === "scale"
 			? { opacity: 1, scale: 1, x: 0, y: 0 }
 			: { opacity: 1, x: 0, y: 0 }
 		: initial;
 
-	const transition = shouldAnimate
-		? { duration, delay, ease: [0.22, 1, 0.36, 1] as const }
-		: { duration: 0, delay: 0 };
+	const transition = prefersReducedMotion
+		? { duration: 0 }
+		: { duration, delay, ease: [0.22, 1, 0.36, 1] as const };
 
 	return (
 		<motion.div

@@ -158,13 +158,13 @@ duration: 1.1
 delay: 0       // prop으로 주입
 direction: "up"  // "up" | "down" | "left" | "right" | "scale" | "none"
 viewport margin: "-120px"  // 뷰포트 안쪽 120px 진입 시 트리거
-once: false    // 뷰포트 재진입 시 재실행 (스크롤 방향 감지로 제어)
+once: true     // 처음 보일 때 1회만 재생, 재진입 시 재실행 안 함
 ```
 
 동작 규칙:
-- 아래로 스크롤 중 뷰포트 진입 → 애니메이션 실행
-- 위로 스크롤 중 뷰포트 이탈 → 리셋 (다음 스크롤다운 대비)
-- 아래로 스크롤 중 뷰포트 이탈(위로) → visible 유지 (경계 루프 방지)
+- 뷰포트 진입(주로 아래로 스크롤) → 애니메이션 1회 실행
+- 위로 다시 스크롤해도 재생/리셋하지 않음 (한 번 보이면 계속 visible 유지)
+- 스크롤 리스너 없음 — Windows 등에서 스크롤마다 재실행되던 끊김 제거
 - `useReducedMotion()` 자동 대응 — opacity만으로 축소
 
 direction별 초기 offset:

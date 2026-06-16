@@ -140,9 +140,9 @@ type RevealProps = {
 ```
 
 **동작**:
-- `useInView` margin `-120px`, `once: false` — 뷰포트 재진입 시 재실행
-- 위로 스크롤 중 뷰포트 아래로 벗어나면 상태 리셋 → 다음 스크롤다운에서 재생
-- 아래로 스크롤 중 뷰포트 위로 벗어나면 visible 유지 (루프 방지)
+- `useInView` margin `-120px`, `once: true` — 처음 보일 때 1회만 재생
+- 위로 다시 스크롤해도 재실행/리셋 안 함 (한 번 보이면 visible 유지)
+- 스크롤 리스너 없음 (인스턴스마다 scroll 이벤트 등록하던 로직 제거 → Windows 끊김 방지)
 - `prefers-reduced-motion` 감지 시 위치 이동 없이 opacity만 변환
 - transition ease: `[0.22, 1, 0.36, 1]`
 
