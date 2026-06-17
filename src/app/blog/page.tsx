@@ -15,6 +15,14 @@ export const metadata: Metadata = {
 		url: `${siteConfig.url}/blog`,
 		title: "블로그 | 온세상이마케팅이다",
 		description: "전문직 마케팅·네이버 블로그·숏폼 운영 인사이트를 온케팅이 공유합니다.",
+		images: [
+			{
+				url: `${siteConfig.url}/og-image.png`,
+				width: 1200,
+				height: 630,
+				alt: "온세상이마케팅이다",
+			},
+		],
 	},
 };
 

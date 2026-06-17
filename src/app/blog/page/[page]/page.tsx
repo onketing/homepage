@@ -27,7 +27,19 @@ export const generateMetadata = async ({
 		description:
 			"전문직 마케팅·네이버 블로그·숏폼 운영 인사이트. 12개 직군 마케팅 노하우를 온케팅이 공유합니다.",
 		alternates: { canonical: url },
-		openGraph: { type: "website", url, title: `블로그 (${n}페이지) | 온세상이마케팅이다` },
+		openGraph: {
+			type: "website",
+			url,
+			title: `블로그 (${n}페이지) | 온세상이마케팅이다`,
+			images: [
+				{
+					url: `${siteConfig.url}/og-image.png`,
+					width: 1200,
+					height: 630,
+					alt: "온세상이마케팅이다",
+				},
+			],
+		},
 	};
 };
 

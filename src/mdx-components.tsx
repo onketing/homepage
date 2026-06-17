@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types";
-import Image from "next/image";
+import { BlogImage } from "@/components/shared/BlogImage";
 import { BLOG_IMAGE_META } from "@/content/blog/_imageMeta";
 
 // @next/mdx + App Router 필수 파일.
@@ -9,19 +9,9 @@ export function useMDXComponents(): MDXComponents {
 	return {
 		img: ({ src, alt }) => {
 			const s = typeof src === "string" ? src : "";
-			// width/height는 CLS 방지용. unoptimized로 원본을 그대로 서빙 → 재압축 없이 고화질 유지.
 			const meta = BLOG_IMAGE_META[s] ?? { w: 1600, h: 1200 };
-			return (
-				<Image
-					src={s}
-					alt={alt ?? ""}
-					width={meta.w}
-					height={meta.h}
-					unoptimized
-					sizes="(max-width: 768px) 100vw, 768px"
-					className="mx-auto my-7 h-auto w-full max-w-[560px]"
-				/>
-			);
+			// 로딩 스켈레톤 + 페이드인 (BlogImage). width/height로 공간 예약(CLS 방지).
+			return <BlogImage src={s} alt={alt ?? ""} width={meta.w} height={meta.h} />;
 		},
 		table: (props) => (
 			// 모바일에서 표가 넘칠 때 가로 스크롤
