@@ -5,6 +5,7 @@ import { frontmatter as lawyerFm } from "./lawyer-shortform-marketing.mdx";
 import { frontmatter as exclusionFm } from "./naver-blog-exclusion.mdx";
 import { frontmatter as smartplaceFm } from "./naver-smartplace-setup.mdx";
 import { frontmatter as introFm } from "./onketing-intro.mdx";
+import { frontmatter as proShortformFm } from "./professional-shortform.mdx";
 import { frontmatter as taxFm } from "./tax-accountant-marketing.mdx";
 
 export type FaqItem = { q: string; a: string };
@@ -60,6 +61,11 @@ const REGISTRY: RegistryEntry[] = [
 		slug: "labor-attorney-marketing",
 		frontmatter: laborFm,
 		load: () => import("./labor-attorney-marketing.mdx"),
+	},
+	{
+		slug: "professional-shortform",
+		frontmatter: proShortformFm,
+		load: () => import("./professional-shortform.mdx"),
 	},
 ];
 
