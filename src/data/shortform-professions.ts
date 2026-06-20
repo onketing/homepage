@@ -52,9 +52,9 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		regulationSlug: "lawyer",
 		accent: "#1e40af",
 		icon: "scale",
-		title: "변호사 숏폼 마케팅 | 쇼츠·릴스로 상담을 만듭니다 | 온세상이마케팅이다",
+		title: "변호사 숏폼·쇼츠 마케팅 | 릴스로 상담을 만듭니다 | 온세상이마케팅이다",
 		description:
-			"변호사 숏폼 마케팅. 쇼츠와 릴스로 신뢰를 쌓고, 변호사법 제23조를 검토한 대본으로 촬영합니다. 조회수가 아닌 상담 전화로 이어지는 영상을 만듭니다.",
+			"변호사 숏폼·쇼츠 마케팅. 쇼츠와 릴스로 신뢰를 쌓고, 변호사법 제23조를 검토한 대본으로 촬영합니다. 조회수가 아닌 상담 전화로 이어지는 영상을 만듭니다.",
 		keywords: [
 			"변호사 숏폼",
 			"변호사 쇼츠",
@@ -65,7 +65,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"법률 영상 마케팅",
 		],
 		eyebrow: "변호사 · 숏폼 마케팅",
-		titleLead: "변호사 숏폼,",
+		titleLead: "변호사 숏폼·쇼츠,",
 		titleHighlight: "상담 전화로 이어집니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 변호사법 제23조를 검토한 대본으로 촬영합니다.",
@@ -130,9 +130,9 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		regulationSlug: "doctor",
 		accent: "#0d9488",
 		icon: "stethoscope",
-		title: "의사·병원 숏폼 마케팅 | 쇼츠·릴스로 내원을 만듭니다 | 온세상이마케팅이다",
+		title: "의사·병원 숏폼·쇼츠 마케팅 | 릴스로 내원을 만듭니다 | 온세상이마케팅이다",
 		description:
-			"의사·병원 숏폼 마케팅. 의료법 제56조 사전심의 기준을 검토한 영상으로 환자 신뢰를 쌓습니다. 쇼츠와 릴스로 내원·예약 전환을 만듭니다.",
+			"의사·병원 숏폼·쇼츠 마케팅. 의료법 제56조 사전심의 기준을 검토한 영상으로 환자 신뢰를 쌓습니다. 쇼츠와 릴스로 내원·예약 전환을 만듭니다.",
 		keywords: [
 			"의사 숏폼",
 			"의사 쇼츠",
@@ -143,7 +143,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"의료 영상 마케팅",
 		],
 		eyebrow: "의사 · 숏폼 마케팅",
-		titleLead: "의사 숏폼,",
+		titleLead: "의사 숏폼·쇼츠,",
 		titleHighlight: "환자의 신뢰를 만듭니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 환자를 안심시킵니다. 의료법 제56조 사전심의 기준을 검토한 영상으로 제작합니다.",
@@ -208,9 +208,9 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		regulationSlug: "labor",
 		accent: "#b45309",
 		icon: "shield",
-		title: "노무사 숏폼 마케팅 | 쇼츠·릴스로 상담을 만듭니다 | 온세상이마케팅이다",
+		title: "노무사 숏폼·쇼츠 마케팅 | 릴스로 상담을 만듭니다 | 온세상이마케팅이다",
 		description:
-			"노무사 숏폼 마케팅. 부당해고·임금체불·산재 등 노동 이슈를 쇼츠와 릴스로 풀어, 문제가 생긴 순간 가장 먼저 발견되고 상담으로 이어지게 만듭니다.",
+			"노무사 숏폼·쇼츠 마케팅. 부당해고·임금체불·산재 등 노동 이슈를 쇼츠와 릴스로 풀어, 문제가 생긴 순간 먼저 발견되고 상담으로 이어지게 만듭니다.",
 		keywords: [
 			"노무사 숏폼",
 			"노무사 쇼츠",
@@ -220,7 +220,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"노무법인 영상 마케팅",
 		],
 		eyebrow: "노무사 · 숏폼 마케팅",
-		titleLead: "노무사 숏폼,",
+		titleLead: "노무사 숏폼·쇼츠,",
 		titleHighlight: "상담으로 이어집니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 노동 이슈가 터진 순간 가장 먼저 발견되게 만듭니다.",
@@ -285,9 +285,9 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		regulationSlug: "tax",
 		accent: "#15803d",
 		icon: "calculator",
-		title: "세무사 숏폼 마케팅 | 쇼츠·릴스로 기장·상담을 만듭니다 | 온세상이마케팅이다",
+		title: "세무사 숏폼·쇼츠 마케팅 | 릴스로 기장·상담을 만듭니다 | 온세상이마케팅이다",
 		description:
-			"세무사 숏폼 마케팅. 종합소득세·양도세 시즌 검색을 쇼츠와 릴스로 잡아 상담·기장 의뢰로 잇습니다. 세무사법 제12조의7을 검토한 영상으로 제작합니다.",
+			"세무사 숏폼·쇼츠 마케팅. 종합소득세·양도세 시즌 검색을 쇼츠와 릴스로 잡아 상담·기장 의뢰로 잇습니다. 세무사법 제12조의7을 검토한 영상으로 제작합니다.",
 		keywords: [
 			"세무사 숏폼",
 			"세무사 쇼츠",
@@ -297,7 +297,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"세무 영상 마케팅",
 		],
 		eyebrow: "세무사 · 숏폼 마케팅",
-		titleLead: "세무사 숏폼,",
+		titleLead: "세무사 숏폼·쇼츠,",
 		titleHighlight: "의뢰로 이어집니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 세무사법 제12조의7을 검토한 대본으로 촬영합니다.",
@@ -362,9 +362,9 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		regulationSlug: "cpa",
 		accent: "#4f46e5",
 		icon: "chart",
-		title: "회계사 숏폼 마케팅 | 쇼츠·릴스로 신뢰를 쌓습니다 | 온세상이마케팅이다",
+		title: "회계사 숏폼·쇼츠 마케팅 | 릴스로 신뢰를 쌓습니다 | 온세상이마케팅이다",
 		description:
-			"회계사 숏폼 마케팅. 회계·세무·창업 이슈를 쇼츠와 릴스로 풀어 전문성을 보여주고 의뢰로 잇습니다. 공인회계사회 윤리기준을 지켜 발행합니다.",
+			"회계사 숏폼·쇼츠 마케팅. 회계·세무·창업 이슈를 쇼츠와 릴스로 풀어 전문성을 보여주고 의뢰로 잇습니다. 공인회계사회 윤리기준을 지켜 발행합니다.",
 		keywords: [
 			"회계사 숏폼",
 			"회계사 쇼츠",
@@ -374,7 +374,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"회계 영상 마케팅",
 		],
 		eyebrow: "회계사 · 숏폼 마케팅",
-		titleLead: "회계사 숏폼,",
+		titleLead: "회계사 숏폼·쇼츠,",
 		titleHighlight: "전문성을 증명합니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 공인회계사회 윤리기준을 지켜 발행합니다.",
