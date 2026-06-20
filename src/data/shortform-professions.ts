@@ -65,7 +65,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"법률 영상 마케팅",
 		],
 		eyebrow: "변호사 · 숏폼 마케팅",
-		titleLead: "변호사 숏폼·쇼츠,",
+		titleLead: "변호사 숏폼,",
 		titleHighlight: "상담 전화로 이어집니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 변호사법 제23조를 검토한 대본으로 촬영합니다.",
@@ -74,7 +74,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		why: [
 			{
 				title: "의뢰는 신뢰에서 나옵니다",
-				body: "의뢰인은 광고가 아니라 신뢰를 보고 연락합니다. 변호사의 말투와 전문성이 그대로 전달되는 쇼츠가 그 신뢰를 가장 빠르게 쌓습니다.",
+				body: "의뢰인은 광고가 아니라 신뢰를 보고 연락합니다. 말투와 전문성이 그대로 담긴 변호사 쇼츠가 그 신뢰를 빠르게 쌓습니다.",
 			},
 			{
 				title: "검색보다 먼저 발견됩니다",
@@ -143,7 +143,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"의료 영상 마케팅",
 		],
 		eyebrow: "의사 · 숏폼 마케팅",
-		titleLead: "의사 숏폼·쇼츠,",
+		titleLead: "의사 숏폼,",
 		titleHighlight: "환자의 신뢰를 만듭니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 환자를 안심시킵니다. 의료법 제56조 사전심의 기준을 검토한 영상으로 제작합니다.",
@@ -152,7 +152,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		why: [
 			{
 				title: "환자는 안심하고 선택합니다",
-				body: "진료 전 불안을 줄여주는 영상이 내원과 예약으로 이어집니다. 의료진의 설명을 직접 보면 신뢰가 생깁니다.",
+				body: "진료 전 불안을 줄여주는 의사 쇼츠가 내원과 예약으로 이어집니다. 의료진의 설명을 직접 보면 신뢰가 생깁니다.",
 			},
 			{
 				title: "심의 범위 안에서 안전하게",
@@ -220,16 +220,16 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"노무법인 영상 마케팅",
 		],
 		eyebrow: "노무사 · 숏폼 마케팅",
-		titleLead: "노무사 숏폼·쇼츠,",
+		titleLead: "노무사 숏폼,",
 		titleHighlight: "상담으로 이어집니다",
 		heroSub:
-			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 노동 이슈가 터진 순간 가장 먼저 발견되게 만듭니다.",
+			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 노동 이슈가 터진 순간 먼저 발견되게 만듭니다.",
 		whyTitle: "왜 노무사에게 ",
 		whyHighlight: "숏폼인가",
 		why: [
 			{
 				title: "문제가 터진 순간 검색합니다",
-				body: "부당해고·임금체불·산재가 생긴 순간 사람들은 검색합니다. 그 앞에 짧은 영상으로 존재하면 상담으로 이어집니다.",
+				body: "부당해고·임금체불·산재가 생긴 순간 사람들은 검색합니다. 그 앞에 노무사 쇼츠로 존재하면 상담으로 이어집니다.",
 			},
 			{
 				title: "전문성이 곧 신뢰입니다",
@@ -297,7 +297,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"세무 영상 마케팅",
 		],
 		eyebrow: "세무사 · 숏폼 마케팅",
-		titleLead: "세무사 숏폼·쇼츠,",
+		titleLead: "세무사 숏폼,",
 		titleHighlight: "의뢰로 이어집니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 세무사법 제12조의7을 검토한 대본으로 촬영합니다.",
@@ -306,7 +306,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		why: [
 			{
 				title: "세금은 시즌마다 검색합니다",
-				body: "종합소득세·양도세 시즌이면 사람들이 직접 검색합니다. 그 시점에 짧은 영상으로 답하면 의뢰로 이어집니다.",
+				body: "종합소득세·양도세 시즌이면 사람들이 직접 검색합니다. 그 시점에 세무사 쇼츠로 답하면 의뢰로 이어집니다.",
 			},
 			{
 				title: "어려운 걸 쉽게 = 신뢰",
@@ -374,7 +374,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 			"회계 영상 마케팅",
 		],
 		eyebrow: "회계사 · 숏폼 마케팅",
-		titleLead: "회계사 숏폼·쇼츠,",
+		titleLead: "회계사 숏폼,",
 		titleHighlight: "전문성을 증명합니다",
 		heroSub:
 			"유튜브 쇼츠·인스타 릴스, 곧 숏폼으로 신뢰를 쌓습니다. 공인회계사회 윤리기준을 지켜 발행합니다.",
@@ -383,7 +383,7 @@ export const SHORTFORM_PROS: Record<string, ShortformPro> = {
 		why: [
 			{
 				title: "신뢰가 의뢰를 만듭니다",
-				body: "회계는 신뢰 산업입니다. 회계사의 전문성을 영상으로 보여주면 의뢰로 이어집니다.",
+				body: "회계는 신뢰 산업입니다. 회계사 쇼츠로 전문성을 보여주면 의뢰로 이어집니다.",
 			},
 			{
 				title: "어려운 회계를 쉽게",
