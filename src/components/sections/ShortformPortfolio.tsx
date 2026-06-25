@@ -38,7 +38,7 @@ export const ShortformPortfolio = () => {
 						조회수로 <span className="gradient-text">증명합니다</span>
 					</h2>
 					<p className="mx-auto mt-3 max-w-md break-keep text-base text-slate-500 leading-relaxed">
-						실제 운영한 릴스의 조회수입니다.
+						직접 운영한 릴스가 이만큼 터졌습니다.
 					</p>
 				</Reveal>
 
@@ -63,7 +63,7 @@ export const ShortformPortfolio = () => {
 				</div>
 
 				<p className="mt-6 text-center text-slate-400 text-xs">
-					인스타그램 릴스 1편 조회수 기준 · 병원명은 익명 처리했습니다.
+					릴스 한 편 기준 조회수입니다. 병원명은 익명 처리했습니다.
 				</p>
 
 				{/* 그대로 노출 가능한 변호사 릴스 1편 */}
