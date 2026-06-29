@@ -7,15 +7,67 @@ import { CTACard } from "@/components/shared/CTACard";
 import { PageHero } from "@/components/shared/PageHero";
 
 export const metadata: Metadata = {
-	title: "서비스 | 온세상이마케팅이다",
+	title: "전문직 마케팅 서비스 — 블로그·숏폼·인스타그램 | 온케팅",
 	alternates: { canonical: "/services" },
 	description:
-		"블로그·숏폼·전문직 통합 — 원하는 결과부터 정해주세요. 온세상이마케팅이다의 3가지 마케팅 채널을 비교하고 선택하세요.",
+		"전문직 마케팅 서비스 — 네이버 블로그, 숏폼·인스타그램 릴스, 직군 통합 운영. 변호사·의사·한의사 등 직군에 맞는 채널을 비교하고 선택하세요. 보고는 노출 수가 아닌 상담 신청 수로 합니다.",
+	keywords: [
+		"전문직 마케팅",
+		"전문직 마케팅 서비스",
+		"블로그 마케팅",
+		"숏폼 마케팅",
+		"인스타그램 마케팅",
+		"전문직 마케팅 대행사",
+		"마케팅 대행사",
+	],
+};
+
+const servicesSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	name: "전문직 마케팅 서비스",
+	url: "https://onketing.kr/services",
+	provider: { "@id": "https://onketing.kr/#organization" },
+	areaServed: "KR",
+	serviceType: "전문직 블로그·숏폼·인스타그램 마케팅 대행",
+	description:
+		"변호사·의사·한의사 등 전문직을 위한 마케팅 서비스. 네이버 블로그, 숏폼·인스타그램 릴스, 직군 통합 운영 중 직군에 맞는 채널을 설계합니다.",
+	hasOfferCatalog: {
+		"@type": "OfferCatalog",
+		name: "전문직 마케팅 채널",
+		itemListElement: [
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "전문직 블로그 마케팅",
+					url: "https://onketing.kr/services/blog",
+				},
+			},
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "전문직 숏폼·인스타그램 마케팅",
+					url: "https://onketing.kr/services/shortform",
+				},
+			},
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "전문직 통합 마케팅",
+					url: "https://onketing.kr/services/professional",
+				},
+			},
+		],
+	},
 };
 
 export const ServicesPage = () => {
 	return (
 		<>
+			<script type="application/ld+json">{JSON.stringify(servicesSchema)}</script>
 			<PageHero
 				eyebrow="서비스"
 				title="원하는 결과부터"

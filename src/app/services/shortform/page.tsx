@@ -11,12 +11,15 @@ import { SHORTFORM_PILLARS, SHORTFORM_PROCESS } from "@/data/service-shortform";
 import { SHORTFORM_PROS } from "@/data/shortform-professions";
 
 export const metadata: Metadata = {
-	title: "전문직 숏폼 마케팅 | 온세상이마케팅이다",
+	title: "전문직 숏폼·인스타그램 마케팅 | 온케팅",
 	alternates: { canonical: "/services/shortform" },
 	description:
-		"변호사·의사·한의사·수의사·노무사·세무사 등 전문직 숏폼 마케팅 대행사. 인스타그램 릴스·유튜브 쇼츠·틱톡 3채널 동시 운영. 대본 기획·촬영·편집·업로드까지 인하우스 팀이 전담합니다.",
+		"변호사·의사·한의사·수의사·노무사·세무사 등 전문직 숏폼·인스타그램 마케팅 대행사. 인스타그램 릴스·유튜브 쇼츠·틱톡 3채널을 동시 운영합니다. 대본 기획·촬영·편집·업로드까지 인하우스 팀이 전담합니다.",
 	keywords: [
 		"전문직 숏폼 마케팅",
+		"전문직 인스타그램 마케팅",
+		"인스타그램 마케팅",
+		"인스타 마케팅",
 		"변호사 숏폼 마케팅",
 		"의사 숏폼 마케팅",
 		"변호사 릴스",
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
 const shortformServiceSchema = {
 	"@context": "https://schema.org",
 	"@type": "Service",
-	name: "전문직 숏폼 마케팅",
+	name: "전문직 숏폼·인스타그램 마케팅",
 	url: "https://onketing.kr/services/shortform",
 	provider: {
 		"@type": "Organization",
@@ -40,9 +43,9 @@ const shortformServiceSchema = {
 		url: "https://onketing.kr",
 	},
 	description:
-		"변호사·의사·한의사 등 전문직을 위한 숏폼 마케팅. 인스타그램 릴스·유튜브 쇼츠·틱톡 3채널을 동시 운영합니다. 대본·촬영·편집·업로드를 인하우스 팀이 전담합니다.",
+		"변호사·의사·한의사 등 전문직을 위한 숏폼·인스타그램 마케팅. 인스타그램 릴스·유튜브 쇼츠·틱톡 3채널을 동시 운영합니다. 대본·촬영·편집·업로드를 인하우스 팀이 전담합니다.",
 	areaServed: "KR",
-	serviceType: "숏폼 영상 마케팅 대행",
+	serviceType: "숏폼·인스타그램 릴스 마케팅 대행",
 	hasOfferCatalog: {
 		"@type": "OfferCatalog",
 		name: "숏폼 마케팅 서비스",
