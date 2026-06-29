@@ -2,11 +2,13 @@ import type { ComponentType } from "react";
 import { frontmatter as aeoSeoFm } from "./aeo-seo-marketing.mdx";
 import { frontmatter as animalHospitalFm } from "./animal-hospital-marketing.mdx";
 import { frontmatter as laborFm } from "./labor-attorney-marketing.mdx";
+import { frontmatter as laborReelsFm } from "./labor-attorney-reels.mdx";
 import { frontmatter as lawyerFm } from "./lawyer-shortform-marketing.mdx";
 import { frontmatter as metaAdsFm } from "./meta-ads-setup-guide.mdx";
 import { frontmatter as exclusionFm } from "./naver-blog-exclusion.mdx";
 import { frontmatter as smartplaceFm } from "./naver-smartplace-setup.mdx";
 import { frontmatter as introFm } from "./onketing-intro.mdx";
+import { frontmatter as proInstagramFm } from "./professional-instagram-marketing.mdx";
 import { frontmatter as proShortformFm } from "./professional-shortform.mdx";
 import { frontmatter as subsidyFm } from "./small-business-subsidy-2026.mdx";
 import { frontmatter as taxFm } from "./tax-accountant-marketing.mdx";
@@ -35,6 +37,16 @@ type RegistryEntry = {
 
 // 새 글 추가 시: src/content/blog/{slug}.mdx 작성 후 아래에 한 항목만 등록한다.
 const REGISTRY: RegistryEntry[] = [
+	{
+		slug: "labor-attorney-reels",
+		frontmatter: laborReelsFm,
+		load: () => import("./labor-attorney-reels.mdx"),
+	},
+	{
+		slug: "professional-instagram-marketing",
+		frontmatter: proInstagramFm,
+		load: () => import("./professional-instagram-marketing.mdx"),
+	},
 	{
 		slug: "tax-accountant-no-inquiry",
 		frontmatter: taxNoInquiryFm,
