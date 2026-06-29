@@ -25,8 +25,8 @@
 | `onsite/` | `onsite-1~4.jpg` | 촬영·인터뷰 **현장** 사진 (원본: 사용자 제공 `현장1~4`) |
 | `team/` | `video-01~05,07.jpg`, `edit-01~03.jpg` | 촬영팀·편집팀 현장 사진 |
 | `reviews/` | `review-01~16.jpg` | 실제 고객 후기(01~08) + 업무 카톡(09~16) 스크린샷 |
-| `shortform/` | `shortform-3.png` | 변호사 노동법 릴스 썸네일 1편 (병원 릴스 1·2·4·5·6은 2차 사용 불가로 삭제 — 조회수 카드로 대체) |
-| `results/` | `reel-01~04.png` | About 성과 릴스 캡처(조회수 표기용) |
+| `shortform/` | `shortform-1~8.png` | 변호사 법률 릴스 썸네일 8편 (조회수가 이미지에 표기됨). ShortformPortfolio 그리드 + AboutResults에서 사용 |
+| `results/` | `reel-01~04.png` | (미사용 — AboutResults가 shortform 썸네일로 교체됨) |
 | `blog-examples/` | `blog-01~02.png` | 블로그 결과물 예시 캡처 |
 
 > **참고**: `team/video-03.jpg` = `onsite/onsite-2.jpg`, `team/video-04.jpg` = `onsite/onsite-3.jpg` 는 동일 원본이다. TeamScene은 현장 컷(onsite)을, TeamCrews는 팀 컷(team/video-*)을 각각 사용한다.
@@ -47,7 +47,7 @@
 | 섹션 | 사용 이미지 |
 |---|---|
 | `AboutHero` | `images/about/office-main.jpg` ⚠️ *(미존재 placeholder — `HERO_PHOTO_READY=false`)* |
-| `AboutResults` | `images/results/reel-01~04.png` |
+| `AboutResults` | `images/shortform/shortform-6,2,3,4.png` (마케팅 후 릴스 4컷, 조회수 표기용) |
 | AboutFoundingStory / AboutWhyPossible / AboutConsequences / OrgChart | (이미지 없음) |
 
 ### `/team` 팀
@@ -67,24 +67,24 @@
 ### `/services/shortform` 숏폼 마케팅
 | 섹션 | 사용 이미지 |
 |---|---|
-| `ShortformPortfolio` | `images/shortform/shortform-3.png` (변호사 릴스 1편, 클릭 시 인스타그램 이동) + 병원 5곳 익명 조회수 카드(이미지 없음) |
+| `ShortformPortfolio` | `images/shortform/shortform-1~8.png` (변호사 법률 릴스 8편 썸네일 그리드) |
 | 그 외(ShortformHero, ShortformPain, ServiceWhatWeDo, ShortformAccumulation, ServiceProcess, ShortformFinalCTA) | (이미지 없음) |
 
 #### ShortformPortfolio 구성
-병원 릴스 5편(뷰웰·오드·카인드글로벌·리뉴얼·포레)은 2차 사용 불가로 **이미지·링크를 모두 삭제**하고, 조회수만 익명 카드로 노출한다. 카드 데이터는 `components/sections/ShortformPortfolio.tsx`의 `RESULTS` 배열에서 수정.
+병원 익명 조회수 카드는 제거하고, 직접 제작한 변호사 법률 릴스 8편 썸네일을 조회수 높은 순으로 그리드 노출한다. **조회수는 이미지 안에 표기돼 있어 코드 오버레이를 두지 않는다.** 썸네일 목록은 `components/sections/ShortformPortfolio.tsx`의 `REELS` 배열에서, 하단 인스타그램 링크는 `INSTAGRAM_REEL` 상수에서 수정.
 
-| 카드(익명) | 조회수 |
-|---|---|
-| P 성형외과 | 100만 |
-| R 의원 | 90만 |
-| O 의원 | 72만 |
-| B 의원 | 70만 |
-| K 의원 | 17만 |
+| 썸네일 | 주제 | 조회수(이미지 내) |
+|---|---|---|
+| `shortform-4.png` | 근로계약서 싸인 주의 | 123.6만 |
+| `shortform-3.png` | 통장 입금 100만원 | 53.6만 |
+| `shortform-2.png` | 이사 100만원 받는 법 | 47.2만 |
+| `shortform-5.png` | 깡값 | 24.5만 |
+| `shortform-6.png` | 몰래 녹음 불법 여부 | 23.6만 |
+| `shortform-1.png` | 월세 호구 | 12.8만 |
+| `shortform-7.png` | 변호사 선임 주의 | 4.9만 |
+| `shortform-8.png` | 소액피해 대처 | 2.9만 |
 
-남은 릴스 썸네일 1편:
-| 썸네일 | 인스타그램 URL |
-|---|---|
-| `shortform-3.png` (변호사 노동법) | https://www.instagram.com/reel/DYCAsVXR0He/ |
+하단 인스타그램 링크: https://www.instagram.com/reel/DYCAsVXR0He/
 
 ### `/regulation` · `/services/professional` (공통 `AboutMidCTA`)
 | 섹션 | 사용 이미지 |
