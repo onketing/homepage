@@ -6,6 +6,7 @@ import { RegulationHero } from "@/components/sections/RegulationHero";
 import { RegulationLawSwitcher } from "@/components/sections/RegulationLawSwitcher";
 import { RegulationPledge } from "@/components/sections/RegulationPledge";
 import { RegulationStats } from "@/components/sections/RegulationStats";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 
 const regulationSchema = {
 	"@context": "https://schema.org",
@@ -59,6 +60,12 @@ export const metadata: Metadata = {
 export const RegulationPage = () => (
 	<>
 		<script type="application/ld+json">{JSON.stringify(regulationSchema)}</script>
+		<BreadcrumbJsonLd
+			items={[
+				{ name: "홈", path: "" },
+				{ name: "광고 규정 가이드", path: "/regulation" },
+			]}
+		/>
 		<RegulationHero />
 		<RegulationStats />
 		<RegulationLawSwitcher />

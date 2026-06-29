@@ -5,6 +5,7 @@ import { AboutHero } from "@/components/sections/AboutHero";
 import { AboutResults } from "@/components/sections/AboutResults";
 import { AboutWhyPossible } from "@/components/sections/AboutWhyPossible";
 import { OrgChart } from "@/components/sections/OrgChart";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { CTACard } from "@/components/shared/CTACard";
 
 export const metadata: Metadata = {
@@ -73,6 +74,12 @@ export const AboutPage = () => {
 		<>
 			<script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
 			{/* 1. 풀스크린 다크 Hero */}
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "회사소개", path: "/about" },
+				]}
+			/>
 			<AboutHero />
 
 			{/* 2. 창업 스토리 */}

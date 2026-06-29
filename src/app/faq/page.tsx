@@ -3,6 +3,7 @@ import { FAQContact } from "@/components/sections/FAQContact";
 import { FaqDirectory } from "@/components/sections/FaqDirectory";
 import { FaqHero } from "@/components/sections/FaqHero";
 import { FaqSpotlight } from "@/components/sections/FaqSpotlight";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { FAQ_ITEMS } from "@/data/faq";
 
 export const metadata: Metadata = {
@@ -36,6 +37,12 @@ const faqSchema = {
 export const FaqPage = () => (
 	<>
 		<script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+		<BreadcrumbJsonLd
+			items={[
+				{ name: "홈", path: "" },
+				{ name: "자주 묻는 질문", path: "/faq" },
+			]}
+		/>
 		<FaqHero />
 		<FaqSpotlight />
 		<FaqDirectory />

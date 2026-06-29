@@ -8,6 +8,7 @@ import { ServicePainPoints } from "@/components/sections/ServicePainPoints";
 import { ServiceProcess } from "@/components/sections/ServiceProcess";
 import { ServiceProofStrip } from "@/components/sections/ServiceProofStrip";
 import { ServiceWhatWeDo } from "@/components/sections/ServiceWhatWeDo";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import {
 	PROFESSIONAL_CASES,
 	PROFESSIONAL_PAIN,
@@ -120,6 +121,13 @@ export const ProfessionalServicePage = () => {
 		<>
 			<script type="application/ld+json">{JSON.stringify(professionalServiceSchema)}</script>
 			<script type="application/ld+json">{JSON.stringify(professionalFaqSchema)}</script>
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "서비스", path: "/services" },
+					{ name: "전문직 마케팅", path: "/services/professional" },
+				]}
+			/>
 			<ProfessionalHero />
 			<ServiceProofStrip items={PROFESSIONAL_PROOF} />
 			<DisciplineGrid />

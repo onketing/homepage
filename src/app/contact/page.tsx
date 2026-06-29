@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactHero } from "@/components/sections/ContactHero";
 import { ContactSplit } from "@/components/sections/ContactSplit";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
 	title: "마케팅 컨설팅 문의 | 온세상이마케팅이다",
@@ -45,6 +46,12 @@ export const ContactPage = () => {
 	return (
 		<>
 			<script type="application/ld+json">{JSON.stringify(contactPageSchema)}</script>
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "마케팅 컨설팅 문의", path: "/contact" },
+				]}
+			/>
 			<ContactHero />
 			<ContactSplit />
 		</>

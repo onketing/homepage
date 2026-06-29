@@ -7,6 +7,7 @@ import { ShortformFinalCTA } from "@/components/sections/ShortformFinalCTA";
 import { ShortformHero } from "@/components/sections/ShortformHero";
 import { ShortformPain } from "@/components/sections/ShortformPain";
 import { ShortformPortfolio } from "@/components/sections/ShortformPortfolio";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { SHORTFORM_PILLARS, SHORTFORM_PROCESS } from "@/data/service-shortform";
 import { SHORTFORM_PROS } from "@/data/shortform-professions";
 
@@ -112,6 +113,13 @@ export const ShortformServicePage = () => {
 		<>
 			<script type="application/ld+json">{JSON.stringify(shortformServiceSchema)}</script>
 			<script type="application/ld+json">{JSON.stringify(shortformFaqSchema)}</script>
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "서비스", path: "/services" },
+					{ name: "숏폼·인스타그램 마케팅", path: "/services/shortform" },
+				]}
+			/>
 			<ShortformHero />
 			<ShortformPain />
 			<ServiceWhatWeDo

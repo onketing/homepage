@@ -3,6 +3,7 @@ import { CaseHighlight } from "@/components/sections/CaseHighlight";
 import { ServiceComparison } from "@/components/sections/ServiceComparison";
 import { ServiceMatrix } from "@/components/sections/ServiceMatrix";
 import { WhyUsBold } from "@/components/sections/WhyUsBold";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { CTACard } from "@/components/shared/CTACard";
 import { PageHero } from "@/components/shared/PageHero";
 
@@ -68,6 +69,12 @@ export const ServicesPage = () => {
 	return (
 		<>
 			<script type="application/ld+json">{JSON.stringify(servicesSchema)}</script>
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "서비스", path: "/services" },
+				]}
+			/>
 			<PageHero
 				eyebrow="서비스"
 				title="원하는 결과부터"

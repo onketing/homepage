@@ -8,6 +8,7 @@ import { BlogVsAds } from "@/components/sections/BlogVsAds";
 import { ServiceProcess } from "@/components/sections/ServiceProcess";
 import { ServiceProofStrip } from "@/components/sections/ServiceProofStrip";
 import { ServiceWhatWeDo } from "@/components/sections/ServiceWhatWeDo";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { BLOG_PILLARS, BLOG_PROCESS, BLOG_PROOF } from "@/data/service-blog";
 
 export const metadata: Metadata = {
@@ -109,6 +110,13 @@ export const BlogServicePage = () => {
 		<>
 			<script type="application/ld+json">{JSON.stringify(blogServiceSchema)}</script>
 			<script type="application/ld+json">{JSON.stringify(blogFaqSchema)}</script>
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "서비스", path: "/services" },
+					{ name: "블로그 마케팅", path: "/services/blog" },
+				]}
+			/>
 			<BlogHero />
 			<BlogVsAds />
 			<BlogHomepageSection />

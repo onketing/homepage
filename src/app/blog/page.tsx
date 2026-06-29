@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BlogGrid } from "@/components/sections/BlogGrid";
 import { BlogListHero } from "@/components/sections/BlogListHero";
 import { BlogPagination } from "@/components/sections/BlogPagination";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { siteConfig } from "@/config/site";
 import { getPagePosts, getTotalPages, POSTS } from "@/content/blog/posts";
 
@@ -31,6 +32,12 @@ export const BlogIndexPage = () => {
 
 	return (
 		<div className="min-h-screen bg-white">
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "홈", path: "" },
+					{ name: "블로그", path: "/blog" },
+				]}
+			/>
 			<BlogListHero count={POSTS.length} />
 
 			<section className="px-4 pt-4 pb-20 md:px-8 md:pb-28">

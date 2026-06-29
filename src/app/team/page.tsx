@@ -3,6 +3,7 @@ import { TeamCrews } from "@/components/sections/TeamCrews";
 import { TeamHero } from "@/components/sections/TeamHero";
 import { TeamProblemSolution } from "@/components/sections/TeamProblemSolution";
 import { TeamScene } from "@/components/sections/TeamScene";
+import { BreadcrumbJsonLd } from "@/components/shared/BreadcrumbJsonLd";
 import { CTACard } from "@/components/shared/CTACard";
 
 const teamPageSchema = {
@@ -45,6 +46,12 @@ export const metadata: Metadata = {
 export const TeamPage = () => (
 	<>
 		<script type="application/ld+json">{JSON.stringify(teamPageSchema)}</script>
+		<BreadcrumbJsonLd
+			items={[
+				{ name: "홈", path: "" },
+				{ name: "팀", path: "/team" },
+			]}
+		/>
 		<TeamHero />
 		<TeamCrews />
 		<TeamScene />
