@@ -1,5 +1,6 @@
-import { Check, X } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProShortformHero } from "@/components/sections/ProShortformHero";
 import { CTACard } from "@/components/shared/CTACard";
@@ -56,8 +57,8 @@ export const ProShortformPage = async ({ params }: { params: Promise<{ professio
 	const serviceSchema = {
 		"@context": "https://schema.org",
 		"@type": "Service",
-		name: `${pro.profession} 숏폼 마케팅`,
-		serviceType: `${pro.profession} 숏폼·쇼츠 영상 마케팅 대행`,
+		name: `${pro.profession} 마케팅`,
+		serviceType: `${pro.profession} 숏폼·블로그·SNS 마케팅 대행`,
 		url,
 		areaServed: "KR",
 		provider: { "@id": `${siteConfig.url}/#organization` },
@@ -74,7 +75,7 @@ export const ProShortformPage = async ({ params }: { params: Promise<{ professio
 				name: "숏폼 마케팅",
 				item: `${siteConfig.url}/services/shortform`,
 			},
-			{ "@type": "ListItem", position: 3, name: `${pro.profession} 숏폼`, item: url },
+			{ "@type": "ListItem", position: 3, name: `${pro.profession} 마케팅`, item: url },
 		],
 	};
 	const faqSchema = {
@@ -224,10 +225,38 @@ export const ProShortformPage = async ({ params }: { params: Promise<{ professio
 				</div>
 			</section>
 
+			{/* 관련 인사이트 (내부링크 — 토픽 클러스터) */}
+			{pro.relatedLinks && pro.relatedLinks.length > 0 ? (
+				<section className="bg-white px-4 py-16 md:px-8 md:py-20">
+					<div className="mx-auto max-w-4xl">
+						<SectionHeading
+							eyebrow="More"
+							title={`${pro.profession} 마케팅, `}
+							highlight="더 알아보기"
+						/>
+						<div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+							{pro.relatedLinks.map((l, i) => (
+								<Reveal key={l.href} delay={i * 0.06}>
+									<Link
+										href={l.href}
+										className="group flex h-full items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-5 transition-colors hover:border-[#58d68d]/50"
+									>
+										<span className="break-keep font-medium text-foreground text-sm leading-snug">
+											{l.label}
+										</span>
+										<ArrowRight className="h-4 w-4 shrink-0 text-[#16a34a] transition-transform group-hover:translate-x-1" />
+									</Link>
+								</Reveal>
+							))}
+						</div>
+					</div>
+				</section>
+			) : null}
+
 			<CTACard
 				variant="gradient"
 				eyebrow="온세상이마케팅이다 · 마케팅 컨설팅"
-				headline={`${pro.profession} 숏폼, 지금 시작하세요.`}
+				headline={`${pro.profession} 마케팅, 지금 시작하세요.`}
 				sub="첫 상담은 무료입니다. 광고 규정 검토부터 함께 봅니다."
 			/>
 		</>
