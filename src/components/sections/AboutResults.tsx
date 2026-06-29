@@ -1,15 +1,32 @@
 "use client";
 
-import { ArrowRight, Eye, X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { AnimatePresence, motion, useInView } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+// 조회수는 이미지 안에 표기돼 있어 코드 오버레이를 두지 않는다.
 const AFTER_REELS = [
-	{ views: "81.9만", src: "/images/results/reel-01.png", alt: "근로계약서 관련 릴스", rotate: -4 },
-	{ views: "29.4만", src: "/images/results/reel-02.png", alt: "통장 입금 관련 릴스", rotate: 3 },
-	{ views: "38.1만", src: "/images/results/reel-03.png", alt: "이사 관련 릴스", rotate: 3.5 },
-	{ views: "16.6만", src: "/images/results/reel-04.png", alt: "깡값 관련 릴스", rotate: -3 },
+	{
+		src: "/images/shortform/shortform-6.png",
+		alt: "몰래 녹음은 다 불법? — 온케팅 제작 변호사 릴스",
+		rotate: -4,
+	},
+	{
+		src: "/images/shortform/shortform-2.png",
+		alt: "이사갈 때 100만원 받는 법 — 온케팅 제작 변호사 릴스",
+		rotate: 3,
+	},
+	{
+		src: "/images/shortform/shortform-3.png",
+		alt: "모르는 돈 100만원이 통장에 입금된다면 — 온케팅 제작 변호사 릴스",
+		rotate: 3.5,
+	},
+	{
+		src: "/images/shortform/shortform-4.png",
+		alt: "근로계약서에 이 조항 있으면 절대 싸인하지 마세요 — 온케팅 제작 변호사 릴스",
+		rotate: -3,
+	},
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -113,7 +130,7 @@ export const AboutResults = () => {
 								return (
 									<motion.div
 										key={reel.src}
-										className="relative aspect-9/16 cursor-pointer overflow-hidden rounded-2xl"
+										className="cursor-pointer overflow-hidden rounded-2xl"
 										style={{ boxShadow: "0 16px 48px rgba(0,0,0,0.28)" }}
 										onClick={() => setActive(i)}
 										initial={{ opacity: 0, y: 80, rotate: initRotate, scale: 0.8 }}
@@ -138,16 +155,11 @@ export const AboutResults = () => {
 										<Image
 											src={reel.src}
 											alt={reel.alt}
-											fill
-											className="object-cover"
+											width={332}
+											height={516}
+											className="h-auto w-full"
 											sizes="180px"
 										/>
-										<div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/90 via-black/40 to-transparent px-3 py-3">
-											<div className="flex items-center gap-1.5">
-												<Eye className="h-3.5 w-3.5 text-white/70" />
-												<p className="font-bold text-white text-xl leading-none">{reel.views}</p>
-											</div>
-										</div>
 									</motion.div>
 								);
 							})}
@@ -165,7 +177,7 @@ export const AboutResults = () => {
 								<span className="text-white/50 text-xs">팔로워</span>
 							</div>
 							<div className="flex items-center gap-2 rounded-full border border-[#16a34a]/20 bg-[#16a34a]/8 px-4 py-2.5">
-								<span className="font-bold text-[#15803d] text-sm">166만+</span>
+								<span className="font-bold text-[#15803d] text-sm">290만+</span>
 								<span className="text-[#16a34a]/60 text-xs">총 조회수</span>
 							</div>
 						</motion.div>
@@ -193,7 +205,7 @@ export const AboutResults = () => {
 							<X className="h-5 w-5" />
 						</button>
 						<motion.div
-							className="relative aspect-9/16 w-[min(80vw,360px)] overflow-hidden rounded-3xl shadow-2xl"
+							className="w-[min(80vw,360px)] overflow-hidden rounded-3xl shadow-2xl"
 							initial={{ scale: 0.85, opacity: 0 }}
 							animate={{ scale: 1, opacity: 1 }}
 							exit={{ scale: 0.9, opacity: 0 }}
@@ -203,19 +215,11 @@ export const AboutResults = () => {
 							<Image
 								src={AFTER_REELS[active].src}
 								alt={AFTER_REELS[active].alt}
-								fill
-								className="object-cover"
+								width={332}
+								height={516}
+								className="h-auto w-full"
 								sizes="360px"
 							/>
-							<div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/90 via-black/40 to-transparent px-5 py-5">
-								<div className="flex items-center gap-2">
-									<Eye className="h-4 w-4 text-white/70" />
-									<p className="font-bold text-2xl text-white leading-none">
-										{AFTER_REELS[active].views}
-									</p>
-									<span className="ml-1 text-sm text-white/60">조회수</span>
-								</div>
-							</div>
 						</motion.div>
 					</motion.div>
 				)}
