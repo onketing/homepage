@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -150,14 +151,25 @@ export const BlogPostPage = async ({ params }: { params: Promise<{ slug: string 
 					))}
 				</div>
 
-				{/* 목록으로 */}
-				<div className="mt-12 border-slate-100 border-t pt-8">
+				{/* 네이버 원문 + 목록으로 */}
+				<div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-slate-100 border-t pt-8">
 					<Link
 						href="/blog"
 						className="font-medium text-[#16a34a] text-sm transition-colors hover:text-[#15803d]"
 					>
 						← 다른 글 보기
 					</Link>
+					{post.naverUrl ? (
+						<a
+							href={post.naverUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-600 text-sm transition-colors hover:border-[#58d68d]/50 hover:text-[#16a34a]"
+						>
+							네이버 블로그에서 원문 보기
+							<ArrowUpRight className="h-4 w-4" />
+						</a>
+					) : null}
 				</div>
 			</div>
 
